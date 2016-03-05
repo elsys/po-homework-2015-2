@@ -13,7 +13,7 @@ long hash(char *word) {
 int main() {
     char word[200];
     scanf("%s", word);
-    int sum = hash(word);
+    long sum = hash(word);
     printf("%ld", sum);
     return 0;
 }
