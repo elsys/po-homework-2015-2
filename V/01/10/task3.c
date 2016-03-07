@@ -21,6 +21,8 @@ int main()
   	scanf("%s",d[i].str[0]);
   	d[i].h=hash(d[i].str[0]);
   	
+  	//printf("h=%ld ", d[i].h);
+  	
   	d[i].count=1;
   	
   	for(j=0,n=1;j<i;j++)
@@ -29,8 +31,14 @@ int main()
   	   if(d[j].h==d[i].h)
   	   {
   	     d[i].count++;
+  	     //printf("\n%d",d[i].count);
   	     strcpy(d[i].str[n],d[j].str[0]);
+  	     
+  	     strcpy(d[j].str[d[j].count],d[i].str[0]);
+  	     d[j].count++;
+  	     //printf("\n%d",d[j].count);
   	     n++;
+  	     //printf("\nn=%d",n);
   	   }
   	}
   	
@@ -38,8 +46,25 @@ int main()
   	
     }while(n != 4 );
     
+        
+    for(i=0;i<=3000;i++)
+    {
+    	
+    	if(d[i].count>1)
+    	{
+ 	
+ 	   printf("\n%ld ", d[i].h);
+    	   
+    	   for(j=0;j<=4;j++)
+    	   {
+    	   
+    	   printf("%s ", d[i].str[j]);
+    	   
+    	   }
+    	}
+    	
+    }
     
-   printf("%s %s %s %s", d[i-1].str[0], d[i-1].str[1], d[i-1].str[2], d[i-1].str[3]);
    
 
 
