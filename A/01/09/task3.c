@@ -117,6 +117,7 @@ void sort(struct occurance_t *words, int length) {
 }
 
 void print_words(struct occurance_t *words, int length) {
+    
     for (int i = 0; i < length; i++) {
         printf("%ld ", words[i].hash);
         for (int j = 0; j < MAX_COLLISIONS; j++) {
