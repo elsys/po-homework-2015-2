@@ -9,6 +9,7 @@ typedef struct{
 int fix_count(occurance_t*, int);
 long hash(int);
 void fix_repeat(occurance_t*, int);
+void sort_sentence(occurance_t*, int);
 char words[3000][200];
 
 int main()
@@ -23,6 +24,7 @@ int main()
 		i++;
 	}
 	fix_repeat(sentence, i);
+	sort_sentence(sentence, i);
 	for(int j = 0; j < i; j++)
 	{
 		if(sentence[j].count[0][0] >= '2')
@@ -83,6 +85,22 @@ void fix_repeat(occurance_t* sentence, int i)
 			if(sentence[j].hash == sentence[k].hash)
 			{
 				sentence[k].count[0][0] = '0';
+			}
+		}
+	}
+}
+void sort_sentence(occurance_t* sentence, int i)
+{
+	occurance_t temp;
+	for(int j = 0; j < i; j++)
+	{
+		for(int k = j; k < i; k++)
+		{
+			if(sentence[j].hash > sentence[k].hash)
+			{
+				temp = sentence[j];
+				sentence[j] = sentence[k];
+				sentence[k] = temp;
 			}
 		}
 	}
