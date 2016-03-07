@@ -3,10 +3,10 @@
 
 int main()
 {
-	unsigned short int i, j;
+	unsigned short int i, j, sorted=0;
 	char word[200];
 	long int hashed_word;
-	occurance_t hashes[3000];
+	occurance_t hashes[3000], sort_help;
 	for(i=0; i<3000; i++)
 	{
 		hashes[i].hash_sum=0;
@@ -37,7 +37,39 @@ int main()
 		if(hashes[j].a==4)
 			break;
 	}
-	for(i=0; i<4; i++)
-		printf("%s",hashes[j].words_with_this_hash[i]);
+	i=0;
+	while(!sorted)
+	{
+		sorted=1;
+		for(j=0; j<2999-i; j++)
+		{
+			if(hashes[j+1].hash_sum==0)
+				break;
+			if(hashes[j].hash_sum > hashes[j+1].hash_sum)
+			{
+				sorted=0;
+				sort_help=hashes[j+1];
+				hashes[j+1]=hashes[j];
+				hashes[j]=sort_help;
+			}
+		}
+		i++;
+	}
+	for(i=0; i<3000; i++)
+	{
+		if(hashes[i].hash_sum==0)
+			break;
+		if(hashes[i].a>1)
+		{
+			printf("%ld ",hashes[i].hash_sum);
+			for(j=0; j<4; j++)
+			{
+				if(hashes[i].words_with_this_hash[j][0]=='\0')
+					break;
+				printf("%s ",hashes[i].words_with_this_hash[j]);
+			}
+			printf("\n");
+		}
+	}
 	return 0;
 }
