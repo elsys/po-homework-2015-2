@@ -37,6 +37,16 @@ int main() {
 			break;
 	}
 
+	for(int i = 0; i < size - 1; i++) {
+		for(int j = 0; j < size - i - 1; j++) {
+			if(occ_class[j].hash < occ_class[j+1].hash) {
+				occurance_t tmp = occ_class[j];
+				occ_class[j] = occ_class[j+1];
+				occ_class[j+1] = tmp;
+			}
+		}
+	} 
+
 	for(int i = 0; i < size-1; i++) {
 		if(occ_class[i].times >= 1) {
 			printf("%ld", occ_class[i].hash);
