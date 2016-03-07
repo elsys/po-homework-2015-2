@@ -50,12 +50,13 @@ for(l=0;l<counter;l++){
         var.hash=helper;
         }
     }
-
+return 0;
 }
 
 }
 printf("%d\n",var.reps);
 printf("%d",var.hash);
+return 0;
 }
 
 int hashing(char arr[]){
@@ -71,4 +72,7 @@ for(i=0;i<len;i++){
 
 return eq;
 }
+
+
+
 
