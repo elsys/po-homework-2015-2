@@ -16,63 +16,6 @@ int put_version(char*, struct occurance_t*, int);
 void sort(struct occurance_t*, int);
 void print_words(struct occurance_t*, int);
 
-void print_words(struct occurance_t *words, int length) {
-    for (int i = 0; i < length; i++) {
-        printf("%ld ", words[i].hash);
-        for (int j = 0; j < MAX_COLLISIONS; j++) {
-            printf("%s ", words[i].versions[j]);
-        }
-        printf("\n");
-    }
-}
-
-void sort(struct occurance_t *words, int length) {
-    
-    struct occurance_t temp;
-    int sorted = 0, j = 0;
-    
-    while (!sorted) {
-        sorted = 1;
-        j++;
-        for (int i = 0; i < length; i++) {
-            if (words[i].hash > words[i + 1].hash) {
-                temp = words[i];
-                words[i] = words[i + 1];
-                words[i + 1] = temp;
-                sorted = 0;
-            }
-        }
-    }
-}
-
-int put_version(char *word, struct occurance_t *words, int index) {
-    
-    int i;
-    
-    for (i = 0; i < MAX_COLLISIONS; i++) {
-        if (strcmp(word, words[index].versions[i]) == 0) {
-            return 1;
-        }
-    }
-    
-    for (i = 0; i < MAX_COLLISIONS; i++) {
-
-        if (strlen(words[index].versions[i]) <= 1) {
-            
-            strcpy(words[index].versions[i], word);
-            
-            if (i == MAX_COLLISIONS - 1) {
-                return 0;
-            }
-            
-            return 1;
-        }
-    }
-    
-    return 0;
-    
-}
-
 int main() {
 
     int i = 0, temp;
@@ -124,4 +67,61 @@ int index_of(char *word, struct occurance_t *words, int length) {
     }
     
     return -1;
+}
+
+int put_version(char *word, struct occurance_t *words, int index) {
+    
+    int i;
+    
+    for (i = 0; i < MAX_COLLISIONS; i++) {
+        if (strcmp(word, words[index].versions[i]) == 0) {
+            return 1;
+        }
+    }
+    
+    for (i = 0; i < MAX_COLLISIONS; i++) {
+
+        if (strlen(words[index].versions[i]) <= 1) {
+            
+            strcpy(words[index].versions[i], word);
+            
+            if (i == MAX_COLLISIONS - 1) {
+                return 0;
+            }
+            
+            return 1;
+        }
+    }
+    
+    return 0;
+    
+}
+
+void sort(struct occurance_t *words, int length) {
+    
+    struct occurance_t temp;
+    int sorted = 0, j = 0;
+    
+    while (!sorted) {
+        sorted = 1;
+        j++;
+        for (int i = 0; i < length; i++) {
+            if (words[i].hash > words[i + 1].hash) {
+                temp = words[i];
+                words[i] = words[i + 1];
+                words[i + 1] = temp;
+                sorted = 0;
+            }
+        }
+    }
+}
+
+void print_words(struct occurance_t *words, int length) {
+    for (int i = 0; i < length; i++) {
+        printf("%ld ", words[i].hash);
+        for (int j = 0; j < MAX_COLLISIONS; j++) {
+            printf("%s ", words[i].versions[j]);
+        }
+        printf("\n");
+    }
 }
