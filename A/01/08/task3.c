@@ -43,7 +43,29 @@ int main(){
 		}
 	}
 
-	for(i = 0; i < 3000 && words[i].hash != 0; i++){
+	int strSize;
+	for(strSize = 0; words[strSize].hash != 0; strSize++);
+
+	for(i = 0; i < (strSize-1); i++){
+		for(j = 0; j < (strSize-i-1); j++){
+			if(words[j].hash > words[j+1].hash){
+				struct occurance_t temp;
+				temp.hash = words[j].hash;
+				for(int k = 0; k < 4 && words[j].collisions[k] != 0; k++)
+					strcpy(temp.collisions[k], words[j].collisions[k]);
+				
+				words[j].hash = words[j+1].hash;
+				for(int k = 0; k < 4 && words[j+1].collisions[k] != 0; k++)
+					strcpy(words[j].collisions[k], words[j+1].collisions[k]);
+				
+				words[j+1].hash = temp.hash;
+				for(int k = 0; k < 4 && temp.collisions[k] != 0; k++)
+					strcpy(words[j+1].collisions[k], temp.collisions[k]);
+			}
+		}
+	}
+
+	for(i = 0; i < strSize; i++){
 		if(words[i].collisions[1][0] != 0){
 			printf("[%li]", words[i].hash);
 			for(j = 0; j < 4 && words[i].collisions[j][0] != 0; j++){
