@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int hashing(char [],int i);
+long hashing(char [],int i);
 int main()
 {
 int answ=0,i;
@@ -17,10 +17,10 @@ i=strlen(sent);
     return 0;
 }
 
-int hashing(char str[],int len){
+long hashing(char str[],int len){
 
-int i,eq=42;
-
+int i;
+long eq=42;
 for(i=0;i<len;i++){
 
     eq=eq+str[i]*(i+1);
@@ -28,4 +28,6 @@ for(i=0;i<len;i++){
     }
 return eq;
 }
+
+
 
