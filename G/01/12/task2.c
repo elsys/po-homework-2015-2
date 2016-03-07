@@ -42,7 +42,7 @@ int main()
 
         counter++;
 
-    }while(counter < MAX_WORDS);
+    }while(counter < 3000);
 
     for(counter2 = 0; counter2 < counter; counter2++){
 
