@@ -13,14 +13,15 @@ struct occurance_t
 };
 
 long hash(char *word);
+void sort(struct occurance_t *word, int len);
 
 int main()
 {
-	int i = 0,j,result;
+	int i = 0, j, result, words_counter = 0;
 	char arr[MAX];
 	struct occurance_t word[MAX];
 
-	for(i=0; i<MAX; i++)
+	for(i = 0; i < MAX; i++)
 	{
 		word[i].hash=0;
 		word[i].count=0;
@@ -54,6 +55,8 @@ int main()
 					
 					strcpy(word[j].same[0],arr);
 					
+					words_counter++;
+					
 					break;
 				}
 			}
@@ -63,16 +66,19 @@ int main()
 
 	
 	}while(1>0);
-	
-		
+
+  	sort(word,words_counter - 1); 	
 	
       
    	for(i = 0; word[i].hash != '\0'; i++)
 	{
+		if(word[i].count > 1)
+		{
 		printf("%ld  ",word[i].hash);
 		for(j = 0 ; j <4;j++)
 			printf("%s ",word[i].same[j]);
 		printf("\n");
+		}
 	}
 	
 
@@ -92,4 +98,32 @@ long hash(char *word)
 	}
 
 	return asc;
+}
+
+
+void sort(struct occurance_t *word, int len) 
+{
+    
+    struct occurance_t swap;
+	int check,i;
+
+
+    do 
+    {
+        check = 1;
+       
+        for (i = 0; i < len; i++) 
+        {
+            if (word[i].hash > word[i + 1].hash) 
+            {
+            	swap = word[i];
+
+            	word[i] = word[i + 1];
+                
+                word[i + 1] = swap;
+                
+                check = 0;
+            }
+        }
+    }while (!check);
 }
