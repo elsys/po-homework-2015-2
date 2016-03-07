@@ -78,31 +78,44 @@ int main()
 	
 	}
 
-	int poz^=poz , poz2;
+	int poz=0 ;
+	long hases[3000]={ 0 };
 	for (int l = 0; l < i; ++l)
 	{
-		poz2=poz;
-		for (int l = 1; l < i; ++l)
+				
+		for (int l1 = 0; l1 < i; ++l1)
 		{
-			if((wd[poz].hash1) < (wd[l+1].hash1) && wd[l+1].num_of_oc_w>1)
+			if((wd[poz].hash1) < (wd[l1+1].hash1) && wd[l1+1].num_of_oc_w>0 )
 			{
-				poz=l+1;	//printf("\t\t\t%d %d\n",poz,l);
+				char booll=0;
+
+				for (int count = 0; count < l; ++count)
+				{
+					if(hases[count]==wd[poz].hash1)
+					{
+						booll=1;
+						break;
+					}
+				}
+				if(booll==0) poz=l1+1;	//printf("\t\t\t%d %d\n",poz,l);
 			}
 
 		}
 
 
-		printf("%li",wd[poz],hash1 );
+		hases[l]=wd[poz].hash1;	
+		printf("%li",wd[poz].hash1 );
 		for (int k = 0; k < wd[poz].num_of_oc_w; ++k)
 		{
 			for (int k = poz; k < i; ++k)
 			{
-					if (wd[poz].hash1 == wd[k].hash1 && !strcmp(wd[poz].word1,wd[k].word1))
+					if (wd[poz].hash1 == wd[k].hash1 && !strcmp(wd[poz].word1 ,wd[k].word1))
 					{
 						printf("%s ", wd[k].word1);
 					}
 			}
 		}
+		printf("\n");
 
 
 	}
