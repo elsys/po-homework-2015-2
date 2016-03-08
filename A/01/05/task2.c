@@ -21,7 +21,7 @@ int main()
 {
     int i = 0,b = 0,checkmate = 1,checker = 0,suv = 0,suv_pos = 0;
     char input[200] = {0};
-    struct occurance_t array[3000];
+    struct occurance_t array[2000];
     scanf("%s",input);
     checkmate = strcmp(input, "vsmisal");
     array[i].hash = hash(input);
@@ -46,7 +46,7 @@ int main()
         b = 0;
         checker = 0;
         checkmate = strcmp(input, "vsmisal");
-        if(i==3000)
+        if(i==2000)
         {
             checkmate = 0;
         }
