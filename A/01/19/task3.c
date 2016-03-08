@@ -54,9 +54,9 @@ int main()
 	/*sort -.-*/
 	long swap;
 	char tempString[200];
-	for (int i = 0 ; i < c; i++)
+	for (int i = 0 ; i < c - 1; i++)
 	{
-		for (int d = 0 ; d < c - i; d++)
+		for (int d = 0 ; d < c - i - 1; d++)
 		{
 		  if (word[d].hash > word[d+1].hash)
 		  {
