@@ -3,7 +3,7 @@
 
 typedef struct{
 	int counter_struct;
-	int hash;
+	long hash;
 } occurance_t;
 
 	static long sum=42;
@@ -46,7 +46,7 @@ int main()
          result = duma[count].counter_struct;
     }}
 
-    printf("%d %d",result,duma[helper].hash);
+    printf("%ld %ld",result,duma[helper].hash);
 
     return 0;
 }
