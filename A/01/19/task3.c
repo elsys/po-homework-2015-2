@@ -11,7 +11,6 @@ struct occurance_t
 
 long hash(char*);
 
-
 int main()
 {
 	char input[200];
@@ -51,6 +50,43 @@ int main()
 			break;
 		}
 	}
+	
+	/*sort -.-*/
+	long swap;
+	char tempString[200];
+	for (int i = 0 ; i < c; i++)
+	{
+		for (int d = 0 ; d < c - i; d++)
+		{
+		  if (word[d].hash > word[d+1].hash)
+		  {
+			swap = word[d].hash;
+			word[d].hash = word[d+1].hash;
+			word[d+1].hash = swap;
+			
+			swap = word[d].count;
+			word[d].count = word[d+1].count;
+			word[d+1].count = swap;
+			
+			strcpy(tempString, word[d].word[0]);
+   			strcpy(word[d].word[0], word[d+1].word[0]);
+   			strcpy(word[d+1].word[0], tempString);
+   			
+   			strcpy(tempString, word[d].word[1]);
+   			strcpy(word[d].word[1], word[d+1].word[1]);
+   			strcpy(word[d+1].word[1], tempString);
+   			
+   			strcpy(tempString, word[d].word[2]);
+   			strcpy(word[d].word[2], word[d+1].word[2]);
+   			strcpy(word[d+1].word[2], tempString);
+   			
+   			strcpy(tempString, word[d].word[3]);
+   			strcpy(word[d].word[3], word[d+1].word[3]);
+   			strcpy(word[d+1].word[3], tempString);
+		  }
+		}
+	}
+	/*...*/
 	
 	for(int i = 0; i < c; i++)
 	{
