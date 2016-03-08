@@ -6,7 +6,7 @@ typedef struct{
 	int hash;
 } occurance_t;
 
-	static int sum=42;
+	static long sum=42;
 
 long hash(char *word,int *counter);
 
@@ -15,7 +15,8 @@ int main()
     occurance_t duma[3000];
 
     char word[200];
-    int lenght,counter=0,result,count=0,helper;
+    int lenght,counter=0,count=0,helper;
+    long result;
 
     for (count=0;count<3000;count++){
         duma[count].counter_struct = 1;
