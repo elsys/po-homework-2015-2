@@ -83,7 +83,7 @@ int main()
 					if(strlen(wr)==0)
 					{
 						wh1=r[j].h1;
-						sprintf(wr1,"[%ld] ",wh1);
+						sprintf(wr1,"%ld ",wh1);
 						strcat(wr, wr1);
 						strcat(wr,r[j].w);
 					}
