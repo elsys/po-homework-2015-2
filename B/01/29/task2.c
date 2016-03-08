@@ -25,7 +25,7 @@ long hash(char *word);
 		for (i = 0 ;i < 3000;i++){
 		fgets(word, 200, stdin);
 		
-		
+		if (i != 0)
 			if (word[0] == 'v' && 
 			word[1] == 's' && 
 			word[2] == 'm' && 
