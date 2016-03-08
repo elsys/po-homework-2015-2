@@ -41,7 +41,6 @@ int main()
     }
     counter = 0;
     counter2 = 0;
-    //fgets(w_word,200,stdin);
     scanf("%199s", w_word);
     strtok(w_word, "\n");
     wordstruct[counter].hash1 = hash(w_word);
@@ -51,7 +50,6 @@ int main()
     counter++;
     while(flag!=0)
     {
-        //fgets(w_word,200,stdin);
         scanf("%199s", w_word);
         strtok(w_word, "\n");
         while(flag3 == 0)
@@ -123,7 +121,7 @@ int main()
                     strcpy(swapstring, wordstruct[counter3].h_word[2]);
                     strcpy(wordstruct[counter3].h_word[2], wordstruct[counter3+1].h_word[2]);
                     strcpy(wordstruct[counter3+1].h_word[2], swapstring);
-                    //printf("\nCOUNTER 3 IS %d", counter3);
+                    
                     strcpy(swapstring, wordstruct[counter3].h_word[3]);
                     strcpy(wordstruct[counter3].h_word[3], wordstruct[counter3+1].h_word[3]);
                     strcpy(wordstruct[counter3+1].h_word[3], swapstring);
