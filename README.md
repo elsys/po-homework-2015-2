@@ -11,3 +11,6 @@ https://docs.google.com/presentation/d/1BKdqi6NKZqAuD1JarhkKTMQQKlE3-0Rl-npi9gg7
 
 ## Lectures 4 - Pointers
 https://docs.google.com/presentation/d/1vQMcsT-wW2ZgJ7JQnGmvfvV7w5HvfYacuf5CrGqXkfc
+
+## Lecture 5 - Pointers II
+https://docs.google.com/presentation/d/1HEfJu943UwAVMqIocsbzbdva5lSa90kY57JlHmxRad0/edit?usp=sharing
