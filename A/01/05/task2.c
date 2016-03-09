@@ -8,10 +8,10 @@ struct occurance_t
 };
 long hash(char *word)
 {
-	int i=0,lenght;
-	long res=42;
+    int i=0,lenght;
+    long res=42;
     lenght=strlen(word);
-        for(i=0;i<lenght-1;i++)
+        for(i=0;i<lenght;i++)
         {
             res=res + word[i]*(i+1);
         }
@@ -21,15 +21,14 @@ int main()
 {
     int i = 0,b = 0,checkmate = 1,checker = 0,suv = 0,suv_pos = 0;
     char input[200] = {0};
-    struct occurance_t array[3000];
-    fgets(input,200,stdin);
-    checkmate = strcmp(input, "vsmisal\n");
+    struct occurance_t array[2000];
+    scanf("%s",input);
+    checkmate = strcmp(input, "vsmisal");
     array[i].hash = hash(input);
     array[i].occurances = 1;
     i=1;
-
     do{
-        fgets(input,200,stdin);
+        scanf("%199s",input);
             for(;b<=i;b++)
             {
                 if(hash(input) == array[b].hash)
@@ -46,8 +45,8 @@ int main()
         i++;
         b = 0;
         checker = 0;
-        checkmate = strcmp(input, "vsmisal\n");
-        if(i==3000)
+        checkmate = strcmp(input, "vsmisal");
+        if(i==2000)
         {
             checkmate = 0;
         }

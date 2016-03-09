@@ -4,12 +4,12 @@
 typedef struct occurance_t{
 
 int reps;
-int hash;
+long hash;
 
 }occurance;
 
-int comparing(int array[],int counter);
-int hashing(char arr[]);
+long comparing(long array[],int counter);
+long hashing(char arr[]);
 
 int main(){
 
@@ -30,7 +30,7 @@ comparing(hashes,i);
 return 0;
 }
 
-int comparing(int array[], int counter){
+long comparing(long array[], int counter){
 
 occurance var;
 var.reps=0;
@@ -50,19 +50,17 @@ for(l=0;l<counter;l++){
         var.hash=helper;
         }
     }
-return 0;
 }
 
 }
 printf("%d\n",var.reps);
 printf("%d",var.hash);
-return 0;
 }
 
-int hashing(char arr[]){
+long hashing(char arr[]){
 
-int len=0,i,eq=42;
-
+int len = 0,i;
+long eq=42;
 len=strlen(arr);
 for(i=0;i<len;i++){
 
@@ -72,7 +70,6 @@ for(i=0;i<len;i++){
 
 return eq;
 }
-
 
 
 
