@@ -13,7 +13,7 @@ struct occurance_t
 	}r[3000];
 	char wr1[20];
 	char wr[3000];
-	int i, j, k, wn, hind;
+	int i, j, k, wn, hind,flag;
 	char *tok;
 	long h, wh, wh1, ww;
 	const char s[2]=" ";
@@ -23,52 +23,54 @@ struct occurance_t
 		r[i].num1=0;
 		r[i].h1=0;
 	}
-
 	hind=0;
+
 	fgets(wr,3000,stdin);
+
 	i=strlen(wr)-1;
 	wr[i]='\0';
 
 	tok=strtok(wr, s);
 	r[hind].num1=1;
-	r[hind].h1=0;
+	r[hind].h1=hash(tok);
 	strcpy(r[hind++].w,tok);
-	while(tok!= NULL )
+	flag=0;
+	while(tok!= NULL && flag==0)
     {
 		tok = strtok(NULL, s);
-		if(tok!=NULL)
+		if(tok!=NULL && flag==0)
 		{
 			r[hind].num1=1;
-			r[hind].h1=0;
-			strcpy(r[hind++].w,tok);
+			r[hind].h1=hash(tok);
+			strcpy(r[hind].w,tok);
+
+			wn=0;
+			for(i=0; i<=hind; i++)
+            {
+				wh=r[i].h1;
+				wn=0;
+				for(j=0; j<=hind; j++)
+                {
+					if(r[j].h1==wh)
+                    {
+						wn++;
+					}
+				}
+				for(j=0; j<=hind; j++)
+				{
+					if(r[j].h1==wh)
+					{
+						r[j].num1=wn;
+						if(wn==4)
+						{
+							flag=1;
+						}
+					}
+				}
+			}
+			hind++;
 		}
    }
-	for(i=0; i<hind; i++)
-    {
-		ww=hash(r[i].w);
-		r[i].h1=ww;
-	}
-
-	wn=0;
-	for(i=0; i<hind; i++)
-    {
-		wh=r[i].h1;
-		wn=0;
-		for(j=0; j<hind; j++)
-        {
-			if(r[j].h1==wh)
-			{
-				wn++;
-			}
-		}
-		for(j=0; j<hind; j++)
-        {
-			if(r[j].h1==wh)
-            {
-				r[j].num1=wn;
-			}
-		}
-	}
 
 	for(i=hind; i>0; i--)
     {
@@ -105,7 +107,7 @@ struct occurance_t
 					if(strlen(wr)==0)
 					{
 						wh1=r[j].h1;
-						sprintf(wr1,"%ld ",wh1);
+						sprintf(wr1,"%ld",wh1);
 						strcat(wr, wr1);
 						strcat(wr,r[j].w);
 					}
@@ -117,7 +119,7 @@ struct occurance_t
 					r[j].num1=0;
 				}
 			}
-			printf("%s",wr);
+			printf("%s\n",wr);
 		}
 	}
 	return 0;
