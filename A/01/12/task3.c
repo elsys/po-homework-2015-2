@@ -15,7 +15,7 @@ struct occurance_t
 	char wr[3000];
 	int i, j, k, wn, hind,flag;
 	char *tok;
-	long h, wh, wh1, ww;
+	long wh, wh1, ww;
 	const char s[2]=" ";
 
 	for(i=0;i<3000;i++)
