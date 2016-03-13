@@ -9,7 +9,7 @@ int main()
 	int i;
 	fgets(string, 400, stdin);
 	scanf("%c", &key);
-	if(find(string, key) != 0)
+	if(find(string, key) != NULL)
 	{
 		i = find(string, key) - string;
 		printf("%d", i);
@@ -24,5 +24,5 @@ char* find(char *haystack, char needle)
 	{
 		if(needle == haystack[i]) return &haystack[i];
 	}
-	return 0;
+	return NULL;
 }
