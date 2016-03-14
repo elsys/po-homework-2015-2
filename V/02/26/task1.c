@@ -6,7 +6,7 @@ void minmax(int*, int, int*, int*);
 
 int main(){
     int max, size, min, i;
-    int* arr = (int*)malloc(sizeof(int)*400);
+    int* arr = (int*)malloc(sizeof(int)*500);
     scanf("%d", &size);
     for(i = 0; i < size; i++){
         scanf("%d", &arr[i]);
