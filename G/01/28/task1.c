@@ -3,7 +3,7 @@
 long hash(char *);
 int main()
 {
-    char word[200];
+    char word[200] = {0};
     printf("%ld",hash(word));
 
     return 0;
