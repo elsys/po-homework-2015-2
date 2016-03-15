@@ -23,3 +23,5 @@ https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D
 
 ### Testcase 1 failed
 Execution took more than 1 seconds
+### Testcase 2 failed
+Execution took more than 1 seconds
