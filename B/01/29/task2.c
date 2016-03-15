@@ -23,7 +23,7 @@ long hash(char *word);
 			stats[i].hash = 0;
 		}
 		for (i = 0 ;i < 3000;i++){
-		fgets(word, 200, stdin);
+		scanf("%s", word);
 		
 		if (i != 0)
 			if (word[0] == 'v' && 
