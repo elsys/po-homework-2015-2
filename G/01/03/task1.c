@@ -6,9 +6,9 @@
 int long hash(char *word);
 int main()
 {
-   char word[200];
+   char word[200] = {0};
 
-  fgets(word,200,stdin);
+  scanf("%s",word);
 
 hash(word);
 
@@ -22,10 +22,10 @@ int long hash(char *word)
    int go;
    int helper=0;
    int answer=0;
-int home ;
+
    go = strlen(word);
-home = go-1;
-   for(i=0;i<home;i++)
+
+   for(i=0;i<go;i++)
 
    {
      helper = word[i] * core;
