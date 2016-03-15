@@ -15,6 +15,7 @@ for(;counter<lenght;counter++)
 {
 helper=word[counter]*count;
 sum=sum+helper;
+
 count++;
 }
 
@@ -23,7 +24,7 @@ return sum;
 }
 int main() {
 
-   char word[200];
+   char word[200]={0};
    scanf("%s",word);
   
    printf("%ld\n",hash(word));
