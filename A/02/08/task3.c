@@ -9,10 +9,6 @@ int main()
     int arr[50], i, arrSize;
     int* ptr = arr;
     int reachable = 0;
-
-    /*for(i = 0; i < 50; i++){
-        arr[i] = 1;
-    }*/
     
     i = 0;
     while(scanf("%d", &arr[i]) != EOF && i < 50)
