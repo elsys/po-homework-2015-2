@@ -67,11 +67,11 @@ int main(){
 
 	for(i = 0; i < strSize; i++){
 		if(words[i].collisions[1][0] != 0){
-			printf("[%li]", words[i].hash);
+			printf("%li", words[i].hash);
 			for(j = 0; j < 4 && words[i].collisions[j][0] != 0; j++){
 				printf(" %s", words[i].collisions[j]);
 			}
-			printf("\n");
+			printf(" ");
 		}
 	}
 
