@@ -105,7 +105,7 @@ int isRepeating(struct occurance_t *hashes, int hashPos, char *word){
 		if(strcmp(word, hashes[hashPos].words[i]) == 0){
 			return 1;
 		}
-		if(word[0]=='\0'){
+		if(hashes[hashPos].words[i][0]=='\0'){
 			break;
 		}
 	}
