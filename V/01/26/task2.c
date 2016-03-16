@@ -16,20 +16,20 @@ int main(){
     memset(broi, 0, sizeof(broi));
     memset(word, 0, sizeof(word));
     do{
-        scanf("%s", word);
-        for(k = 0; k < size; k++){
-			if(broi[k].hash_sum == hash(word)){
-				broi[k].a++;
-				break;
-			}
-			else
-				continue;
-		}
-		if(k == size){
-			broi[k].hash_sum = hash(word);
-			broi[k].a = 1;
-			size++;
-		}
+       scanf("%s", word);
+       for(k = 0; k < size; k++){
+	if(broi[k].hash_sum == hash(word)){
+		broi[k].a++;
+		break;
+	}
+	else
+		continue;
+	}
+	if(k == size){
+		broi[k].hash_sum = hash(word);
+		broi[k].a = 1;
+		size++;
+	}
     }while(strcmp(word, "vsmisal") != 0);
     for(i = 0; i < size; i++)
         if(broi[i].a > b)
