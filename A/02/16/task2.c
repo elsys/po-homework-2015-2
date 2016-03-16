@@ -17,8 +17,9 @@ int main()
     }
     else
     {
-        printf("%ld", pointer - haystack);
+        printf("%d", pointer - haystack);
     }
+    return 0;
 }
 char *find(char *haystack, char needle)
 {
