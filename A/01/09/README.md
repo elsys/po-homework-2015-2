@@ -21,11 +21,7 @@ Execution took more than 1 seconds
 ## Task 3: Collisions [7 points]
 https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3
 
-Failed compiling
-
-Exit code: -9
-
-Error
-```
-
-```
+### Testcase 1 failed
+Execution took more than 1 seconds
+### Testcase 2 failed
+Execution took more than 1 seconds
