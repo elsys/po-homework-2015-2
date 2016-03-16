@@ -6,7 +6,7 @@ long hash(char *word);
 	int main(){
 		char word[200];
 		
-		fgets(word, 200, stdin);
+		scanf("%s", word);
 		
 		printf("%ld",hash(word));
   return 0;
@@ -15,6 +15,6 @@ long hash(char *word);
 	long hash(char *word){
 		long starter = 42;
 		int index = 0, position = 1;
-		for (;index < strlen(word) -1  ; index++, position++)starter = starter + (word[index] * position);
+		for (;index < strlen(word); index++, position++)starter = starter + (word[index] * position);
 		return starter;
 	}
