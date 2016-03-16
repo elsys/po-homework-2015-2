@@ -9,7 +9,7 @@ int main(int argc, const char * argv[]) {
     int nums[50];
 
     
-    while (scanf("%d", &nums[size]) != EOF) {
+    while (scanf(" %d", &nums[size]) != EOF) {
         size++;
     }
     
