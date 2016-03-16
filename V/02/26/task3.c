@@ -8,7 +8,7 @@ int is_in_bound(int*, int, int*);
 int main(){
     int* arr = (int*)malloc(sizeof(int)*50);
     int i, *p, k = 0, el;
-    for(i = 0; i != EOF; i++){
+    for(i = 0; i < 6; i++){
         scanf("%d", &arr[i]);
     }
     el = i;

@@ -79,10 +79,10 @@ int main(){
 	for(i=0; i<hashCount; i++){
 		if(hashes[i].count>1){
 			
-			printf("%ld ", hashes[i].hash);
+			printf("%ld", hashes[i].hash);
 			
 			for(l=0; hashes[i].words[l][0]!=0 && l<4; l++){
-				printf("%s ", hashes[i].words[l]);
+				printf(" %s", hashes[i].words[l]);
 			}
 			printf("\n");
 		}

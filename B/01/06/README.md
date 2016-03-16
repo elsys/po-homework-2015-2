@@ -12,16 +12,16 @@ Exit code: 1
 
 Error
 ```
-/home/sasho/programs/elsys/po-homework/B/01/06/task1.c: In function âmainâ:
-/home/sasho/programs/elsys/po-homework/B/01/06/task1.c:13:2: error: âReturnâ undeclared (first use in this function)
+/home/pi/elsys/po-homework/B/01/06/task1.c: In function âmainâ:
+/home/pi/elsys/po-homework/B/01/06/task1.c:13:2: error: âReturnâ undeclared (first use in this function)
   Return 0;
   ^
-/home/sasho/programs/elsys/po-homework/B/01/06/task1.c:13:2: note: each undeclared identifier is reported only once for each function it appears in
-/home/sasho/programs/elsys/po-homework/B/01/06/task1.c:13:9: error: expected â;â before numeric constant
+/home/pi/elsys/po-homework/B/01/06/task1.c:13:2: note: each undeclared identifier is reported only once for each function it appears in
+/home/pi/elsys/po-homework/B/01/06/task1.c:13:9: error: expected â;â before numeric constant
   Return 0;
          ^
-/home/sasho/programs/elsys/po-homework/B/01/06/task1.c: In function âhashâ:
-/home/sasho/programs/elsys/po-homework/B/01/06/task1.c:23:9: error: expected expression before â=â token
+/home/pi/elsys/po-homework/B/01/06/task1.c: In function âhashâ:
+/home/pi/elsys/po-homework/B/01/06/task1.c:23:9: error: expected expression before â=â token
    hash+ = word[count] * (counter + 1);
          ^
 

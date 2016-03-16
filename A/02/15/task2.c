@@ -14,6 +14,9 @@ int main(){
 	if(result!=NULL){
 		printf("%ld", result - input);
 	}
+	else{
+		printf("-1");
+	}
 	
 	return 0;
 	
