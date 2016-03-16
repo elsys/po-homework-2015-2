@@ -151,3 +151,4 @@ void print_occurance_t(struct occurance_t _struct)
 		printf(" %s", _struct.words[i]);
 	}
 	printf("\n");
+}
