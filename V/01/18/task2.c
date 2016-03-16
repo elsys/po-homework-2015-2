@@ -1,117 +1,51 @@
-
 #include <stdio.h>
 #include <string.h>
 
-#define true 1
-#define false 0
-
-#define MAX_INPUT_WORDS 3000
-#define HASH_START_VALUE 42
-#define END "vsmisal"
-
-struct occurance_t
-{
-	long word_hash;
-	int count;
+struct occurance_t {
+	int t;
+	long hash;
 };
 
-long hash(char *word);
-int is_string_equals(char *first, char *second);
-int get_index(struct occurance_t *array, int hash, int lenght);
+long hash(char* word) {
+    long hesh = (long)42, i;
 
-int main()
-{
-	char word[200];
 
-	struct occurance_t words[MAX_INPUT_WORDS];
+    for(i = 0; i < strlen(word); i++)
+        hesh += (long)(word[i]*(i+1));
 
-	int words_counter = 0;
+    return hesh;
+}
 
-	while(true)
-	{
-		scanf("%s",word);
 
-		if(is_string_equals(word,END))
-		{
-			break;
+int main() {
+
+	char text[100] = "";
+	int size = 1;
+	struct occurance_t model[100];
+	memset(model, 0, sizeof(struct occurance_t));
+	for(; strcmp(text, "vsmisal");) {
+		scanf("%s", text);
+		int j;
+		for(j = 0; j < size; j++) {
+			if(model[j].hash == hash(text)) {
+				model[j].t++;
+				break;
+			}
+			else
+				continue;
 		}
-
-		long hash_value;
-		int index ;
-		hash_value = hash(word);
-		index = get_index(words, hash_value, words_counter);
-		if(index == -1)
-		{
-			words[words_counter] = (struct occurance_t){hash_value , 1};
-			words_counter++;
-		}
-		else
-		{
-			words[index].count++;
-		}
-	}
-	int max_index = words_counter-1, max_count = words[words_counter-1].count;
-	for (words_counter-=2;words_counter >= 0; words_counter--)
-	{
-		if(words[words_counter].count > max_count)
-		{
-			max_index = words_counter;
-			max_count = words[words_counter].count;
+		if(j == size) {
+			model[j].hash = hash(text);
+			model[j].t = 1;
+			size++;
 		}
 	}
-
-	printf("%d %ld", max_count, words[max_index].word_hash);
+	int n = 0;
+	for(int i = 0; i < size; i++)
+		if(model[i].t > n)
+			n = i;
+	printf("%d %ld", model[n].t, model[n].hash);
 
 	return 0;
 }
 
-long hash(char *word)
-{
-	long word_hash = HASH_START_VALUE;
-
-	int word_lenght = strlen(word);
-
-	int i = 0;
-	for(;i < word_lenght; i++)
-	{
-		word_hash += word[i] * (i+1);
-	}
-
-	return word_hash;
-}
-
-int is_string_equals(char *first, char *second)
-{
-	int counter = 0;
-
-	while(first[counter] != '\0' && second[counter] != '\0')
-	{
-		if(first[counter] != second[counter])
-		{
-			return false;
-		}
-
-		counter++;
-	}
-
-	if(first[counter] != second[counter])
-	{
-		return false;
-	}
-
-	return true;
-}
-
-int get_index(struct occurance_t *array, int hash, int lenght)
-{
-	int i = 0;
-	for(;i < lenght; i++)
-	{
-		if(array[i].word_hash == hash)
-		{
-			return i;
-		}
-	}
-
-	return -1;
-}
