@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #define HASH_START_VALUE 42
 
@@ -6,7 +7,7 @@ long hash(char *);
 
 int main()
 {
-	char input_word[200];
+	char *input_word = malloc(201 * sizeof(char));
 	long word_hash;
 
 	scanf("%s",input_word);
