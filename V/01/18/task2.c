@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <string.h>
 
@@ -36,8 +37,9 @@ int main()
 		}
 
 		long hash_value;
+		int index ;
 		hash_value = hash(word);
-		int index = get_index(words, hash_value, words_counter);
+		index = get_index(words, hash_value, words_counter);
 		if(index == -1)
 		{
 			words[words_counter] = (struct occurance_t){hash_value , 1};
