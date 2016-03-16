@@ -31,7 +31,13 @@ int main() {
 
 	}
 	
-	printf("%d\n%d", is_found, i + 1);
+	if(i == 50) {
+		printf("%d\n%d", is_found, i);
+	}
+	else {
+		printf("%d\n%d", is_found, i + 1);
+	}
+
  
 	return 0;
 }
