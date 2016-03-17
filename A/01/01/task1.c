@@ -13,7 +13,6 @@ long hash (char *word)
 {
 	int sum = 42,i , n = 0,temp;
 	n = strlen(word) - 1;
-	printf("%d\n", n );
 	for (i = 0; i < n; i++)
 	{
 		temp=word[i]*(i+1);

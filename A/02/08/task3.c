@@ -6,11 +6,12 @@ char is_in_bound(int *arr, int size, int *ptr);
 
 int main()
 {
-    int arr[50], i = 0, arrSize;
+    int arr[50], i, arrSize;
     int* ptr = arr;
-    char reachable = 0;
-
-    while(scanf("%d", &arr[i]) && i < 50)
+    int reachable = 0;
+    
+    i = 0;
+    while(scanf("%d", &arr[i]) != EOF && i < 50)
         i++;
 
     arrSize = i;
@@ -24,7 +25,7 @@ int main()
         i++;
     }
 
-    printf("%d\n%d", reachable, i);
+    printf("%d %d", reachable, i);
 
     return 0;
 }
@@ -34,5 +35,8 @@ int* hop(int *elem){
 }
 
 char is_in_bound(int *arr, int size, int *ptr){
-    return (ptr < arr + size) ? 1 : 0;
+
+    if(ptr < arr + size)
+        return 1;
+    return 0;
 }
