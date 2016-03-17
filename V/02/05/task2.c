@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char * find(char *haystack, char needle);
+char* find(char *haystack, char needle);
 
 int main()
 {
@@ -13,7 +13,7 @@ int main()
 	return 0;
 }
 
-char *find(char *haystack, char needle)
+char* find(char *haystack, char needle)
 {
 	int counter = 0;
 	while(counter < strlen(haystack))
