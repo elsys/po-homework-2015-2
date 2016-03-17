@@ -18,7 +18,7 @@ int main()
 	while(i!=3000)
 	{
 		j=0;
-		while(j!=3)
+		while(j!=4)
 		{
 			words[i].word[j][0]='0';
 			j++;
@@ -31,6 +31,7 @@ int main()
 	while(1)
 	{
 		temp=0;
+		n=0;
 		scanf("%s", word);
 		temp_hash=hash(word);
 		while(n!=i)
@@ -38,11 +39,10 @@ int main()
 			if (words[n].hash==temp_hash)
 			{
 				j=0;
-				while(j!=3)
+				while(j<words[n].count)
 				{
 					if ((strcmp(word, words[n].word[j])==0))
 					{
-						words[n].count++;
 						temp=1;
 						break;
 					}
@@ -50,28 +50,23 @@ int main()
 				}
 				if(temp==0)
 				{
-					j=0;
-					while(words[n].word[j][1]!='0')
-					{
-						j++;
-					}
+					j=words[n].count;
 					strcpy(words[n].word[j], word);
 					words[n].count++;
 					temp=1;
 				}
-				if (temp==1)
-				{
-					break;
-				}
+				break;
 			}
+			n++;
 		}
 		if (temp==0)
 		{
 			strcpy(words[i].word[0], word);
 			words[i].hash=temp_hash;
+			words[i].count++;
 			i++;
 		}
-		if(j==3 && temp==1)
+		if(j==3)
 		{
 			break;
 		}
@@ -81,7 +76,7 @@ int main()
 		temp=0;
 		for(n=0; n<i; n++)
 		{
-			if(words[n].hash<words[n+1].hash)
+			if(words[n].hash>words[n+1].hash)
 			{
 				temp_swap=words[n];
 				words[n]=words[n+1];
@@ -95,25 +90,20 @@ int main()
 		}
 	}
 	n=0;
-	while (n!=i)
+	while (n<=i)
 	{
-		j=0;
-		while(words[n].word[j][1]!='0')
+		switch (words[n].count)
 		{
-			j++;
-		}
-		switch (j)
-		{
-			case 0:
-				break;
-			case 1:
-				printf("%ld %s\n", words[n].hash, words[n].word[0]);
-				break;
 			case 2:
 				printf("%ld %s %s\n", words[n].hash, words[n].word[0], words[n].word[1]);
 				break;
 			case 3:
+				printf("%ld %s %s %s\n", words[n].hash, words[n].word[0], words[n].word[1], words[n].word[2]);
+				break;
+			case 4:
 				printf("%ld %s %s %s %s\n", words[n].hash, words[n].word[0], words[n].word[1], words[n].word[2], words[n].word[3]);
+				break;
+			default:
 				break;
 		}
 		n++;
