@@ -1,43 +1,77 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-char* find(char *haystack, const char needle){
+long hash(char *word);
 
-	int i;
+typedef struct{
 
-	for(i = 0; haystack[i] != '\0'; i++){
+	int count;
+	long hesh;
 	
-		if(haystack[i] == needle){
+}occurance_t;
+
+int main() {
+
+	int counter = 0, matched, i, j;
+	
+	occurance_t things[200];
+	
+	char word[200] = "\0";
+	
+	while(!(word[0] == 'v' && word[1] == 's' && word[2] == 'm' && word[3] == 'i' && word[4] == 's' && word[5] == 'a' && word[6] == 'l' && word[7] == '\0')) {
+	
+		scanf("%s%*c", word);
+		matched = 0;
+		for(i = 0; i < counter; i++) {
 		
-			return &haystack[i];
-		
-		}
+			if(things[i].hesh == hash(word)) {
 			
-	
-	}
+				things[i].count++;
+				matched = 1;
+				break;
+				
+			}
+			
+		}
 		
-	return NULL;
+		if(!matched) {
+		
+			things[counter].hesh = hash(word);
+			things[counter].count = 0; 
+			counter++;
+			
+		}
+	}
+	for(i = 0; i < counter; i++) {
+	
+		for(j = 0; j < counter; j++)
+		
+			if(things[i].count > things[j].count) {
+			
+				occurance_t temp = things[i];
+				things[i] = things[j];
+				things[j] = temp;
+				
+			}
+			
+	} 
+
+	printf("%d %ld\n",things[0].count+1 ,things[0].hesh);
+
+
+	return 0;
 }
 
 
-int main (){
+long hash(char *word){
 
-	char haystack[400];
-	char needle;
+	long result = 42 ;
+	int i;
 	
-	fgets(haystack, 400, stdin);
+	for(i = 0; i < strlen(word);i++){
 	
-	scanf("%c", &needle);
-	
-	if(find(haystack, needle)){
-	
-		printf("%d", find(haystack, needle) - haystack);
-	
-	}else{
-	
-		printf("-1");
-	
-	}
-	
-	return 0;
+		result += word[i] * (i+1);
+		
+	}	
+	return result ;
 }

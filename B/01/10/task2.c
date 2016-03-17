@@ -19,15 +19,20 @@ int main () {
 
 	struct occurance_t MaxWords[3000];
 	
-	char Final[] = "vsmisal";
+	
 	int index = 0;
 
 
 
 	for(;;index++) {
 		scanf("%s",current_word);
-		if (!strcmp(current_word,Final)) break;
-
+		if (current_word[0] == 'v')
+		if (current_word[1] == 's')
+		if (current_word[2] == 'm')
+		if (current_word[3] == 'i')
+		if (current_word[4] == 's')
+		if (current_word[5] == 'a')
+		if (current_word[6] == 'l') break;					
 		
 
 		MaxWords[index].word_hash = hash(current_word);//Hash for word
@@ -50,7 +55,7 @@ int main () {
 }
 
 long hash(char *word) {
-	int hash = 42;
+	long hash = 42;
 
 	int position = 1;
 	
