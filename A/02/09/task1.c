@@ -14,7 +14,6 @@ int main() {
     }
     
     minmax(arr, n, &min, &max);
-    
     printf("%d", min + max);
     
     return 0;

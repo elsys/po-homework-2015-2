@@ -1,29 +1,30 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-
+ 
 char* find(char *haystack, char needle){
-	int i;
-	for (i = 0; i < strlen(haystack); ++i){
-		if(haystack[i] == needle){
-			return &haystack[i];
-		}
-	}
-	return NULL;
+    int i;
+    for (i = 0; i < strlen(haystack); ++i){
+        if(haystack[i] == needle){
+            return &haystack[i];
+        }
+    }
+    return NULL;
 }
 int main(){
-	char haystack[400];
-	char needle;
-	char *finded;
-	int position;
-	scanf("%[^\n]s",haystack);
-	scanf(" %c", &needle);
-	finded = find(haystack, needle);
-	//position = finded == NULL ? -1 : (int)(finded - line);
-	if(finded == NULL){
-		printf("-1");
-	}
-	else{
-		printf("%d", finded);
-	}
-	return 0;
+    int const arr = 400;
+    char haystack[arr],*f, needle;
+   
+    scanf("%[^\n]s",haystack);
+    getchar();
+    scanf("%c", &needle);
+    f = find(haystack, needle);
+   
+    if(f == NULL){
+        printf("-1");
+    }
+    else{
+        printf("%d", (int)(f-haystack));
+    }
+    return 0;
 }
