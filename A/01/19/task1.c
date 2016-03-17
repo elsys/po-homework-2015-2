@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
-long hash(char *word);
+long hash(char *);
 
 int main()
 {
-	char input[200];
-	fgets(input, 200, stdin);
+	char input[200] = {0};
+	scanf("%s", input);
 	
 	printf("%ld", hash(input));
 
@@ -18,7 +18,7 @@ long hash(char *word)
 	long sum = 42;
 	int ascii = 0;
 	
-	for(int i = 0; i < strlen(word) - 1; i++)
+	for(int i = 0; i < strlen(word); i++)
 	{
 		ascii = word[i];
 		sum += (ascii * (i + 1));
