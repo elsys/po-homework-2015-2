@@ -5,7 +5,7 @@ long hash(char *word);
 
 int main()
 {
-	char input[200];
+	char input[200] = {0};
 	int output;
 	scanf("%s",input);
 	output = hash(input);

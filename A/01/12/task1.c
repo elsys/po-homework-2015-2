@@ -5,7 +5,7 @@ long hash(char *);
 
 int main()
 {
-    char w[200];
+    char w[200]={0};
     long h;
     scanf("%s",w);
     h=hash(w);
@@ -19,7 +19,7 @@ long hash(char *word)
     int num,i;
     num=strlen(word);
     he=42;
-    for(i=0;i<num;i++)
+    for(i=0; i<num; i++)
     {
         he=he+word[i]*(i+1);
     }

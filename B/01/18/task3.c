@@ -70,7 +70,7 @@ int main()
         if (temp[index] != 0)
         {
             current = temp[index];
-            printf("[%d] ", current);
+            printf("%d ", current);
                     
             for (sec_index = 0; sec_index < count; sec_index++)
             {

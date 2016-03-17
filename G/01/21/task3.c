@@ -48,8 +48,21 @@ int main()
 		}
 		else
 		{
-			strcpy(words[index].words[words[index].count],word);
-			words[index].count++;
+			int i = 0,has_already_exist = false;
+			for (; i < words[index].count; ++i)
+			{
+				if(is_string_equals(words[index].words[i],word))
+				{
+					has_already_exist = true;
+					break;
+				}
+			}
+
+			if(!has_already_exist)
+			{
+				strcpy(words[index].words[words[index].count],word);
+				words[index].count++;
+			}
 		}
 
 		if(max_count < words[index].count)

@@ -1,11 +1,18 @@
 # PO-2015
 
+## News
+
+1. Срокът на домашно 01 е удължен до този четвъртък ( **2016-03-17 23:59:59** )!
+
 ## Important
 
 ### Headquarters
 https://docs.google.com/spreadsheets/d/1bj6Y8O1POXFm2LN03ut5ORoGL7C-1lcWnt0Ij9WPJ-s
 
 ## Lectures
+
+### Lecture 6 - Pointers & Structures
+https://docs.google.com/presentation/d/13LH7xLchER6djz3AYF9zgW6kwAcVV-39CS7H4bi4-Qg
 
 ### Lecture 5 - Pointers II
 https://docs.google.com/presentation/d/1HEfJu943UwAVMqIocsbzbdva5lSa90kY57JlHmxRad0

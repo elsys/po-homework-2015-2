@@ -5,7 +5,7 @@ long hash(char *word);
 int main()
 
 {
-  char d[199];
+  char d[199] = {0};
   
   
   do{

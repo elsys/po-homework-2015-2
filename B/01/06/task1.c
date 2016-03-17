@@ -10,7 +10,7 @@ int main()
 	scanf("%s", word);
 	printf("%ld", hash(word));
 	
-	Return 0;
+	return 0;
 }
 
 long hash(char *word)
@@ -20,6 +20,6 @@ long hash(char *word)
 	
 	length = strlen(word);
 	for(; count<length; count++)
-		hash+ = word[count] * (counter + 1);
+		hash = hash + word[count] * (count + 1);
 	return hash;
 }

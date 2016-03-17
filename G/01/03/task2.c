@@ -8,7 +8,7 @@ int times ;
 };
 int main()
 {
-   char  word[2000];
+   char  word[2000] = {0};
     int i = 0;
     int answer = 42;
     int code =1 ;
@@ -73,9 +73,9 @@ for(i= 0 ;i<ct;i++)
 
     }
 }
-
-printf("%d\n", type1.hash_t);
 printf("%d\n", type1.times);
+printf("%d\n", type1.hash_t);
+
 return 0 ;
 }
 
