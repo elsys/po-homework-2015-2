@@ -6,7 +6,7 @@ char *find(char *, char);
 int main()
 {
     char mas[400], y;
-    int i, j, k;
+    int i, k;
     char *pos;
 
 	fgets(mas,400,stdin);

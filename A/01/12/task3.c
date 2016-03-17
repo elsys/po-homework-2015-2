@@ -13,7 +13,7 @@ struct occurance_t
 	}r[3000];
 	char wr1[200];
 	char wr[3000];
-	int i, j, k, k1, wn, hind;
+	int i, j, k, k1, wn, hind, n;
 	char *tok;
 	long wh, wh1, ww;
 	const char s[2]=" ";
@@ -88,6 +88,7 @@ struct occurance_t
             }
         }
     }
+    n=0;
 	for(i=0; i<hind; i++)
     {
 		if(r[i].num1>1)
@@ -114,8 +115,12 @@ struct occurance_t
 					r[j].num1=0;
 				}
 			}
-            if(i!=(hind-1) && i!=0) printf("\n");
+            if(i!=(hind-1) && n!=0)
+            {
+                printf("\n");
+            }
 			printf("%s",wr);
+            n++;
 		}
 	}
 	return 0;

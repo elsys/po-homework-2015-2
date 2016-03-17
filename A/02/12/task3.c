@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int *hop(int *);
 int is_in_bound(int *, int, int *);
 
 int main()
 {
-    int arr[50],i,j, *p, hops, flag, num, lim;
+    int arr[50], i, *p, hops, flag, num, lim;
     char s[2000], *tok, sp[2]=" ";
 
 	fgets(s,2000,stdin);
