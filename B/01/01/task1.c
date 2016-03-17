@@ -6,7 +6,8 @@ long hash(char *word,int *counter);
 int main()
 {
     char word[200];
-    int lenght,counter=0,result;
+    int lenght,counter=0;
+     long result;
 
     scanf("%s", word);
 
@@ -15,13 +16,13 @@ int main()
     for(counter=0;counter<lenght;counter++){
     	result = hash(&word[counter], &counter);
     }
-	printf("%d", result);
+	printf("%ld", result);
     return 0;
 }
 
 long hash(char *word,int *counter){
     int counter2=0;
-	static int sum=42;
+	static long sum=42;
     char ascii;
 
             for(;counter2<=255;counter2++){

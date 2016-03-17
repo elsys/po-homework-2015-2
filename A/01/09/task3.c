@@ -25,7 +25,7 @@ int main() {
     
     while (1) {
         
-        fgets(word, 201, stdin);
+        scanf("%s", word);
             
         if ((temp = index_of(word, words, i)) != -1) {
             words[temp].count++;
@@ -84,6 +84,7 @@ int put_version(char *word, struct occurance_t *words, int index) {
         if (strlen(words[index].versions[i]) <= 1) {
             
             strcpy(words[index].versions[i], word);
+            words[index].collisions++;
             
             if (i == MAX_COLLISIONS - 1) {
                 return 0;
@@ -119,10 +120,18 @@ void sort(struct occurance_t *words, int length) {
 void print_words(struct occurance_t *words, int length) {
     
     for (int i = 0; i < length; i++) {
-        printf("%ld ", words[i].hash);
-        for (int j = 0; j < MAX_COLLISIONS; j++) {
-            printf("%s ", words[i].versions[j]);
+        if (words[i].collisions > 1) {
+            printf("%ld ", words[i].hash);
+            for (int j = 0; j < words[i].collisions; j++) {
+                printf("%s", words[i].versions[j]);
+                if (j != words[i].collisions - 1) {
+                    printf(" ");
+                }
+            }
+            if (words[i].collisions != 4) {
+                printf("\n");
+            }
+            
         }
-        printf("\n");
     }
 }
