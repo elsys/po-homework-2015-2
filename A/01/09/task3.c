@@ -122,10 +122,16 @@ void print_words(struct occurance_t *words, int length) {
     for (int i = 0; i < length; i++) {
         if (words[i].collisions > 1) {
             printf("%ld ", words[i].hash);
-            for (int j = 0; j < MAX_COLLISIONS; j++) {
-                printf("%s ", words[i].versions[j]);
+            for (int j = 0; j < words[i].collisions; j++) {
+                printf("%s", words[i].versions[j]);
+                if (j != words[i].collisions - 1) {
+                    printf(" ");
+                }
             }
-            printf("\n");
+            if (words[i].collisions != 4) {
+                printf("\n");
+            }
+            
         }
     }
 }
