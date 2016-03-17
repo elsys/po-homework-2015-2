@@ -1,67 +1,126 @@
 #include <stdio.h>
+#include <string.h>
 
-int* hop(int *);
-int is_in_bound(int *, int, int *);
+long hash(char *);
+
+struct occurance_t{
+	long hash;
+	char word[4][200];
+	int count;
+};
 
 int main()
 {
-	int arr[50], size, *ptr;
-	int hops=0;
-	int i=0, temp=0;
-	for(i=0; scanf("%d", &temp)!=EOF; i++)
+	int i=0, n=0, j=0, temp=0;
+	char word[200];
+	long temp_hash=0;
+	struct occurance_t words[3000], temp_swap;
+	while(i!=3000)
 	{
-		arr[i]=temp;
+		j=0;
+		while(j!=4)
+		{
+			words[i].word[j][0]='0';
+			j++;
+		}
+		words[i].hash=0;
+		words[i].count=0;
+		i++;
 	}
-	temp=0;
-	size=i;
 	i=0;
-	ptr=&arr[0];
-	while(hops!=50)
+	while(1)
 	{
 		temp=0;
-		temp=is_in_bound(&arr[0], size, ptr);
-		if(*ptr==0 && temp==1)
+		n=0;
+		scanf("%s", word);
+		temp_hash=hash(word);
+		while(n!=i)
 		{
-			temp=1;
+			if (words[n].hash==temp_hash)
+			{
+				j=0;
+				while(j<words[n].count)
+				{
+					if ((strcmp(word, words[n].word[j])==0))
+					{
+						temp=1;
+						break;
+					}
+					j++;
+				}
+				if(temp==0)
+				{
+					j=words[n].count;
+					strcpy(words[n].word[j], word);
+					words[n].count++;
+					temp=1;
+				}
+				break;
+			}
+			n++;
+		}
+		if (temp==0)
+		{
+			strcpy(words[i].word[0], word);
+			words[i].hash=temp_hash;
+			words[i].count++;
+			i++;
+		}
+		if(j==3)
+		{
 			break;
+		}
+	}
+	while(1)
+	{
+		temp=0;
+		for(n=0; n<i; n++)
+		{
+			if(words[n].hash>words[n+1].hash)
+			{
+				temp_swap=words[n];
+				words[n]=words[n+1];
+				words[n+1]=temp_swap;
+				temp=1;
+			}
 		}
 		if(temp==0)
 		{
 			break;
 		}
-		if(temp==1)
+	}
+	n=0;
+	while (n<=i)
+	{
+		switch (words[n].count)
 		{
-			hops++;
+			case 2:
+				printf("%ld %s %s\n", words[n].hash, words[n].word[0], words[n].word[1]);
+				break;
+			case 3:
+				printf("%ld %s %s %s\n", words[n].hash, words[n].word[0], words[n].word[1], words[n].word[2]);
+				break;
+			case 4:
+				printf("%ld %s %s %s %s\n", words[n].hash, words[n].word[0], words[n].word[1], words[n].word[2], words[n].word[3]);
+				break;
+			default:
+				break;
 		}
-		temp=0;
-		ptr=hop(ptr);
-	}
-	if(temp==1)
-	{
-		printf("1\n%d", hops);
-	}
-	else
-	{
-		printf("0\n%d", hops);
+		n++;
 	}
 	return 0;
 }
 
-int* hop(int *elem)
+long hash(char *word)
 {
-	return elem + *elem;
-}
-
-int is_in_bound(int *arr, int size, int *ptr)
-{
-	int i=0;
-	while(i!=size)
+	long hash=42;
+	int n, i=0, temp;
+	n=strlen(word);
+	while(i!=n)
 	{
-		if (&arr[i]==ptr)
-		{
-			return 1;
-		}
+		temp=word[i];
+		hash=hash+(temp*(i+1));
 		i++;
 	}
-	return 0;
+	return hash;
 }
