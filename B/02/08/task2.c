@@ -35,7 +35,7 @@ char *find(char *haystack, char needle){
 	int i;
 
 	for(i = 0; i < strlen(haystack) - 1; i++){
-		if(needle = haystack[i]){
+		if(needle == haystack[i]){
 			position = i + '0';
 			break;
 		}
