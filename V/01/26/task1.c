@@ -6,7 +6,8 @@ long hash(char*);
 
 int main(){
     char word[200];
-    scanf("%s", word);
+    memset(word, 0, sizeof(word));
+    scanf("%200[^\n]", word);
     printf("%ld", hash(word));
     return 0;
 }
