@@ -3,10 +3,13 @@
 int long_hash(char *word);
 int main()
 {
-    int sum = 42;
+    int sum = 42, i = 0;
     int result;
     char str[200];
-
+    for(i = 0; i < 200;i++)
+	{
+		str[i] = 0;
+	}
     scanf("%s", str);
 
     result = long_hash(str);
