@@ -22,14 +22,14 @@ int main()
 
     struct occurance_t wordstruct[3000];
 
-    fgets(w_word,200,stdin);
-    flag = strcmp(w_word, "vsmisal\n");
+    scanf("%199s", w_word);
+    flag = strcmp(w_word, "vsmisal");
     wordstruct[counter].hash1 = hash(w_word);
     wordstruct[counter].occurances = 1;
     counter++;
     while(flag!=0)
     {
-        fgets(w_word,200,stdin);
+        scanf("%199s", w_word);
         while(counter2<=counter)
         {
             if(hash(w_word) == wordstruct[counter2].hash1)
@@ -47,8 +47,8 @@ int main()
         counter++;
         counter2 = 0;
         flag2 = 0;
-        flag = strcmp(w_word, "vsmisal\n");
-        if(counter==3000)
+        flag = strcmp(w_word, "vsmisal");
+        if(counter==2000)
         {
             flag = 0;
         }
@@ -81,7 +81,7 @@ long hash(char *w_word)
     int length = 0;
     int positioncounter = 1;
     length = strlen(w_word);
-    length--;
+
     while(counter<length)
     {
         word = w_word[counter];

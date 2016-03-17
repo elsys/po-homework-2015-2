@@ -32,11 +32,11 @@ int main() {
 	int tmp = 0;
 
 	for(int i = 0; i < size; i++) {
-		if(occ_class[i].times > tmp)
+		if(occ_class[i].times > tmp && occ_class[i].times != 1)
 			tmp = i;
 	}
 
-	printf("%d %ld\n", occ_class[tmp].times, occ_class[tmp].hash);
+	printf("%d %ld", occ_class[tmp].times, occ_class[tmp].hash);
 
 	free(word);
 	free(occ_class);

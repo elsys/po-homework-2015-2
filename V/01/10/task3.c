@@ -53,12 +53,12 @@ int main()
     	if(d[i].count>1)
     	{
  	
- 	   printf("\n%ld ", d[i].h);
+ 	   printf("\n%ld", d[i].h);
     	   
     	   for(j=0;j<=4;j++)
     	   {
     	   
-    	   printf("%s ", d[i].str[j]);
+    	   printf(" %s", d[i].str[j]);
     	   
     	   }
     	}

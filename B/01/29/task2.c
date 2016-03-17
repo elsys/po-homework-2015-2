@@ -23,7 +23,7 @@ long hash(char *word);
 			stats[i].hash = 0;
 		}
 		for (i = 0 ;i < 3000;i++){
-		fgets(word, 200, stdin);
+		scanf("%s", word);
 		
 		if (i != 0)
 			if (word[0] == 'v' && 
@@ -69,6 +69,6 @@ long hash(char *word);
 	long hash(char *word){
 		long starter = 42;
 		int index = 0, position = 1;
-		for (;index < strlen(word) -1  ; index++, position++)starter = starter + (word[index] * position);
+		for (;index < strlen(word) ; index++, position++)starter = starter + (word[index] * position);
 		return starter;
 	}

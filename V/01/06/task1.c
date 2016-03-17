@@ -5,7 +5,7 @@ long hash( char *word);
 
 int main() {
 
-	char word[200];
+	char word[200] = {0};
 	do {
 		scanf("%s", word);
 	} while( strlen(word) > 200 );

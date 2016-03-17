@@ -2,7 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-long int hash(char *word);
+long int hash(char *word)
+{
+	int begin = 42;
+	int i = 0,l;
+	l = strlen(word);
+	while(i < l)
+	{
+		begin += word[i]*(i + 1);
+		i++;
+	}
+	return begin;
+}
 
 struct occurance_t
 {
@@ -12,10 +23,10 @@ struct occurance_t
 
 int main()
 {
-	char letter[200];
+	char letter[200] = {0};
 	struct occurance_t m;
-	struct occurance_t max[3000];
-	int a,b,i = 0,number = 3000;
+	struct occurance_t max[200];
+	int a,b,i = 1,number = 3000;
 
 	while(i < number)
 	{
@@ -52,15 +63,4 @@ int main()
 		return 0;
 }
 
-long int hash(char *word)
-{
-	int begin = 42;
-	int i = 0,l;
-	l = strlen(word);
-	while(i < l)
-	{
-		begin += word[i]*(i + 1);
-		i++;
-	}
-	return begin;
-}
+long int hash(char *word);

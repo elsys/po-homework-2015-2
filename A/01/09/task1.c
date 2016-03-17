@@ -5,7 +5,7 @@ long hash(char*);
 
 int main() {
     
-    char word[200];
+    char word[200] = { 0 };
     fgets(word, 201, stdin);
     
     printf("%ld", hash(word));
@@ -17,7 +17,7 @@ long hash(char *word) {
     
     long result = 42;
     int length = strlen(word);
-    
+ 
     for (int i = 0; i < length; i++) {
         result += word[i] * (i + 1);
     }

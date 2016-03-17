@@ -11,29 +11,29 @@ long hash(char*);
 
 int main(){
     char word[200];
-    unsigned short int i, k, b = 0;
+    unsigned short int i, k, b = 0, size = 1;
     struct occurance_t broi[3000];
     memset(broi, 0, sizeof(broi));
+    memset(word, 0, sizeof(word));
     do{
-        scanf("%s", word);
-        i++;
-        for(k = 0; k < 3000; k++){
-            if(broi[k].hash_sum == hash(word)){
-                broi[k].a++;
-                break;
-            } else if(broi[k].hash_sum == 0){
-                broi[k].hash_sum = hash(word);
-                broi[k].a = 1;
-                break;
-            }
-        }
+       scanf("%s", word);
+       for(k = 0; k < size; k++){
+	if(broi[k].hash_sum == hash(word)){
+		broi[k].a++;
+		break;
+	}
+	else
+		continue;
+	}
+	if(k == size){
+		broi[k].hash_sum = hash(word);
+		broi[k].a = 1;
+		size++;
+	}
     }while(strcmp(word, "vsmisal") != 0);
-    i = 0;
-    while(broi[i].a != 0){
+    for(i = 0; i < size; i++)
         if(broi[i].a > b)
             b = i;
-        i++;
-    }
     printf("%d %ld", broi[b].a, broi[b].hash_sum);
     return 0;
 }
