@@ -1,5 +1,6 @@
 #include <stdio.h>
 #define MAX_LENGTH 50
+#define MAX_HOPS 50
 
 int* hop(int*);
 int is_in_bound(int*, int, int*);
@@ -17,7 +18,7 @@ int main() {
     length = i + 1;
     ptr = arr;
 
-    for (i = 0; is_in_bound(arr, length, ptr) && hops < 50; i += arr[i]) {
+    for (i = 0; is_in_bound(arr, length, ptr) && hops < MAX_HOPS; i += arr[i]) {
         
         hops++;
         
