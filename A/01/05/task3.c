@@ -11,7 +11,7 @@ long hash(char *word)
 {   int counter=0,lenght;
     long res=42;
     lenght=strlen(word);
-    for(counter=0;counter<=lenght-1;counter++)
+    for(counter=0;counter<lenght-1;counter++)
     {
         res=res+word[counter]*(counter+1);
     }
