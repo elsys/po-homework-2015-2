@@ -13,21 +13,20 @@ Exit code: 0
 
 Error
 ```
-task1.c: In function âminmaxâ:
-task1.c:10:5: warning: statement with no effect [-Wunused-value]
-     for (i; i < size; i++) {
-     ^
 task1.c: In function âmainâ:
-task1.c:26:5: warning: statement with no effect [-Wunused-value]
-     for (i; i < n; i++) {
-     ^
+task1.c:26:9: warning: passing argument 1 of âminmaxâ from incompatible pointer type
+  minmax(&arr, size, &min, &max);
+         ^
+task1.c:3:6: note: expected âint *â but argument is of type âint (*)[500]â
+ void minmax(int *arr, int size, int *min, int *max) {
+      ^
 
 ```
 
 ## Task 2: Seek & !Destroy [0/7 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-2---seek--destroy
 
-### Not submitted
+### Testcase 1 failed
 
 ## Task 3: Za.io [0/12 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3---zaio

@@ -9,25 +9,25 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 
 Failed compiling
 
-Exit code: 0
+Exit code: 1
 
 Error
 ```
-task1.c: In function âminmaxâ:
-task1.c:10:5: warning: statement with no effect [-Wunused-value]
-     for (i; i < size; i++) {
-     ^
 task1.c: In function âmainâ:
-task1.c:26:5: warning: statement with no effect [-Wunused-value]
-     for (i; i < n; i++) {
-     ^
+task1.c:10:3: warning: format â%dâ expects argument of type âint *â, but argument 2 has type âintâ [-Wformat=]
+   scanf("%d",arr[i]);
+   ^
+task1.c: In function âminmaxâ:
+task1.c:28:3: error: invalid operands to binary * (have âintâ and âint *â)
+   *min=arr[i];
+   ^
 
 ```
 
 ## Task 2: Seek & !Destroy [0/7 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-2---seek--destroy
 
-### Not submitted
+### Testcase 1 failed
 
 ## Task 3: Za.io [0/12 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3---zaio

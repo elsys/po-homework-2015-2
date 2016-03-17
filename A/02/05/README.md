@@ -13,12 +13,10 @@ Exit code: 0
 
 Error
 ```
-task1.c:6:12: warning: âminâ defined but not used [-Wunused-variable]
- static int min;
-            ^
-task1.c:7:12: warning: âmaxâ defined but not used [-Wunused-variable]
- static int max;
-            ^
+task1.c: In function âmainâ:
+task1.c:23:45: warning: unused variable âsumâ [-Wunused-variable]
+     int counter=0,array[500],min,max,elem=0,sum=0;
+                                             ^
 
 ```
 
@@ -32,13 +30,12 @@ Exit code: 0
 Error
 ```
 task2.c: In function âmainâ:
-task2.c:17:45: warning: comparison between pointer and integer
-         if (find(&haystack[counter],needle) == 1){
-                                             ^
-task2.c: In function âfindâ:
-task2.c:35:20: warning: return makes pointer from integer without a cast
-   if (helper == 1) return 1;
-                    ^
+task2.c:28:12: warning: assignment makes pointer from integer without a cast
+     pointer-=string;
+            ^
+task2.c:29:5: warning: format â%dâ expects argument of type âintâ, but argument 2 has type âchar *â [-Wformat=]
+     printf("%d",pointer);
+     ^
 
 ```
 

@@ -1,6 +1,6 @@
 # Assignment report
 ```
-Points earned: 19
+Points earned: 14
 Maximum points: 26
 ```
 
@@ -9,26 +9,14 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 
 ### Testcase 1 passed
 
-## Task 2: Seek & !Destroy [0/7 points]
+## Task 2: Seek & !Destroy [7/7 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-2---seek--destroy
 
-Failed compiling
+### Testcase 1 passed
 
-Exit code: 0
-
-Error
-```
-task2.c: In function âfindâ:
-task2.c:24:9: warning: return from incompatible pointer type
-         return &str;
-         ^
-task2.c:24:9: warning: function returns address of local variable [-Wreturn-local-addr]
-
-```
-
-## Task 3: Za.io [12/12 points]
+## Task 3: Za.io [0/12 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3---zaio
 
-### Testcase 1 passed
-### Testcase 2 passed
-### Testcase 3 passed
+### Testcase 1 failed
+### Testcase 2 failed
+### Testcase 3 failed

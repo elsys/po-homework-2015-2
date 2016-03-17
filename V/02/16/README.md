@@ -1,6 +1,6 @@
 # Assignment report
 ```
-Points earned: 19
+Points earned: 7
 Maximum points: 26
 ```
 
@@ -18,17 +18,14 @@ Exit code: 0
 
 Error
 ```
-task2.c: In function âfindâ:
-task2.c:24:9: warning: return from incompatible pointer type
-         return &str;
-         ^
-task2.c:24:9: warning: function returns address of local variable [-Wreturn-local-addr]
+task2.c: In function âmainâ:
+task2.c:13:2: warning: format â%ldâ expects argument of type âlong intâ, but argument 2 has type âintâ [-Wformat=]
+  printf("%ld", find(haystack,needle) - haystack);
+  ^
 
 ```
 
-## Task 3: Za.io [12/12 points]
+## Task 3: Za.io [0/12 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3---zaio
 
-### Testcase 1 passed
-### Testcase 2 passed
-### Testcase 3 passed
+### Not submitted

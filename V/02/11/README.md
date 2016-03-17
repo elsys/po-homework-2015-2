@@ -18,11 +18,10 @@ Exit code: 0
 
 Error
 ```
-task2.c: In function âfindâ:
-task2.c:24:9: warning: return from incompatible pointer type
-         return &str;
-         ^
-task2.c:24:9: warning: function returns address of local variable [-Wreturn-local-addr]
+task2.c: In function âmainâ:
+task2.c:28:3: warning: format â%ldâ expects argument of type âlong intâ, but argument 2 has type âintâ [-Wformat=]
+   printf("%ld",find(string,symbol)-string);
+   ^
 
 ```
 

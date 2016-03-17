@@ -40,15 +40,16 @@ int main(){
 	int* max = &test2;
 	
 
-	while((token = strtok_r(all_data, " ", &all_data))){
-		array[counter] = atoi(token);
-		counter++;
-	}
+	//while((token = strtok_r(all_data, " ", &all_data))){
+	//	array[counter] = atoi(token);
+	//	counter++;
+	//}
 
 	minmax(array, size_of_array, min, max);
 
 	printf("%d", *max + *min);
 
+	free(all_data);
 	free(all_data);
 
 	return 0;
