@@ -7,6 +7,7 @@ typedef struct{
 } occurance_t;
 
 int end(char*);
+long hash(char*);
 void check_and_fill(char*, occurance_t*, int);
 int find_max_count(occurance_t*, int);
 
