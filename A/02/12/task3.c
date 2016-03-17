@@ -20,16 +20,16 @@ int main()
     {
 	  arr[num++]=atoi(tok);
 	  tok = strtok(NULL, sp);
-	};
+	}
 
 	flag=0;
 	p=arr;
-	hops=1;
+	hops=0;
 	do
     {
 		p=hop(p);
 		lim=is_in_bound(arr,num,p);
-		if(!lim) hops++;
+        hops++;
 	}while(*p!=0 && hops<50 && lim<1);
 
 	if(*p==0)
