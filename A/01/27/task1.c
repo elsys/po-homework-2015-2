@@ -14,9 +14,12 @@ int main()
 long hash(char *word)
 {
 	int value = 42;
-	for(int i = 0; i < strlen(word); i++)
+	if(strlen(word) > 1)
 	{
-		value = value + word[i]*(i+1);
+		for(int i = 0; i < strlen(word); i++)
+		{
+			value = value + word[i]*(i+1);
+		}
 	}
 	return value;
 }
