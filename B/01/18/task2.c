@@ -93,13 +93,13 @@ void hash_checker()
 {
     int index = 0;
     int sec_index = 0;
-    int count = 0;
+    int count = 1;
 
     last.meet = count;
-    
+    last.hash = last.temp[0];
     for (index = 0; last.temp[index] != 0; index++)
     {
-        count = 0;
+        count = 1;
         
         for (sec_index = 1; last.temp[sec_index] != 0; sec_index++)
         {
@@ -115,4 +115,5 @@ void hash_checker()
             last.hash = last.temp[index];
         }
     }
+    
 }
