@@ -16,7 +16,7 @@ struct occurance_t
 
 long hash(char *word);
 int is_string_equals(char *first, char *second);
-int get_index(struct occurance_t *array, int hash, int lenght);
+int get_index(struct occurance_t *array, long hash, int lenght);
 
 int main()
 {
@@ -100,7 +100,7 @@ int is_string_equals(char *first, char *second)
 	return true;
 }
 
-int get_index(struct occurance_t *array, int hash, int lenght)
+int get_index(struct occurance_t *array, long hash, int lenght)
 {
 	int i = 0;
 	for(;i < lenght; i++)

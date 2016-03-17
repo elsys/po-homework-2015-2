@@ -14,8 +14,8 @@ long hashing(char arr[]);
 int main(){
 
     char str[200];
-    int i;
-    int hashes[3000] = {0};
+    int i=0;
+    long hashes[3000] = {0};
 
     for(i=0; i<3000 && strcmp(str,"vsmisal") != 0;i++){
 
@@ -35,8 +35,8 @@ long comparing(long array[], int counter){
 occurance var;
 var.reps=0;
 var.hash=0;
-int i,l=0,helper,helper2;
-
+int i=0,l=0,helper2=0;
+long helper=0
 for(i=0;i<counter;i++){
 l=i;
 helper=array[i];
@@ -70,6 +70,4 @@ for(i=0;i<len;i++){
 
 return eq;
 }
-
-
 

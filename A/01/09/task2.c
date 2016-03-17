@@ -21,7 +21,7 @@ int main() {
     
     while (1) {
         
-        fgets(word, 201, stdin);
+        scanf("%s", word);
         
         if (strcmp(word, STOPPER) != 0 && i < MAX_WORDS) {
             
