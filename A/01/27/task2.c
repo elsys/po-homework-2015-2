@@ -6,88 +6,77 @@ typedef struct{
 	int hash;
 } occurance_t;
 
-typedef struct{
-	char word[200];
-} sentence_t;
-
-int input(sentence_t*);
-int not_end(sentence_t*, int);
-void arrange_words_info(sentence_t*, occurance_t*, int);
-long hash(sentence_t*, int);
-int check_count(occurance_t*, int);
+int end(char*);
+void check_and_fill(char*, occurance_t*, int);
+int find_max_count(occurance_t*, int);
 
 int main()
 {
-	int count_words, c;
-	sentence_t sentence[3001]; 
-	occurance_t words_info[3001];
-	count_words = input(sentence);
-	arrange_words_info(sentence, words_info, count_words);
-	c = check_count(words_info, count_words);
-	printf("%d %d", words_info[c].count, words_info[c].hash);
+	occurance_t data[2000];
+	char word[200];
+	int max_count, i;
+	for(i = 0; i < 2000; i++)
+	{
+		scanf("%s", word);
+		if(end(word)) break;
+		check_and_fill(word, data, i);
+	}
+	max_count = find_max_count(data, i);
+	printf("%d %d", data[max_count].count, data[max_count].hash);
 	return 0;
 }
-int input(sentence_t* sentence)
+
+int end(char* word)
 {
-	int i = 0;
-	do{
-		fgets(sentence[i].word, 200, stdin);
-		i++;
-	}while(not_end(sentence, i-1));
-	return i;
-}
-int not_end(sentence_t* sentence, int i)
-{
-	int check = 0, j;
-	char end[7] = "vsmisal";
-	for(j = 0; j < strlen(sentence[i].word); j++)
+	char example[8] = "vsmisal";
+	for(int i = 0; i < 7; i++)
 	{
-		if(sentence[i].word[j] == end[j]) check++;
+		if(word[i] != example[i]) return 0;
 	}
-	if(check == 7) return 0;
-	else return 1;
+	return 1;
 }
-void arrange_words_info(sentence_t* sentence, occurance_t* words_info, int count_words)
-{
-	int p = 0;
-	for(int i = 0; i < count_words; i++)
-	{
-		for(int j = 0; j < i; j++)
-		{
-			if(hash(sentence, i) == hash(sentence, j))
-			{
-				words_info[i].hash = 0;
-				words_info[i].count = 0;
-				words_info[j].count++;
-				p = 1;
-			}
-			else if(p == 0 && j + 1 == i)
-			{
-				words_info[i].hash = hash(sentence, i);
-				words_info[i].count = 1;
-			}
-		}
-	}
-}
-long hash(sentence_t *sentence, int i)
+
+long hash(char *word)
 {
 	int value = 42;
-	for(int j = 0; j < strlen(sentence[i].word); j++)
+	if(strlen(word) > 1)
 	{
-		value = value + sentence[i].word[j]*(j+1);
+		for(int i = 0; i < strlen(word); i++)
+		{
+			value = value + word[i]*(i+1);
+		}
 	}
 	return value;
 }
-int check_count(occurance_t* words_info, int count_words)
+
+void check_and_fill(char* word, occurance_t* data, int length)
 {
-	int max = 0, c;
-	for(int i = 0; i < count_words; i++)
+	int k = 0;
+	for(int j = 0; j < length; j++)
 	{
-		if(words_info[i].count > max)
+		if(hash(word) == data[j].hash)
 		{
-			max = words_info[i].count;
-			c = i;
+			data[j].count++;
+			data[length].count = 0;
+			k = 1;
 		}
 	}
-	return c;
+	if(k == 0)
+	{
+		data[length].count = 1;
+		data[length].hash = hash(word);
+	}
+}
+int find_max_count(occurance_t* data, int length)
+{
+	int max = 0, element;
+	for(int i = 0; i < length; i++)
+	{
+		if(data[i].count > max)
+		{
+			max = data[i].count;
+			element = i;
+		}
+	}
+	return element;
 }
