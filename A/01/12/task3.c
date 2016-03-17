@@ -9,19 +9,22 @@ struct occurance_t
 	{
 		long h1;
 		int num1;
-		char w[200];
+		char w1[200];
 	}r[3000];
-	char wr1[20];
+	char wr1[200];
 	char wr[3000];
-	int i, j, k, wn, hind,flag;
+	int i, j, k, k1, wn, hind;
 	char *tok;
 	long wh, wh1, ww;
 	const char s[2]=" ";
+	char *ch;
+	ch="";
 
 	for(i=0;i<3000;i++)
     {
 		r[i].num1=0;
 		r[i].h1=0;
+		strcpy(r[i].w1,ch);
 	}
 	hind=0;
 
@@ -33,44 +36,19 @@ struct occurance_t
 	tok=strtok(wr, s);
 	r[hind].num1=1;
 	r[hind].h1=hash(tok);
-	strcpy(r[hind++].w,tok);
-	flag=0;
-	while(tok!= NULL && flag==0)
+	strcpy(r[hind++].w1,tok);
+
+	while(tok!= NULL )
     {
 		tok = strtok(NULL, s);
-		if(tok!=NULL && flag==0)
+		if(tok!=NULL )
 		{
 			r[hind].num1=1;
 			r[hind].h1=hash(tok);
-			strcpy(r[hind].w,tok);
-
-			wn=0;
-			for(i=0; i<=hind; i++)
-            {
-				wh=r[i].h1;
-				wn=0;
-				for(j=0; j<=hind; j++)
-                {
-					if(r[j].h1==wh)
-                    {
-						wn++;
-					}
-				}
-				for(j=0; j<=hind; j++)
-				{
-					if(r[j].h1==wh)
-					{
-						r[j].num1=wn;
-						if(wn==4)
-						{
-							flag=1;
-						}
-					}
-				}
-			}
+			strcpy(r[hind].w1,tok);
 			hind++;
 		}
-   }
+    }
 
 	for(i=hind; i>0; i--)
     {
@@ -79,20 +57,37 @@ struct occurance_t
 			if(r[j].h1>r[j+1].h1)
             {
 				ww=r[j].h1;
-				strcpy(wr,r[j].w);
+				strcpy(wr,r[j].w1);
 				k=r[j].num1;
 
 				r[j].h1=r[j+1].h1;
-				strcpy(r[j].w,r[j+1].w);
+				strcpy(r[j].w1,r[j+1].w1);
 				r[j].num1=r[j+1].num1;
 
 				r[j+1].h1=ww;
-				strcpy(r[j+1].w,wr);
+				strcpy(r[j+1].w1,wr);
 				r[j+1].num1=k;
 			}
         }
     }
 
+	for(i=0; i<hind; i++)
+    {
+        for(j=i+1; j<hind; j++)
+        {
+            if (r[j].h1==r[i].h1)
+            {
+                k1=strcmp(r[i].w1,r[j].w1);
+                if (k1==0){
+                    r[j].num1=0;
+                }
+                else{
+                    r[i].num1++;
+                    r[j].num1++;
+                }
+            }
+        }
+    }
 	for(i=0; i<hind; i++)
     {
 		if(r[i].num1>1)
@@ -109,11 +104,11 @@ struct occurance_t
 						wh1=r[j].h1;
 						sprintf(wr1,"%ld ",wh1);
 						strcat(wr, wr1);
-						strcat(wr,r[j].w);
+						strcat(wr,r[j].w1);
 					}
 					else
 					{
-						strcat(wr,r[j].w);
+						strcat(wr,r[j].w1);
 					}
 					strcat(wr," ");
 					r[j].num1=0;
