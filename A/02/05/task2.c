@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+ 
 char *find(char *haystack, char needle)
 {
     int counter;
@@ -25,7 +25,7 @@ int main()
         {
             printf("\n-1");
         }
-    pointer-=string;
-    printf("%d",pointer);
+    printf("%ld",pointer-string);
     return 0;
-}
+ 
+    }
