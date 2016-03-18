@@ -1,31 +1,34 @@
 #include <stdio.h>
-#include <stdlib.h>
- 
-char *find(char *haystack, char needle)
-{
-    int counter;
-    char *pointer=NULL;
-    for(counter=0;counter<400;counter++)
-    {
-        if(haystack[counter]==needle)
-        {
-            pointer = &haystack[counter];
-            break;
-        }
-    }
-        return pointer;
-}
-int main()
-{
-    char string[401] = {0},search_char,*pointer = 0;
-    fgets(string, 400, stdin);
-    scanf("%c", &search_char);
-    pointer = find(string, search_char);
-    if(pointer==NULL)
-        {
-            printf("\n-1");
-        }
-    printf("%ld",pointer-string);
-    return 0;
- 
-    }
+ -#include <string.h>
+ -
+ -char* find(char *haystack, char needle);
+ -
+ -int main(){
+ -	char input[401]={'\0'}, symbol, *result;
+ -	
+ -	fgets(input, 401, stdin);
+ -	symbol=getchar();
+ -	
+ -	result=find(input, symbol);
+ -	
+ -	if(result!=NULL){
+ -		printf("%ld", result - input);
+ -	}
+ -	else{
+ -		printf("-1");
+ -	}
+ -	
+ -	return 0;
+ -	
+ -}
+ -
+ -char* find(char *haystack, char needle){
+ -	int i;
+ -	char *result=NULL;
+ -	for(i=0; i<400 && haystack[i]!='\0'; i++){
+ -		if(haystack[i]==needle){
+ -			result=&haystack[i];
+ -			break;
+ -		}
+ -	}
+ -	return result;
