@@ -20,7 +20,7 @@ void minmax(int *arr, int size, int *min, int *max)
 }
 int main()
 {
-    int counter=0,array[500],min,max,elem=0,sum=0;
+    int counter=0,array[500],min,max,elem=0;
     do{
     scanf("%d",&elem);
     }while(elem<0);
