@@ -18,7 +18,7 @@ int main()
 	}
 	else
 	{
-		printf("\n%ld",result-haystack);
+		printf("\n%d",(int)(result-haystack));
 	}
 	return 0;
 }
