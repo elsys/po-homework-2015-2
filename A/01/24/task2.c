@@ -28,7 +28,9 @@ int main()
 
 	do
 	{
-	scanf("%s",arr);
+		
+	scanf("%s", arr);
+
 	result = hash(arr);
 	
 	for(j=0; j<MAX; j++)
@@ -57,9 +59,9 @@ int main()
      {
     	if(word[j].count > max)
    	   {
-       	     max=word[j].count;
+       	     max = word[j].count;
 
-             k=j;
+             k = j;
         }
 	   
 	   
