@@ -15,8 +15,9 @@ int main()
 {
 	char word[200];	
 	struct occurance_t occurance[3000];
+	struct occurance_t temp;
 	int n=0,i=0,j=0;
-	int found,word_found,stop=0;
+	int word_found,found,stop=0;
 	long sum=0;
 	do{
 		do{
@@ -34,7 +35,7 @@ int main()
 				for(j=0;j<occurance[i].n;j++)
 				{
 					if(occurance[i].array[j]==word)
-					{
+ 					{
 						word_found=1;
 					}
 				}
@@ -49,7 +50,6 @@ int main()
 				}
 			}
 		}
-
 		if(found==0)
 		{
 			occurance[n].hash=sum;
@@ -61,11 +61,20 @@ int main()
 
 	}while(stop!=1 && n<300);
 	for(i=0;i<n;i++)
+     {
+          if(occurance[i].hash>occurance[i+1].hash)
+          {
+              temp=occurance[i];
+              occurance[i]=occurance[i+1];
+              occurance[i+1]=temp;
+          }
+      }
+	for(i=0;i<n;i++)
 	{
 		printf("\n%ld",occurance[i].hash);
 		for(j=0;j<occurance[i].n;j++)
 		{
-			printf(" %s",occurance[i].array[j]);
+			printf("%s",occurance[i].array[j]);
 		}
 	}
 	return 0;

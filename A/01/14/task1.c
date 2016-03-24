@@ -6,7 +6,7 @@ long hash(char* word);
 
 int main()
 {
-    char word[201];
+    char word[201]={0};
     int m=0;
     scanf("%s",word);
 

@@ -47,7 +47,7 @@ int main () {
 
 	} 
 
-printf("%d : %d", ss[ktimes].times , ss[ktimes].hesh);
+printf("%d %d", ss[ktimes].times , ss[ktimes].hesh);
 
  return 0 ;
 }

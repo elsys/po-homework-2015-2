@@ -6,12 +6,11 @@ long hash(char *word);
 
 int main()
 {
-	char word[200];
+	char word[200]={0};
 	long sum=0;
 	do{
 		scanf("%s",word);
 	}while(strlen(word)>200);
-	
 	sum=hash(word);
 	printf("\n%ld",sum);
 	return 0;

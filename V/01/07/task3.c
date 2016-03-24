@@ -71,11 +71,5 @@ int main()
 			printf("\n");
 		}
 	}
-	for(i=0; i<3000; i++)
-	{
-		if(hashes[i].hash_sum==0)
-			break;
-		printf("\n%d %ld %s %s %s %s",hashes[i].a, hashes[i].hash_sum, hashes[i].words_with_this_hash[0], hashes[i].words_with_this_hash[1], hashes[i].words_with_this_hash[2], hashes[i].words_with_this_hash[3]);
-	}
 	return 0;
 }
