@@ -20,18 +20,18 @@ Exit code: 1
 
 Error
 ```
-task2.c: In function âcomparingâ:
-task2.c:40:1: error: expected â,â or â;â before âforâ
+task2.c: In function 'comparing':
+task2.c:40:1: error: expected ',' or ';' before 'for'
  for(i=0;i<counter;i++){
  ^
 task2.c:40:9: warning: statement with no effect [-Wunused-value]
  for(i=0;i<counter;i++){
          ^
-task2.c:40:22: error: expected â;â before â)â token
+task2.c:40:22: error: expected ';' before ')' token
  for(i=0;i<counter;i++){
                       ^
-task2.c:40:22: error: expected statement before â)â token
-task2.c:57:1: warning: format â%dâ expects argument of type âintâ, but argument 2 has type âlong intâ [-Wformat=]
+task2.c:40:22: error: expected statement before ')' token
+task2.c:57:1: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
  printf("%d",var.hash);
  ^
 task2.c:58:1: warning: control reaches end of non-void function [-Wreturn-type]

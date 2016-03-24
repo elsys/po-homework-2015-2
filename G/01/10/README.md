@@ -1,57 +1,55 @@
 # Assignment report
 ```
-Points earned: 0
+Points earned: 2
 Maximum points: 19
 ```
 
-## Task 1: Hash [0/5 points]
+## Task 1: Hash [2/5 points]
 https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-1
 
-Failed compiling
-
-Exit code: 0
-
-Error
+Compiled with warning(s)
 ```
-task1.c: In function âhashâ:
+task1.c: In function 'hash':
 task1.c:13:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
          while (c = *str++){
          ^
-task1.c: In function âmainâ:
-task1.c:27:14: warning: pointer targets in passing argument 1 of âhashâ differ in signedness [-Wpointer-sign]
+task1.c: In function 'main':
+task1.c:27:14: warning: pointer targets in passing argument 1 of 'hash' differ in signedness [-Wpointer-sign]
    int a=hash(word);
               ^
-task1.c:6:5: note: expected âunsigned char *â but argument is of type âchar *â
+task1.c:6:5: note: expected 'unsigned char *' but argument is of type 'char *'
      hash(unsigned char *str)
      ^
 
 ```
+### Testcase 1 passed
+### Testcase 2 passed
+### Testcase 3 passed
 
 ## Task 2: Occurances [0/7 points]
 https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-2
 
-Failed compiling
-
-Exit code: 0
-
-Error
+Compiled with warning(s)
 ```
-task2.c: In function âhashâ:
+task2.c: In function 'hash':
 task2.c:13:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
          while (c = *str++){
          ^
-task2.c: In function âmainâ:
-task2.c:30:14: warning: unused variable âarrâ [-Wunused-variable]
+task2.c: In function 'main':
+task2.c:30:14: warning: unused variable 'arr' [-Wunused-variable]
   const char *arr[200000];
               ^
-task2.c:27:5: warning: unused variable âiâ [-Wunused-variable]
+task2.c:27:5: warning: unused variable 'i' [-Wunused-variable]
  int i=0;
      ^
-task2.c:25:7: warning: unused variable âaâ [-Wunused-variable]
+task2.c:25:7: warning: unused variable 'a' [-Wunused-variable]
    int a;
        ^
 
 ```
+### Testcase 1 failed
+### Testcase 2 failed
+### Testcase 3 failed
 
 ## Task 3: Collisions [0/7 points]
 https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3

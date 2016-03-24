@@ -12,18 +12,15 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 ## Task 2: Seek & !Destroy [0/7 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-2---seek--destroy
 
-Failed compiling
-
-Exit code: 0
-
-Error
+Compiled with warning(s)
 ```
-task2.c: In function âmainâ:
-task2.c:19:3: warning: format â%ldâ expects argument of type âlong intâ, but argument 2 has type âintâ [-Wformat=]
+task2.c: In function 'main':
+task2.c:19:3: warning: format '%ld' expects argument of type 'long int', but argument 2 has type 'int' [-Wformat=]
    printf("%ld", find( arr, letter ) - arr );
    ^
 
 ```
+### Testcase 1 failed
 
 ## Task 3: Za.io [0/12 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3---zaio

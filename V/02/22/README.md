@@ -13,12 +13,12 @@ Exit code: 1
 
 Error
 ```
-task1.c: In function âmainâ:
-task1.c:10:3: warning: format â%dâ expects argument of type âint *â, but argument 2 has type âintâ [-Wformat=]
+task1.c: In function 'main':
+task1.c:10:3: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
    scanf("%d",arr[i]);
    ^
-task1.c: In function âminmaxâ:
-task1.c:28:3: error: invalid operands to binary * (have âintâ and âint *â)
+task1.c: In function 'minmax':
+task1.c:28:3: error: invalid operands to binary * (have 'int' and 'int *')
    *min=arr[i];
    ^
 
