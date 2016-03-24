@@ -11,6 +11,9 @@ https://docs.google.com/spreadsheets/d/1bj6Y8O1POXFm2LN03ut5ORoGL7C-1lcWnt0Ij9WP
 
 ## Lectures
 
+### Lecture 7 
+https://docs.google.com/presentation/d/1U1J_ItIyob_k8L_KUiAChuaCvIScqRFbd8XgWmb_F8E
+
 ### Lecture 6 - Pointers & Structures
 https://docs.google.com/presentation/d/13LH7xLchER6djz3AYF9zgW6kwAcVV-39CS7H4bi4-Qg
 

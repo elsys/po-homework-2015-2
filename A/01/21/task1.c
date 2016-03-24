@@ -1,15 +1,20 @@
 #include <string.h>
 #include <stdio.h>
+#define max 200
 
 long hash(char *word);
 
 int main(){
 	
-	char sentence[200];
+	char sentence[max];
 	
-	fgets(sentence, 200, stdin);
+	for(int i = 0; i < max; i++){
+		sentence[i] = 0;
+	}
 	
-	printf("%ld\n", hash(sentence));
+	fgets(sentence, max, stdin);
+	
+	printf("%ld", hash(sentence));
 	
 	return 0;
 }
