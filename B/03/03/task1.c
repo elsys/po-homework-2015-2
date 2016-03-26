@@ -65,3 +65,4 @@ int check_valid_control_number ( char * id ) {
 int convert_char_to_int( char to_convert ) {
     return to_convert - 48;
 }
+
