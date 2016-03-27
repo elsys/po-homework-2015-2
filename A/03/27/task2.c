@@ -126,8 +126,8 @@ int check_error2(char *input)
 		else return 0;
 	}
 	while(input[i] != ' ' && i < strlen(input)) i++;
-	if(( (input[i] != ' ' || input[i+2] != ' ') && check_valid_operators(input, i) ) || input[i+1] == '!') return 1;
-	else return 0;
+	if(( (input[i] != ' ' || input[i+2] != ' ' || i+3 >= strlen(input)) && check_valid_operators(input, i) ) || input[i+1] == '!') return 1;
+	return 0;
 }
 int check_unary_operators(char *input)
 {
@@ -155,14 +155,16 @@ int check_error3(char *input)
 	}
 	for(i = k; input[i] != ' ' && i < strlen(input); i++)
 	{
-		if( (input[i] < '0' || input[i] > '9') && !(input[i] == '-' || input[i] == '+') ) return 1;
+		if((input[i] < '0' || input[i] > '9') && !((input[i] == '+' || input[i] == '-') && (i == k || input[i-1] == ' '))) 
+		return 1;
 	}
 	do{
 	i++;
 	}while(input[i] != ' ' && i < strlen(input));
 	for(i += 1; i < strlen(input); i++)
 	{
-		if( (input[i] < '0' || input[i] > '9') && !(input[i] == '-' || input[i] == '+') ) return 1;
+		if((input[i] < '0' || input[i] > '9') && !((input[i] == '+' || input[i] == '-') && (i == k || input[i-1] == ' ')))  
+		return 1;
 	}
 	return 0;
 }
