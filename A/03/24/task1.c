@@ -12,6 +12,9 @@ int main()
 	int i,valid1 = -2,valid2 = -2;
 	
 	scanf("%s",inp_egn);
+
+	/*if(strlen(inp_egn)!= 10)
+		printf("error");*/
 	
 
 	for( i = 0; i < 10; i++)
