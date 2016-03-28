@@ -18,7 +18,8 @@ void sort_strings(struct occurance_t array[], int len);
 int main()
 {
     struct occurance_t array_of_occurance[3000];
-    int hash, lenght = 0, index, j;
+    int  hash, lenght = 0,  index, j;
+    
     char *word;
 
     while(1)
@@ -37,7 +38,7 @@ int main()
         }
         else
         {
-            array_of_occurance[index].count++;
+
             int hasWord = 0;
             int i;
             for(i = 0; i < array_of_occurance[index].len; i++)
@@ -53,6 +54,7 @@ int main()
             {
                 array_of_occurance[index].words[array_of_occurance[index].len] = word;
                 array_of_occurance[index].len++;
+                array_of_occurance[index].count++;
             }
 
             if(array_of_occurance[index].count == 4)
@@ -61,12 +63,17 @@ int main()
 
                 for(i = 0; i < lenght; i++)
                 {
-                    printf("%d ", array_of_occurance[i].hash);
-                    for(j = 0; j < array_of_occurance[i].len; j++)
+                    if(array_of_occurance[i].count > 1)
                     {
-                        printf("%s ", array_of_occurance[i].words[j]);
+                        printf("%d ", array_of_occurance[i].hash);
+                        for(j = 0; j < array_of_occurance[i].len; j++)
+                        {
+
+                            printf("%s ", array_of_occurance[i].words[j]);
+                        }
+                        printf("\n");
                     }
-                    printf("\n");
+
                 }
                 return 0;
             }
@@ -124,5 +131,4 @@ void sort_strings(struct occurance_t words[], int len)
         }
     }
 }
-
 

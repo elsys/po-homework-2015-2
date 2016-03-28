@@ -9,68 +9,74 @@ struct occurance_t{
 };
 
 long hash(char word[]);
+int strcmp_line(char word[],struct occurance_t occ_word);
+
 
 int main(){
-	int cnt = 0,flag = 1,i,position = 0;
-	char current_input[200];
-	struct occurance_t words[3000];
-	// printf("%ld\n",words[0].hash );
-	for(i = 0; i < 3000; i++){
-		flag = 1;
-		scanf("%s",current_input);
-		for(int i = 0; i < cnt ; i++){
-			// printf("%ld == %ld\n",hash(current_input),words[i].hash );
-			if(hash(current_input) == words[i].hash){
-				// strcpy(words[i].same_hash[words[i].times][0],current_input);
-				// printf("%d(0.0)\n",i);
-				for(unsigned int k = 0; k < strlen(current_input);k++){
-					words[i].same_hash[words[i].times][k] = current_input[k];
+	struct occurance_t array[3000];
+	int max_words = 0, count = 0, flag = 1;
+	char word[200] = {0};
+	// char st_word[200] = {0};
+	for(int i = 0; i < 3000 && max_words < 4;i++){
+		scanf("%s",word);
+		for(int k = 0;k < count; k++){//don't forget to make count++
+			if(array[k].hash == hash(word)){
+				if(!strcmp_line(word,array[k])){
+					// printf("I am here\n");
+					flag = 0;
+					for(unsigned int j = 0; j < strlen(word); j++){
+						array[k].same_hash[array[k].times][j] = word[j];
+					}
+					array[k].times++;
+					if(max_words < array[k].times){
+						max_words = array[k].times;
+					}
 				}
-				// printf("%s , %d\n",cu );
-				words[i].times++;
-				if(words[i].times == 4){
-					goto Finish; //znam che e kofti ama ne mojah da izmislq drugo
-				}
-				flag = 0;
 			}
 		}
 		if(flag){
-			position++;
-			// printf("%d -_-\n",i );
-			words[i].hash = hash(current_input);
-			for(unsigned int k = 0; k < strlen(current_input);k++){
-				words[i].same_hash[words[i].times][k] = current_input[k];
+			array[count].times++;
+			array[count].hash = hash(word);
+			for(unsigned int j = 0; j < strlen(word); j++){
+				array[count].same_hash[0][j] = word[j];
 			}
-			// strcpy(words[i].same_hash[words[i].times],current_input);
-			words[i].times++;
+			count++;
 		}
-		cnt++;
 	}
-	Finish:
-	for (int j = 0; j < i; ++j){
-		for (int k = j; k < i; ++k){
-			if(words[j].hash > words[k].hash){
-				struct occurance_t swap = words[k];
-				words[k] = words[j];
-				words[i] = swap;
+	for(int i = 0; i < count; i++){
+		for(int k = 0; k < count - i - 1; k++){
+			if(array[i].times < array[k].times){
+				struct occurance_t swap  = array[k];
+				array[k] = array[i];
+				array[i] = swap;
 			}
 		}
 	}
-	for(int k = 0; k < position;k++){
-		if(words[k].times > 1){
-			printf("[%ld] ",words[k].hash);
-			for(int j = 0; j < words[k].times;j++){
-				for(unsigned int p = 0; p < strlen(words[k].same_hash[j]);p++){
-					printf("%c",words[k].same_hash[j][p]);
-				}
-				printf(" ");
+	// count = 0;
+	for(count = 0; array[count].times > 1; count++);
+	for(int i = 0; i < count ; i++){
+		for(int k = 0; k < count - i - 1; k++){
+			if(array[i].hash < array[k].hash){
+				struct occurance_t swap = array[k];
+				array[k] = array[i];
+				array[i] = swap; 
 			}
-			printf("\n");	
 		}
 	}
-	//printf("%d %ld",words[max_id].times, words[max_id].hash);
+	for(int i = 0; i < count;i++){
+		printf("[%ld]",array[i].hash);
+		for(int k = 0; k < array[i].times ; k++){
+			for(int j = 0; j < strlen(array[i].same_hash[k]);j++){
+				printf("%c",array[k].same_hash[k][j]);
+			}
+		}
+		printf("\n");
+	}
+
 	return 0;
 }
+
+
 
 long hash(char word[]){
 	long result = 42;
@@ -78,4 +84,25 @@ long hash(char word[]){
 		result = result + (word[i] * (i + 1));
 	}
 	return result;
+}
+
+
+int strcmp_line(char word[],struct occurance_t occ_word){
+	for(int i = 0; i < occ_word.times; i++){
+		if(strlen(word) != strlen(occ_word.same_hash[i])){
+			// printf("return 0\n");
+			// printf("%d %d\n",strlen(word),strlen(occ_word.same_hash[i]));
+			return 0;
+		}else{
+			// printf("- >%s\n",word );
+			for(unsigned int k = 0;k < strlen(word);k++){
+				if(word[k] != occ_word.same_hash[i][k]){
+					// printf("return 0 as\n");
+					return 0;
+				}
+			}
+		}
+	}
+	// printf("return 1\n");
+	return 1;
 }

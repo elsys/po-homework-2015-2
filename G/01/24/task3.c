@@ -17,7 +17,7 @@ void sort(occurance_t *, int);
 int main()
 {
 
-	int ctr = 0, print_ctr,check_ctr, new;
+	int ctr = 0, print_ctr, check_ctr, rep_ctr, new, is_repeating;
 	char word[SIZE];
 	occurance_t words[MAX_WORDS];
 	    
@@ -37,8 +37,10 @@ int main()
 
 			if(hash(word) == words[check_ctr].hash){
 
-				strcpy(words[check_ctr].word[ words[check_ctr].count++], word);
+				strcpy(words[check_ctr].word[ (words[check_ctr].count++) ], word);
 				new = 0;
+				break;
+							
 			
 			}
 
@@ -49,6 +51,12 @@ int main()
 			words[ctr].hash = hash(word);
 			words[ctr].count = 1;
 			strcpy(words[ctr].word[0], word);
+		
+		}
+
+		if(words[check_ctr].count > 3){
+		
+			break;
 		
 		}
 
@@ -64,7 +72,24 @@ int main()
 		
 			for(print_ctr = 0; print_ctr < words[check_ctr].count; print_ctr++){
 			
-				printf(" %s", words[check_ctr].word[print_ctr]);
+				is_repeating = 0;
+				
+				for(rep_ctr = print_ctr - 1; rep_ctr >= 0; rep_ctr--){
+				
+					if(strcmp(words[check_ctr].word[rep_ctr] , words[check_ctr].word[print_ctr]) == 0){
+					
+						is_repeating = 1;
+						break;
+					
+					}
+				
+				}
+			
+				if(!is_repeating){
+				
+					printf(" %s", words[check_ctr].word[print_ctr]);
+				
+				}
 			
 			}
 			

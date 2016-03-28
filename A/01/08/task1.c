@@ -5,6 +5,9 @@ long hash(char* word);
 
 int main(){
 	char word[201];
+	int i;
+	for(i = 0; i < 201; i++)
+		word[i] = 0;
 
 	scanf("%s", word);
 	printf("%li", hash(word));

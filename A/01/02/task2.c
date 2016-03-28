@@ -28,7 +28,8 @@ int main()
                 if(a[j].h==a[k].h)
                         a[j].n++;
                 }
-            max.n=a[0].n;
+            max.n=1;
+            max.h=a[0].h;
         for(j=0;j<i-1;j++)
             {   if(max.n<a[j+1].n)
                   {
