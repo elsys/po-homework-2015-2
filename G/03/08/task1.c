@@ -1,21 +1,32 @@
 #include <stdio.h>
-
+#define max 10
 int is_month_legit(int month);
 int is_day_legit(int day, int month);
 int last_dig(int *egn);
 int main()
 {
-
-    int egn[10] = {0};
+    char arr[12];
+    int egn[max] = {0};
 
     int i,month=0,day=0;
 
-    for(i=0; i<10; i++)
+    scanf("%s",arr);
+    int l;
+    l=strlen(arr);
+
+    if(l != 10 )
+    {
+        printf("0");
+        return 0;
+    }
+
+    for(i=0; i<max; i++)
     {
 
-        scanf("%d",&egn[i]);
+        egn[i] = arr[i] - 48;
 
     }
+
     month = (egn[2]*10)+egn[3];
     day = (egn[5]*10)+egn[6];
 
