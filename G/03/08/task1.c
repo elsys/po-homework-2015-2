@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 #define max 10
+
 int is_month_legit(int month);
 int is_day_legit(int day, int month);
 int last_dig(int *egn);
