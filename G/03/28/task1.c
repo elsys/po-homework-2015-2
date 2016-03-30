@@ -9,8 +9,7 @@ int main()
 	char egn[12] = {0};
 	scanf("%s",egn);
 	
-	if(is_correct_input(egn) == 1 || is_correct_length(egn) == 1 || control_digit(egn) == 1)
-	{
+	if(is_correct_input(egn) == 1 || is_correct_length(egn) == 1 || control_digit(egn) == 1){
 		printf("0 \n");
 	}
 	else
@@ -98,12 +97,18 @@ int control_digit(char *egn)
 		counter++;
 	}
 	counter = 0;
-	int control_number = ((egn_digit_holder[0] * 2) + (egn_digit_holder[1] * 4) + (egn_digit_holder[2] * 8) + (egn_digit_holder[3] * 5) +
-						 (egn_digit_holder[4] * 10) + (egn_digit_holder[5] * 9) + (egn_digit_holder[6] * 7) + (egn_digit_holder[7] * 3) +
-						 (egn_digit_holder[8] * 6)) % 11;	
-	if(control_number == egn_digit_holder[9])
-	{
+	int control_number = ((egn_digit_holder[0] * 2) + (egn_digit_holder[1] * 4) + (egn_digit_holder[2] * 8) + 				              (egn_digit_holder[3] * 5) +(egn_digit_holder[4] * 10) + (egn_digit_holder[5] * 9) + 		                      (egn_digit_holder[6] * 7) + (egn_digit_holder[7] * 3) +
+						  (egn_digit_holder[8] * 6)) % 11;
+						 	
+	if(control_number == egn_digit_holder[9]){
 		return 0;
-	}									
+	}
+	else if(control_number == 10){
+		control_number = 0;
+		return 0;
+	}
+										
 	return 1;
 }
+
+	
