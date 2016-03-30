@@ -3,12 +3,13 @@
 int is_correct_input(char *);
 int is_correct_length(char *);
 int control_digit(char *);
+int month_no_longer_than_fifty_two(char *);
 
 int main() {
 	char egn[12] = {0};
 	scanf("%s",egn);
 	
-	if(is_correct_input(egn) == 1 || is_correct_length(egn) == 1 || control_digit(egn) == 1) {
+	if(is_correct_input(egn) == 1 || is_correct_length(egn) == 1 || control_digit(egn) == 1 || month_no_longer_than_fifty_two(egn) == 1) {
 		printf("0 \n");
 	}
 	else {
@@ -92,3 +93,46 @@ int control_digit(char *egn) {
 	}
 	return 1;
 }
+int month_no_longer_than_fifty_two(char *egn) {
+	int egn_digit_holder[9] = {0};
+	int counter = 0;
+	while(counter < 10)
+	{
+		if(egn[counter] == 48) {
+			egn_digit_holder[counter] = 0;
+		}
+		if(egn[counter] == 49) {
+			egn_digit_holder[counter] = 1;
+		}
+		if(egn[counter] == 50) {
+			egn_digit_holder[counter] = 2;
+		}
+		if(egn[counter] == 51) {
+			egn_digit_holder[counter] = 3;
+		}
+		if(egn[counter] == 52) {
+			egn_digit_holder[counter] = 4;
+		}
+		if(egn[counter] == 53) {
+			egn_digit_holder[counter] = 5;
+		}
+		if(egn[counter] == 54) {
+			egn_digit_holder[counter] = 6;
+		}
+		if(egn[counter] == 55) {
+			egn_digit_holder[counter] = 7;
+		}
+		if(egn[counter] == 56) {
+			egn_digit_holder[counter] = 8;
+		}
+		if(egn[counter] == 57) {
+			egn_digit_holder[counter] = 9;
+		}
+		counter++;
+	}
+	if(egn_digit_holder[2] >= 5 && egn_digit_holder[3] > 2) {
+		return 1;
+	}
+	return 0;
+}
+
