@@ -39,4 +39,4 @@ if( check_sum % 11 < 10 ){
 
 	printf("%d", check);
 	return 0;
-}
+}eawdada
