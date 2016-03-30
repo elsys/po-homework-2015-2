@@ -12,7 +12,7 @@ int main()
     int valid_id = 0;
     fgets(id, 12, stdin);
 
-    if( strlen(id) - 1 == 10 ) {
+    if( strlen(id) == 10 ) {
         if( check_valid_birth_date( id ) && check_valid_control_number ( id ) ) {
                 valid_id = 1;
         }
