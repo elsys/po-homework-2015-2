@@ -34,7 +34,6 @@ if( check_sum % 11 < 10 ){
 	
 	if(( egn[9] - '0') != (check_sum % 11) ){
 	 check  =  0; 	
-	 printf("kzl")
          }
 }else {	if( egn[9] != '0' ) check  =  0;}
 
