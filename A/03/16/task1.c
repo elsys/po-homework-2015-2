@@ -30,7 +30,6 @@ int main()
     day = temp;
     temp = 0;
 
-    /*checking if dates are correct*/
     if(month>52)
     {
         printf("\n0");
@@ -149,7 +148,6 @@ int main()
             break;
     }
 
-    /*control number calculation*/
     temp = 0;
     while(temp<9)
     {
