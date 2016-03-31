@@ -1,6 +1,6 @@
 # Assignment report
 ```
-Points earned: 13
+Points earned: 14
 Maximum points: 26
 ```
 
@@ -9,17 +9,9 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 
 ### Testcase 1 passed
 
-## Task 2: Seek & !Destroy [6/7 points]
+## Task 2: Seek & !Destroy [7/7 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-2---seek--destroy
 
-Compiled with warning(s)
-```
-task2.c: In function 'main':
-task2.c:13:9: warning: unused variable 'i' [-Wunused-variable]
-     int i=0;
-         ^
-
-```
 ### Testcase 1 passed
 
 ## Task 3: Za.io [0/12 points]

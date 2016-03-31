@@ -1,6 +1,6 @@
 # Assignment report
 ```
-Points earned: 5
+Points earned: 9
 Maximum points: 19
 ```
 
@@ -11,7 +11,7 @@ https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D
 ### Testcase 2 passed
 ### Testcase 3 passed
 
-## Task 2: Occurances [0/7 points]
+## Task 2: Occurances [4/7 points]
 https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-2
 
 Compiled with warning(s)
@@ -28,9 +28,9 @@ task2.c:40:6: note: expected 'char *' but argument is of type 'int'
       ^
 
 ```
-### Testcase 1 failed
-### Testcase 2 failed
-### Testcase 3 failed
+### Testcase 1 passed
+### Testcase 2 passed
+### Testcase 3 passed
 
 ## Task 3: Collisions [0/7 points]
 https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3
