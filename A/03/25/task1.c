@@ -10,11 +10,6 @@ int main(){
 
     scanf("%s", egn);
 
-    /*for(i = 0; i < 10; i++){
-        if(egn[i] < '0' || egn[i] > '9')
-            return 0;
-    }
-*/
     valmonth = valid_Date(egn);
     ctrdigit = control_digit(egn, multiplier);
 
