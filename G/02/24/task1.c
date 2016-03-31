@@ -28,6 +28,7 @@ void minmax(int *arr, int size, int *min, int *max)
 	int counter = 0;
 	
 	*min = arr[0];
+	*max = arr[0];
 
 	do{
 	

@@ -15,7 +15,7 @@ int main(){
 	char current_input[200] = {0};
 	char endl[7]="vsmisal";
 	struct occurance_t words[3000];
-	while(1){
+	for(int p = 0; p < 3001; p++){
 		flag = 1;
 		scanf("%s",current_input);
 		if(!strcmp(endl,current_input)){

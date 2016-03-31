@@ -25,7 +25,7 @@ int main()
 	}
 	scanf("%c",&symbol);
 	if(find(string,symbol)){
-		printf("%ld",find(string,symbol)-string);
+		printf("%ld",((long)find(string,symbol)-string));
 	}
 	else{
 		printf("-1");

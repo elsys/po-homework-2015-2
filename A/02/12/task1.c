@@ -7,21 +7,14 @@ void minimax(int *arr, int size, int *min, int *max);
 int main()
 {
     int i, num, ar[500], mn, mx;
-    char w[2000], sp[2]=" ", *tok;
 
-	scanf("%d",&num);
-	getchar();
-	fgets(w,2000,stdin);
+    scanf("%d", &num);
 
-	i=strlen(w)-1;
-	w[i]='\0';
-	tok = strtok(w, sp);
-	num=0;
-	while(tok!=NULL)
-	{
-	  ar[num++]=atoi(tok);
-	  tok = strtok(NULL, sp);
-	};
+    for (i=0; i<num; i++)
+    {
+        scanf("%d", &ar[i]);
+    }
+
 	minimax(ar, num, &mn, &mx);
 
 	printf("%d",mn+mx);
