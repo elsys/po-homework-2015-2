@@ -22,7 +22,7 @@ int main()
 
 int long_hash(char *word)
 {
-    int i = 1, temp, p;
+    int i = 1, temp = 0, p;
 
     while(*word != '\0')
     {
