@@ -28,25 +28,28 @@ int main(){
 	}
 	for(l=0; l<i; l++){
 		if(command[l].error==-1){
-			printf("operation not supported\n");
+			printf("operation not supported");
 		}
 		else if(command[l].error==-2){
-			printf("invalid command argument count\n");
+			printf("invalid command argument count");
 		}
 		else if(command[l].error==-3){
-			printf("invalid command arguments\n");
+			printf("invalid command arguments");
 		}
 		else if(command[l].error==-4){
-			printf("invalid input\n");
+			printf("invalid input");
 		}
 		else if(command[l].error==-5){
-			printf("invalid arithmetic operation\n");
+			printf("invalid arithmetic operation");
 		}
 		else if(command[l].error==-42){
-			printf("the answer to life, the universe and everything else\n");
+			printf("the answer to life, the universe and everything else");
 		}
 		else{
-			printf("%d\n", command[l].result);
+			printf("%d", command[l].result);
+		}
+		if(l!=i-1){
+			printf("\n");
 		}
 	}
 	return 0;
@@ -126,7 +129,6 @@ void parse(char *input, struct command_t *command){
 	else{
 		unary=-1;
 	}
-	printf("\n------\nTEST %s %s %s\n", token[0], token[1], token[2]);
 	if(unary==1){
 		
 		command->type=0;
@@ -177,7 +179,6 @@ void parse(char *input, struct command_t *command){
 	else{
 		command->error=-4;
 	}
-	printf("%d %s %d\n", command->argument1, command->operator, command->argument2);
 }
 
 int isUnaryOperator(char *operator){
