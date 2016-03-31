@@ -5,20 +5,11 @@
 long hash(char []);
 
 int main(){
-	char c_w;
 	char word[200] = {0};
-	for(int i = 0;i < 200;i++){
-		scanf("%c",&c_w);
-		// printf("Nigah %d\n",c_w );
-		if(c_w == 10){
-			// printf("Sup\n");
-			break;
-
-		}
-		word[i] = c_w;		
-	}
-	printf("%ld",hash(word));
-	return 0;
+	do{
+		scanf("%200[^\n]",word);	
+	}while(strlen(word) > 200);
+	printf("%ld",hash(word) );
 }
 
 long hash(char word[]){
