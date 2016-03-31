@@ -1,6 +1,6 @@
 # Assignment report
 ```
-Points earned: 25
+Points earned: 19
 Maximum points: 26
 ```
 
@@ -9,18 +9,21 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 
 ### Testcase 1 passed
 
-## Task 2: Seek & !Destroy [6/7 points]
+## Task 2: Seek & !Destroy [0/7 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-2---seek--destroy
 
-Compiled with warning(s)
+Failed compiling
+
+Exit code: 1
+
+Error
 ```
 task2.c: In function 'main':
-task2.c:28:3: warning: format '%ld' expects argument of type 'long int', but argument 2 has type 'int' [-Wformat=]
-   printf("%ld",find(string,symbol)-string);
-   ^
+task2.c:28:42: error: invalid operands to binary - (have 'long int' and 'char *')
+   printf("%ld",((long)find(string,symbol)-string));
+                                          ^
 
 ```
-### Testcase 1 passed
 
 ## Task 3: Za.io [12/12 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3---zaio
