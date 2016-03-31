@@ -2,14 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-long int hash(char *word)
+long hash(char *word)
 {
 	int begin = 42;
-	int i = 0,l;
-	l = strlen(word);
-	while(i < l)
-	{
-		begin += word[i]*(i + 1);
+	int i = 1,l = strlen(word);
+	while(i <= l)
+	{	
+		begin += word[i - 1] * i;
 		i++;
 	}
 	return begin;
@@ -64,3 +63,4 @@ int main()
 }
 
 long int hash(char *word);
+//gospodine tova pri men raboti i vsicki testcase sa verni
