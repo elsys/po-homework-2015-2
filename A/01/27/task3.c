@@ -2,106 +2,122 @@
 #include <string.h>
 
 typedef struct{
-	char count[5][200];
+	int count;
 	int hash;
+	char words[5][200];
 } occurance_t;
 
-int fix_count(occurance_t*, int);
-long hash(int);
-void fix_repeat(occurance_t*, int);
-void sort_sentence(occurance_t*, int);
-char words[3000][200];
+int check(char*, occurance_t*, int);
+int fill(char*, occurance_t*, int);
+long hash(char*);
+int sort(occurance_t*, int);
 
 int main()
 {
-	int i = 0;
-	int no_four_same_words = 1;
-	occurance_t sentence[3000];
-	while((no_four_same_words) && i<=3000)
+	occurance_t data[3000];
+	char word[200];
+	int i, k;
+	for(i = 0; i < 3000; i++)
 	{
-		fgets(words[i], 200, stdin);
-		no_four_same_words = fix_count(sentence, i);
-		i++;
+		scanf("%s", word);
+		if(check(word, data, i)) break;
 	}
-	fix_repeat(sentence, i);
-	sort_sentence(sentence, i);
+	k = sort(data, i);
 	for(int j = 0; j < i; j++)
 	{
-		if(sentence[j].count[0][0] >= '2')
+		if(data[j].count >= 2)
 		{
-			printf("%d ", sentence[j].hash);
-			for(int k = 1; k < 5; k++)
-			{
-				printf("%s ", sentence[j].count[k]);
-			}
-			printf("\n");
+			printf("%d", data[j].hash);
+			for(int h = 0; h < data[j].count; h++)
+				printf(" %s", data[j].words[h]);
+			if(j != k) printf("\n");
 		}
 	}
 	return 0;
 }
-int fix_count(occurance_t* sentence, int i)
+
+int check(char *word, occurance_t* data, int length)
 {
-	int j, h, k;
-	for(j = 0; (j < i) || (i == 0); j++)
+	int j;
+	for(j = 0; j < length; j++)
 	{
-		if( (hash(i) == hash(j)) && i!=0)
+		if(hash(word) == data[j].hash)
 		{
-			h = ++sentence[j].count[0][0] - '0';
-			for(k = 0; k < strlen(words[i]); k++)
-			{
-				sentence[j].count[h][k] = words[i][k];
-			}
-			sentence[i].count[0][0] = '0';
-			if(h == 4) return 0;
-		}
-		else
-		{
-			sentence[i].count[0][0] = 49;
-			sentence[i].hash = hash(i);
-			for(k = 0; k < strlen(words[i]); k++)
-			{
-				sentence[i].count[1][k] = words[i][k];
-			}
-		}
-		if(i == 0) break;
-	}
-	return 1;
-}
-long hash(int i)
-{
-	int value = 42;
-	for(int j = 0; j < strlen(words[i]); j++)
-	{
-		value = value + words[i][j]*(j+1);
-	}
-	return value;
-}
-void fix_repeat(occurance_t* sentence, int i)
-{
-	for(int j = 0; j < i; j++)
-	{
-		for(int k = j + 1; k < i; k++)
-		{
-			if(sentence[j].hash == sentence[k].hash)
-			{
-				sentence[k].count[0][0] = '0';
-			}
+			if(fill(word, data, j)) return 1;
+			else return 0;
 		}
 	}
+	data[j].hash = hash(word);
+	data[j].count = 1;
+	for(int i = 0; i < strlen(word); i++)
+	{
+		data[j].words[0][i] = word[i];
+	}
+	return 0;
 }
-void sort_sentence(occurance_t* sentence, int i)
+
+int fill(char* word, occurance_t* data, int j)
+{
+	int k, i;
+	for(i = 0; i < data[j].count; i++)
+	{
+		k = 0;
+		for(int h = 0; h < strlen(word); h++)
+		{
+			if(data[j].words[i][h] != word[h])
+			{
+				k = 1;
+				break;
+			}
+		}
+		if(k == 0) return 0;
+	}
+	data[j].count++;
+	for(int h = 0; h < strlen(word); h++)
+	{
+		data[j].words[i][h] = word[h];
+	}
+	if(data[j].count == 4) return 1;
+	else return 0;
+}
+
+int sort(occurance_t* data, int length)
 {
 	occurance_t temp;
-	for(int j = 0; j < i; j++)
+	int max = 0, position_max;
+	for(int i = 0; i < length; i++)
 	{
-		for(int k = j; k < i; k++)
+		for(int j = i; j < length; j++)
 		{
-			if(sentence[j].hash > sentence[k].hash)
+			if(data[i].hash > data[j].hash)
 			{
-				temp = sentence[j];
-				sentence[j] = sentence[k];
-				sentence[k] = temp;
+				temp = data[i];
+				data[i] = data[j];
+				data[j] = temp;
 			}
+			
 		}
 	}
+	for(int i = 0; i < length; i++)
+	{
+		if( (data[i].count >= 2) && (data[i].hash > max) )
+		{
+			max = data[i].hash;
+			position_max = i;
+		}
+	}
+	return position_max;
+}
+
+long hash(char *word)
+{
+	int value = 42;
+	if(strlen(word) > 1)
+	{
+		for(int i = 0; i < strlen(word); i++)
+		{
+			value = value + word[i]*(i+1);
+		}
+	}
+	return value;
 }

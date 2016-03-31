@@ -21,6 +21,6 @@ int main()
 }
 char* find(char *str, char needle){
     if(needle == *str)
-        return &str;
+        return str;
     else return NULL;
 }

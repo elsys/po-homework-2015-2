@@ -13,8 +13,8 @@ long hash(char*);
 
 int main()
 {
-	char input[200];
-	struct occurance_t word[3000];
+	char input[200] = {0};
+	struct occurance_t word[3000] = {0};
 	int c = 0;
 	int end = 0;
 	
@@ -24,6 +24,7 @@ int main()
 		
 		word[c].hash = hash(input);
 		strcpy(word[c].word[0], input);
+		
 		word[c].count = 1;
 		
 		for(int i = 0; i < c; i++)
@@ -31,15 +32,20 @@ int main()
 			if(word[c].hash == word[i].hash)
 			{
 				c--;
-				word[i].count++;
 				
-				end = word[i].count;
-				
-				switch(end)
+				if (strcmp(input, word[i].word[0]) != 0) 
 				{
-					case 2: strcpy(word[i].word[1], input); break;
-					case 3: strcpy(word[i].word[2], input); break;
-					case 4: strcpy(word[i].word[3], input); break;
+					
+					word[i].count++;
+
+					end = word[i].count;
+				
+					switch(end)
+					{
+						case 2: strcpy(word[i].word[1], input); break;
+						case 3: strcpy(word[i].word[2], input); break;
+						case 4: strcpy(word[i].word[3], input); break;
+					}
 				}
 			}
 		}

@@ -18,7 +18,7 @@ return hesh;
 int main()
 {
 
-char c[201];
+char c[201]={0};
 scanf("%s",c);
 char *word;
 word=c;

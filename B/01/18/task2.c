@@ -26,7 +26,7 @@ int main()
         fgets(input, 3000, stdin);
         strcat(str, input);
     }while (!strstr(input, stop));
-    
+
     get_word(str);
     
     hash_checker();
@@ -77,7 +77,7 @@ void get_word(char *word)
 void make_record(long sum)
 {   
     int index = 0;
-    
+
     while (1)
     {     
         if (last.temp[index] == 0)
@@ -95,8 +95,8 @@ void hash_checker()
     int sec_index = 0;
     int count = 0;
 
-    last.meet = count;
-    
+    last.meet = 1;
+    last.hash = last.temp[0];
     for (index = 0; last.temp[index] != 0; index++)
     {
         count = 0;
@@ -115,4 +115,5 @@ void hash_checker()
             last.hash = last.temp[index];
         }
     }
+    
 }
