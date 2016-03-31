@@ -12,7 +12,7 @@ int main(){
 	result=find(input, symbol);
 
 	if(result!=NULL){
-	printf("%ld", result - input);
+	printf("%d", (int)(result - input));
 	}
 	else{
 		printf("-1");
@@ -32,3 +32,4 @@ char* find(char *haystack, char needle){
  	}
 	}
 	return result;
+}
