@@ -14,7 +14,7 @@ int main()
     }
     int lenght = i - 1;
     int inarray = 0, err = 1;
-    for ( i = 0; i < MAX_SYMB && err; i++ ) {
+    for ( i = 0; i < MAX_SYMB && err != 0; i++ ) {
         if( is_in_bound( arr, lenght, hop(&arr[inarray])) ) {
             inarray += arr[inarray];
             if(!*hop(&arr[inarray])) {
@@ -23,6 +23,8 @@ int main()
             }
         } else {
             err = 1;
+            i++;
+            break;
         }
     }
     if(err == 1)printf("0\n%d", i);

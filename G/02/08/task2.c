@@ -10,7 +10,6 @@ int main()
     char haystack[max];
 
     char needle;
-    int i=0;
 
     scanf("%[^\n]s",haystack);
     scanf(" %c",&needle);

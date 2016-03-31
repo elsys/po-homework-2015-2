@@ -13,15 +13,18 @@ long hash(char *word);
 int main(){
 	
 	struct occurance_t compare[MAX];
-	char sentence[201];
+	char sentence[200];
 	char replacer[8];
 	int count = 0;
 	int max = 0;
 	long int maxhash = 0;
 	
-	for(int i = 0; i < max; i++){
+	for(int i = 0; i < MAX; i++){
 		compare[i].hash = 0;
 		compare[i].counter = 0;
+	}
+	for(int i = 0; i < 200; i++){
+		sentence[i] = 0;
 	}
 	
 	strcpy(replacer, "vsmisal");
@@ -37,7 +40,6 @@ int main(){
 		}
 		
 	}
-	
 	for(int i = 0; i < count; i++){
 		for(int k = 1; k < count; k++){
 			if(compare[i].hash == compare[k].hash){
