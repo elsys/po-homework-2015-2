@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 #define MAX_LEN 1000
 
@@ -86,7 +87,7 @@ int main()
         }
         else if(i1==-1)
         {
-            printf("%s","operation not suppurted");
+            printf("%s","operation not supported");
             if(j<=broj)
             {
                 printf("\n");
@@ -95,7 +96,7 @@ int main()
         }
         else if(i1==-2)
         {
-            printf("%s","invald command argument count");
+            printf("%s","invalid command argument count");
             if(j<=broj)
             {
                 printf("\n");
@@ -104,7 +105,7 @@ int main()
         }
         else if(i1==-3)
         {
-            printf("%s","invald command arguments");
+            printf("%s","invalid command arguments");
             if(j<=broj)
             {
                 printf("\n");
@@ -113,7 +114,7 @@ int main()
         }
         else if(i1==-4)
         {
-            printf("%s","invald input");
+            printf("%s","invalid input");
             if(j<=broj)
             {
                 printf("\n");
@@ -122,7 +123,7 @@ int main()
         }
         else if(i1==-5)
         {
-            printf("%s","invald aritmetic operation");
+            printf("%s","invalid arithmetic operation");
             if(j<=broj)
             {
                 printf("\n");
@@ -131,7 +132,7 @@ int main()
         }
         else if(i1==-42)
         {
-            printf("%s","the ansver to life, the universe and everything else");
+            printf("%s","the answer to life, the universe and everything else");
             if(j<=broj)
             {
                 printf("\n");

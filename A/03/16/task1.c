@@ -10,7 +10,7 @@ int main()
     int month = 0;
     int year = 0;
     int controlnum = 0;
-    scanf("%12s", &EGN);
+    scanf("%12s", EGN);
 
     temp = (temp + EGN[0]) - 48;
     temp = temp * 10;
@@ -205,4 +205,5 @@ int main()
         printf("1");
         return 1;
     }
+    return 0;
 }
