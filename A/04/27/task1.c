@@ -46,7 +46,7 @@ void check_ISBN_validity(char *ISBN)
 	else
 	{
 		check_digit %= 10;
-		check_digit = 10 - check_digit;
+		if(check_digit) check_digit = 10 - check_digit;
 		if(ISBN[16]-'0' != check_digit) valid = 0;
 	}
 	
