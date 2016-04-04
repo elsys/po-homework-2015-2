@@ -127,7 +127,7 @@ void publishing_house(int *parsed_isbn_number) {
 	   publishing_house_array[3] == 8 && publishing_house_array[4] == 3) {
 		printf("Alyson Books\n"); 
 		  
-    }else if(publishing_house_array[0] == 9 && publishing_house_array[1] == 3 && publishing_house_array[2] == 3 &&
+        }else if(publishing_house_array[0] == 9 && publishing_house_array[1] == 3 && publishing_house_array[2] == 3 &&
 	   publishing_house_array[3] == 3 && publishing_house_array[4] == 4 && publishing_house_array[5] == 6) {
 		printf("Bluebridge\n"); 
 		  
