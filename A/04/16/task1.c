@@ -7,22 +7,42 @@ int main()
     int counter = 0;
     int numcount = 0;
     int temp = 0;
+    int flag = 0;
+    int firstdashpos = 0;
     int checknumpos = 0;
     int checksum = 0;
     char isbn[20] = {0};
     scanf("%s", isbn);
-    while(counter < 20)
+    while(counter < 20 && numcount<13)
     {
         if(isbn[counter]>=48 && isbn[counter]<=57)
         {
             numcount++;
             checknumpos = counter;
         }
-        if(isbn[counter]<48 && isbn[counter]>57)
+        else
         {
             if(isbn[counter]!='-')
             {
+                printf("\n0");
                 return 0;
+            }
+            if(isbn[counter+1]=='-')
+            {
+                printf("\n0");
+                return 0;
+            }
+            if(flag==0)
+            {
+                firstdashpos = counter;
+                if(isbn[counter+1]>=48 && isbn[counter+1]<=57)
+                {
+                    if(isbn[counter+2] == '-')
+                    {
+                        firstdashpos = counter+2;
+                    }
+                }
+                flag = 1;
             }
         }
         counter++;
@@ -102,17 +122,17 @@ int main()
     }
 
 
-    if(isbn[6]=='5')
+    if(isbn[firstdashpos+1]=='5')
     {
-        if(isbn[7]=='5')
+        if(isbn[firstdashpos+2]=='5')
         {
-            if(isbn[8]=='5')
+            if(isbn[firstdashpos+3]=='5')
             {
-                if(isbn[9]=='8')
+                if(isbn[firstdashpos+4]=='8')
                 {
-                    if(isbn[10]=='3')
+                    if(isbn[firstdashpos+5]=='3')
                     {
-                        if(isbn[11]=='-')
+                        if(isbn[firstdashpos+6]=='-')
                         {
                             printf("\nAlyson Books");
                         }
@@ -122,15 +142,15 @@ int main()
         }
     }
 
-    if(isbn[6]=='4')
+    if(isbn[firstdashpos+1]=='4')
     {
-        if(isbn[7]=='2')
+        if(isbn[firstdashpos+2]=='2')
         {
-            if(isbn[8]=='1')
+            if(isbn[firstdashpos+3]=='1')
             {
-                if(isbn[9]=='0')
+                if(isbn[firstdashpos+4]=='0')
                 {
-                    if(isbn[10]=='-')
+                    if(isbn[firstdashpos+5]=='-')
                     {
                         printf("\nFUNimation Productions, Ltd.");
                     }
@@ -139,13 +159,13 @@ int main()
         }
     }
 
-    if(isbn[6]=='0')
+    if(isbn[firstdashpos+1]=='0')
     {
-        if(isbn[7]=='1')
+        if(isbn[firstdashpos+2]=='1')
         {
-                    if(isbn[8]=='-')
+                    if(isbn[firstdashpos+3]=='-')
                     {
-                        printf("\nFUNimation Productions, Ltd");
+                        printf("\nPyramid Books");
                     }
         }
     }
