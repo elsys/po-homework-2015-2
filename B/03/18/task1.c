@@ -12,7 +12,7 @@ int main() {
     
     fgets(str, 12, stdin);   
 
-    if (strlen(str) - 1 == 10) {
+    if (strlen(str) == 10) {
         if (checker(str)) {
             valid_id = 1;
         }
