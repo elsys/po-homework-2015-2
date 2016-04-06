@@ -56,8 +56,8 @@ int command_input_and_function(char *command) {
 		return BUTTON_CLICKED;  
 		 	
 	}else if(command[0] == 'c' && command[1] == 'y' && command[2] == 'c' && command[3] == 'l' && command[4] == 'e' &&
-	   		 command[5] == '_' && command[6] == 'c' && command[7] == 'o' && command[8] == 'm' && command[9] == 'p' &&
-	   		 command[10] == 'l' && command[11] == 'e' && command[12] == 't' && command[13] == 'e') {
+	         command[5] == '_' && command[6] == 'c' && command[7] == 'o' && command[8] == 'm' && command[9] == 'p' &&
+	         command[10] == 'l' && command[11] == 'e' && command[12] == 't' && command[13] == 'e') {
 		return CYCLE_COMPLETE;   		 
 	}else {
 		return WRONG_INPUT; 
@@ -126,17 +126,22 @@ int check_cycle_complete_function(char *condition) {
        condition[8] == 'W' && condition[9] == 'H' && condition[10] == 'I' && condition[11] == 'L' &&
        condition[12] == 'E' && condition[13] == '_' && condition[14] == 'C' && condition[15] == 'L' && 
        condition[16] == 'O' && condition[17] == 'S' && condition[18] == 'I' && condition[19] == 'N' && 
-       condition[20] == 'G') || 
+       condition[20] == 'G')
+       || 
        (condition[0] == 'S' && condition[1] == 'T' && condition[2] == 'O' && condition[3] == 'P' && 
        condition[4] == 'P' && condition[5] == 'E' && condition[6] == 'D' && condition[7] == '_' && 
        condition[8] == 'W' && condition[9] == 'H' && condition[10] == 'I' && condition[11] == 'L' &&
        condition[12] == 'E' && condition[13] == '_' && condition[14] == 'O' && condition[15] == 'P' && 
        condition[16] == 'E' && condition[17] == 'N' && condition[18] == 'I' && condition[19] == 'N' && 
-       condition[20] == 'G')) {
+       condition[20] == 'G')
+       ||
+       (condition[0] == 'O' && condition[1] == 'P' && condition[2] == 'E' && condition[3] == 'N' && 
+        condition[4] == 'E' && condition[5] == 'D')
+       ||
+       (condition[0] == 'C' && condition[1] == 'L' && condition[2] == 'O' && condition[3] == 'S' && 
+        condition[4] == 'E' && condition[5] == 'D')) {
+        
      	return CANNOT_TYPE_CYCLE_COMPLETE;
        }
 	return EXIT_SUCCESS;
 }
-
-
-
