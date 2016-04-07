@@ -29,8 +29,6 @@ char * do_door( int * door, int * movement, int operation ) {
                 *door = 0;
                 *movement = 0;
                 return "CLOSED";
-            } else {
-                return "ERROR";
             }
     }
     if( !*door && !*movement && operation ) {
