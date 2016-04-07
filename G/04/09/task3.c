@@ -9,14 +9,15 @@ scanf("%s",array);
 scanf("%s",array1);
  int target = (array1[0]-'0') * 10 + (array1[1]-'0');
 int m=0;
-int charcount = 0;
+
+
 for(m=0; array[m]; m++) {
     if(array[m] != ' ') {
        arr[m]=array[m]-'0';
     }
 }
 int sum=0;
-int i=0;
+
 	if(m == 2){
 		sum = arr[0]+arr[1];
 		sum = arr[0] - arr[1];
