@@ -56,8 +56,7 @@ suma=sum1+sum3;
 supp=suma%10;
 if(arr[12]==10-supp){helpp=1;}
 else {helpp=0;}
-if(help==1 && helper==1 && helpp==1){printf("1\n");}
-else {printf("0\n");}
+if(help==1 && helper==1 && helpp==1){printf("1\n");
 
 if(isbn13[6]== '9' && isbn13[7]=='3' && isbn13[8]=='3' && isbn13[9]=='3' && isbn13[10] == '4' && isbn13[11] == '6')printf("Bluebridge\n");
 
@@ -67,8 +66,10 @@ if(isbn13[6]== '4' && isbn13[7]=='2' && isbn13[8]=='1' && isbn13[9]=='0' )printf
 
 if(isbn13[6]== '0' && isbn13[7]=='1')printf("Pyramid Books\n");
 
+}
+else {printf("0\n");}
+
 
 return 0 ;
 }
-
 
