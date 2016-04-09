@@ -4,49 +4,57 @@
 
 int main(){
 	
+	char sort[512][2*MAX] = {{-1}};
+	char help[2*MAX] = {-1};
 	char input[MAX];
-	int number[MAX];
 	int searched;
 	int plus_minus = 0;
-	int output = 0;
+	int times = 0;
 	
 	fgets(input, MAX, stdin);
 	scanf("%d", &searched);
 	
-	for(int i = 0; i < strlen(input) - 1; i++){
-		number[i] = input[i] - '0';
-	}
-	
-	int result = number[0];
+	int result = input[0] - '0';
 	
 	while(!(plus_minus >> (strlen(input) - 2) & 1)){
 		for(int i = 0; i < strlen(input) - 2; i++){
 			if((plus_minus >> i) & 1){
-				result -= number[i + 1];
+				result -= input[i + 1] - '0';
 			}
 			else{
-				result += number[i + 1];
+				result += input[i + 1] - '0';
 			}
 		}
 		if(result == searched){
-			output = 1;
+			times ++;
 			for(int i = 0; i < strlen(input) - 1; i++){
-				printf("%d", number[i]);
+				sort[times][i*2] =  input[i];
 				if(i < strlen(input) - 2){
 					if((plus_minus >> i) & 1){
-						printf("-");
+						sort[times][i*2 + 1] =  '-';
 					}
 					else{
-						printf("+");
+						sort[times][i*2 + 1] =  '+';
 					}
 				}
 			}
-			printf("=%d\n", searched);
 		}
-		result = number[0];
+		result = input[0] - '0';
 		plus_minus ++;
 	}
-	if(!output){
+	for(int i = 0; i < times ; i++){
+		for(int j = 0; j < times - j; j++){
+			if(strcmp(sort[i], sort[i + 1]) < 0){
+				strcpy(help, sort[i]);
+				strcpy(sort[i], sort[i + 1]);
+				strcpy(sort[i + 1], help);
+			}
+		}
+	}
+	for(int i = 1; i <= times ; i++){
+		printf("%s=%d\n", sort[i], searched);
+	}
+	if(!times){
 		printf("-1");
 	}
 	return 0;
