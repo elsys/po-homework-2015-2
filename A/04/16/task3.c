@@ -4,6 +4,8 @@
 #include <time.h>
 #include <math.h>
 
+/* !!! THIS PROGRAM USES RANDOMISING TO CREATE ANSWERS, PLEASE GIVE IT MORE THAN 1 SECOND TO RUN !!! */
+
 int main()
 {
     char input[40] = {'\0'};
