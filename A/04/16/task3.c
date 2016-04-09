@@ -141,7 +141,7 @@ int main()
     counter2 = 0;
     if(successcount==0)
     {
-        printf("-1");
+        printf("-1\n");
         return 1;
     }
     while(counter < 40)
@@ -163,7 +163,7 @@ int main()
     while(counter < successcount)
     {
         printf("\n%s", success[counter]);
-        printf("=%d", desired_output);
+        printf("=%d\n", desired_output);
         counter++;
     }
     return 0;
