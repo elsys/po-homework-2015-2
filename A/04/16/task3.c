@@ -2,9 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <math.h>
 
-/* !!! THIS PROGRAM USES RANDOMISING TO CREATE ANSWERS, PLEASE GIVE IT MORE THAN 1 SECOND TO RUN !!! */
+/* THIS PROGRAM USES RANDOM GENERATION OF STRINGS, PLEASE ALLOW MORE THAN 1 SECOND OF RUNTIME */
 
 int main()
 {
@@ -18,6 +17,7 @@ int main()
     int num_counter2 = 0;
     int op_counter = 1;
     int counter = 0;
+    int temp = 0;
     int counter2 = 0;
     int failurecount = 0;
     int successcount = 0;
@@ -27,15 +27,20 @@ int main()
     char failure[40][40] = {{'\0'}};
     int desired_output = 0;
     int op_selector = 0;
-    int possibilitites = 0;
+    int possibilities = 0;
     scanf("%s", input);
     scanf("%d", &desired_output);
     if(strlen(input)>10)
     {
         return 0;
     }
-    possibilitites = strlen(input) - 1;
-    possibilitites = pow(2, possibilitites);
+    temp = strlen(input) - 1;
+    possibilities = 2;
+    while(counter<temp-1)
+    {
+        possibilities = possibilities * 2;
+        counter++;
+    }
     while(input[num_counter2] != '\0')
     {
         equation[num_counter] = input[num_counter2];
@@ -53,7 +58,7 @@ int main()
     srand(time(NULL));
     op_counter = 1;
     strcpy(tempequation, equation);
-    while(counter<possibilitites)
+    while(counter<possibilities)
     {
         while(repeatflag==1)
         {
@@ -109,7 +114,7 @@ int main()
                 }
                 checkcounter++;
             }
-            if(counter==possibilitites)
+            if(counter==possibilities)
             {
                 repeatflag = 0;
             }
