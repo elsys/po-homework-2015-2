@@ -8,7 +8,7 @@ char input[MAX_INTPUT_LENGHT];
 int sum;
 
 int lenght;
-char combinations[10][20]={0};
+char combinations[10][20];
 int combinations_lenght = 0;
 int arr[10]={0};
 
