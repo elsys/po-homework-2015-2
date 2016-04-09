@@ -12,7 +12,7 @@ char* strsep();
 
 int main()
 {
-	char input[20];
+	char input[21];
 
 	scanf("%s",input);
 
