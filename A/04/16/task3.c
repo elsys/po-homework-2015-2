@@ -3,7 +3,7 @@
 #include <string.h>
 #include <time.h>
 
-/* THIS PROGRAM USES RANDOM GENERATION OF STRINGS, PLEASE ALLOW MORE THAN 1 SECOND OF RUNTIME */
+/* THIS PROGRAM USES RANDOMISING, GIVE IT MORE THAN ONE SECOND FOR RUNTIME */
 
 int main()
 {
@@ -58,7 +58,8 @@ int main()
     srand(time(NULL));
     op_counter = 1;
     strcpy(tempequation, equation);
-    while(counter<possibilities)
+    counter = 0;
+    while(counter<=possibilities)
     {
         while(repeatflag==1)
         {
@@ -102,13 +103,11 @@ int main()
             {
                 if(strcmp(tempequation, success[checkcounter]) == 0)
                 {
-                    strcpy(tempequation, equation);
                     repeatflag = 1;
                     tempsum = 0;
                 }
                 if(strcmp(tempequation, failure[checkcounter]) == 0)
                 {
-                    strcpy(tempequation, equation);
                     repeatflag = 1;
                     tempsum = 0;
                 }
@@ -126,8 +125,6 @@ int main()
         if(tempsum==desired_output)
         {
             strcpy(success[successcount], tempequation);
-            printf("\n%s", success[successcount]);
-            printf("=%d", desired_output);
             successcount++;
         }
         if(tempsum!=desired_output)
@@ -140,9 +137,34 @@ int main()
         op_counter = 1;
         counter++;
     }
+    counter = 0;
+    counter2 = 0;
     if(successcount==0)
     {
         printf("-1");
+        return 1;
+    }
+    while(counter < 40)
+    {
+        while(counter2 < (40 - counter))
+        {
+            if(strcmp(success[counter2], success[counter2+1]) < 0)
+            {
+                strcpy(tempequation, success[counter2]);
+                strcpy(success[counter2], success[counter2+1]);
+                strcpy(success[counter2+1], tempequation);
+            }
+            counter2++;
+        }
+        counter++;
+        counter2 = 0;
+    }
+    counter = 0;
+    while(counter < successcount)
+    {
+        printf("\n%s", success[counter]);
+        printf("=%d", desired_output);
+        counter++;
     }
     return 0;
 }
