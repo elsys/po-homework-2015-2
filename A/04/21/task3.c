@@ -51,7 +51,7 @@ int main(){
 			}
 		}
 	}
-	for(int i = 1; i <= times ; i++){
+	for(int i = 1; i <= times; i++){
 		printf("%s=%d\n", sort[i], searched);
 	}
 	if(!times){
