@@ -44,5 +44,18 @@ void the_magic(int input, int length, int required_number) {
 		printf("=%d", required_number);
 	}
 
+	for(i = 2, temp = numbers[1]; i < length + 1; i++) {
+		temp -= numbers[i];
+	}
+
+	if(temp == required_number) {
+		printf("%d", numbers[1]);
+		for(i = 2; i < length; i++) {
+			printf("-%d", numbers[i]);
+		}
+		printf("=%d", required_number);
+	}
+
+
 
 }
