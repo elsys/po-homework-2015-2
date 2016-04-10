@@ -4,8 +4,8 @@
 
 int main(){
 	
-	char sort[512][2*MAX] = {{-1}};
-	char help[2*MAX] = {-1};
+	char sort[512][2*MAX] = {{0}};
+	char help[2*MAX] = {0};
 	char input[MAX];
 	int searched;
 	int plus_minus = 0;
@@ -51,7 +51,7 @@ int main(){
 			}
 		}
 	}
-	for(int i = 1; i <= times ; i++){
+	for(int i = 1; i <= times; i++){
 		printf("%s=%d\n", sort[i], searched);
 	}
 	if(!times){
