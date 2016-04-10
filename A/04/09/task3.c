@@ -5,7 +5,7 @@
 #define MAX_DIGITS 10
 
 int number(const char);
-int final_combination(char*);
+int final_combo(char*);
 void generate_signs(const int, const int, char*);
 void sort_combos(char**, const int);
 void print_combos(char**, const int, const int);
@@ -28,7 +28,7 @@ int main() {
     sum = number(digits[0]);
     
     combos_length = 0;
-    for (int combo = 0; !final_combination(signs); combo++) {
+    for (int combo = 0; !final_combo(signs); combo++) {
         generate_signs(combo, length - 2, signs);
         for (int i = 1; i < length; i++) {
             if (signs[i - 1] == '+') {
@@ -40,7 +40,7 @@ int main() {
         if (sum == result) {
             *(combos + combos_length) = combo;
             combos_length++;
-        } else if (final_combination(signs) && combos_length == 0) {
+        } else if (final_combo(signs) && combos_length == 0) {
             printf("-1");
             return 0;
         }
@@ -68,7 +68,7 @@ int number(const char c) {
     return c - '0';
 }
 
-int final_combination(char *signs) {
+int final_combo(char *signs) {
     int length = strlen(signs);
     for (int i = 0; i < length; i++) {
         if (signs[i] != '+') {
