@@ -10,7 +10,7 @@ int main()
     out[0]=1;
     for(i=1;!feof(stdin);i++){
         scanf("%s",in);
-        if(strcmp(in, "button_clicked")){
+        if(strcmp(in, "button_clicked")==0){
             if(out[i-1]==1)
                 out[i]=4;
             if(out[i-1]==2)
@@ -24,7 +24,7 @@ int main()
             if(out[i-1]==6)
                 out[i]=3;
         }
-        if(strcmp(in, "cycle_complete")){
+        if(strcmp(in, "cycle_complete")==0){
             if(out[i-1]==3)
                 out[i]=1;
             if(out[i-1]==4)
@@ -34,17 +34,17 @@ int main()
     }
     l=strlen(out);
     for(i=0;i<l-1;i++){
-        if(out==1)
+        if(out[i]==1)
             printf("\nCLOSED");
-        if(out==2)
+        if(out[i]==2)
             printf("\nOPEN");
-        if(out==3)
+        if(out[i]==3)
             printf("\nCLOSING");
-        if(out==4)
+        if(out[i]==4)
             printf("\nOPENING");
-        if(out==5)
+        if(out[i]==5)
             printf("\nSTOPPED_WHILE_CLOSING");
-        if(out==6)
+        if(out[i]==6)
             printf("\nSTOPPED_WHILE_OPENING");
     }
 

@@ -1,77 +1,71 @@
 #include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#define BLUEBRIDGE = 933346
-#define ALISON = 55583
-#define FUN = 4210
-#define PYRAMID = 01
-
-int main(){
-
-int dash_position = 0;
-char isbn[20];
-char filtered[13];
-int publisher[7];
-int filtered_digits[13];
-int valid = 0;
-int i,digit_counter=0,checksum,filter_count;
-int s, reminder;
-
-
-scanf("%s", &isbn);
-
-if(isbn[0] == 57 && isbn[1] == 55 && (isbn[2] == 56 || isbn[2] == 57)){
-	valid = 1;
-}
-
-if (valid != 1){
-	printf("\n0");
-	return 1;
-}
-
-filter_count = 0;
-for(i=0; i=strlen(isbn); i++){
-	if(isbn[i]>47 && isbn[i]<58){
-		filtered[filter_count] = isbn[i];
-		filter_count++; 
-	}
-}
-
-if(filter_count != 13){
-	printf("\n0");
-	return 1;
-}else {valid = 1;}
-
-
-for(i=0; i<13; i++){
-	filtered_digits[i] = atoi(filtered[i]);
-}
-
-s = filtered_digits[0] + filtered_digits[1]*3 + filtered_digits[2] + filtered_digits[3]*3 + filtered_digits[4] + filtered_digits[5]*3 + filtered_digits[6] + filtered_digits[7]*3 + filtered_digits[8] + filtered_digits[9]*3 + filtered_digits[10] + filtered_digits[11]*3 + filtered_digits[12];
-
-reminder = s % 10;
-checksum = 10 - reminder;
-
-if(checksum != filtered_digits[12]){
-	printf("\n0");
-	return 1;
-}else {valid = 1;}
+#include <stdlib.h>
  
-for(i=6; i<strlen(isbn); i++){
-	if(isbn[i] == 45){
-		dash_position = i;
-	}
-}
-
-filter_count = 0;
-for(i=6; i=dash_position; i++){
-	publisher[filter_count] = atoi(isbn[i]);
-	filter_count ++;	
-}
-
-if(valid = 1){
-printf("1");
-}
-
-return 0;
+int main()
+{
+    int numbers[20];
+    int i, j = 0, count = 0, checkdigit = 0;
+    char ISBN[20];
+ 
+    scanf("%s", ISBN);
+ 
+    if(ISBN[0] == '9' && ISBN[1] == '7')
+    {
+        if(ISBN[2] == '9' || ISBN[2] == '8')
+        {
+ 
+            for(i = 0; i < 20; i++)
+            {
+                if(ISBN[i] >= '0' && ISBN[i] <= '9')
+                {
+                    numbers[j] = (ISBN[i] - 48);
+                    count++;
+                    j++;
+                }
+            }
+           
+            if(count != 13)
+            {
+                printf("0\n");
+                return 0;
+            }
+           
+            for(i = 0; i < 12; i++)
+            {
+                if(i % 2 == 1)
+                    checkdigit = checkdigit + numbers[i]*3;
+                else
+                    checkdigit = checkdigit + numbers[i];
+            }
+           
+            checkdigit = checkdigit % 10;
+            checkdigit = 10 - checkdigit;
+           
+            if(numbers[12] != checkdigit)
+            {
+                printf("0\n");
+                return 0;
+            }
+           
+            printf("1\n");
+            if(ISBN[6] == '9' && ISBN[7] == '3' && ISBN[8] == '3' && ISBN[9] == '3' && ISBN[10] == '4' && ISBN[11] == '6')
+                printf("Bluebridge");
+            if(ISBN[6] == '5' && ISBN[7] == '5' && ISBN[8] == '5' && ISBN[9] == '8' && ISBN[10] == '3')
+                printf("Alyson Books");
+            if(ISBN[6] == '4' && ISBN[7] == '2' && ISBN[8] == '1' && ISBN[9] == '0')
+                printf("FUNimation Productions, Ltd.");
+            if(ISBN[6] == '0' && ISBN[7] == '1')
+                printf("Pyramid Books");
+        }
+        else
+        {
+            printf("0\n");
+        }
+    }
+    else
+    {
+        printf("0\n");
+    }
+ 
+    return 0;
 }
