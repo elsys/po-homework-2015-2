@@ -72,19 +72,19 @@ int main()
         	
         	if(company == 1)
             	{
-            		printf("Bluebridge");
+            		printf("\nBluebridge");
         	}
         	if(company == 2)
             	{
-            		printf("Alyson Books");
+            		printf("\nAlyson Books");
         	}
         	if(company == 3)
             	{
-            		printf("FUNimation Productions, Ltd.");
+            		printf("\nFUNimation Productions, Ltd.");
         	}
         	if(company == 4)
             	{
-            		printf("Pyramid Books");
+            		printf("\nPyramid Books");
     		}
     	}
    
