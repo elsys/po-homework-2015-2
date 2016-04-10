@@ -4,8 +4,8 @@
 
 int main(){
 	
-	char sort[512][2*MAX] = {{-1}};
-	char help[2*MAX] = {-1};
+	char sort[512][2*MAX] = {{0}};
+	char help[2*MAX] = {0};
 	char input[MAX];
 	int searched;
 	int plus_minus = 0;
