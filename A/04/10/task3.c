@@ -1,0 +1,108 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main()
+{
+   char string[20],string1[10][20];
+   int k=0,y=0,z=0,sum=0,a,l,s=1;
+   scanf("%s",string);
+   scanf("%d",&a);
+   l=strlen(string);
+   for(k=l-1;k>0;k--)
+      string[k+k]=string[k];
+   for(k=0;k<l-1;k++)
+       s=s*2;
+   l=l+l-1;
+   for(k=1;k<l-1;k=k+2)
+       string[k]='+';
+   for(k=0;k<l;k=k+2)
+       string[k]=string[k]-'0';
+
+for(k=1,z=0;k<s;k++)
+{
+	sum=string[0];
+	for(y=1;y<l;y=y+2)
+	if(string[y]=='+')
+		sum=sum+string[y+1];
+	else
+		sum=sum-string[y+1];
+	if(sum==a)
+	{
+		strcpy(string1[z],string);
+		z++;
+	}
+	if(string[l-2]=='+')
+		string[l-2]='-';
+	else
+		string[l-2]='+';
+	if(k%2==0)
+	{
+	if(string[l-4]=='+')
+		string[l-4]='-';
+	else
+		string[l-4]='+';
+	}
+     if(k%4==0)
+	{
+		if(string[l-6]=='+')
+			string[l-6]='-';
+		else
+			string[l-6]='+';
+	}
+	if(k%8==0)
+	{
+		if(string[l-8]=='+')
+            	string[l-8]='-';
+        else
+            	string[l-8]='+';
+     }
+	if(k%16==0)
+     {
+        	if(string[l-10]=='+')
+            	string[l-10]='-';
+        	else
+            	string[l-10]='+';
+     }
+     if(k%32==0)
+     {
+        	if(string[l-12]=='+')
+            	string[l-12]='-';
+        	else
+            	string[l-12]='+';
+     }
+     if(k%64==0)
+     {
+        	if(string[l-14]=='+')
+            	string[l-14]='-';
+        	else
+            	string[l-14]='+';
+     }
+     if(k%128==0)
+     {
+        	if(string[l-16]=='+')
+            	string[l-16]='-';
+        	else
+            	string[l-16]='+';
+     }
+     if(k%256==0)
+     {
+        	if(string[l-18]=='+')
+            	string[l-18]='-';
+        	else
+            	string[l-18]='+';
+     }
+}
+    	if(z==0)
+        	printf("-1");
+    	for(k=z-1;k>=0;k--)
+    	{
+     	for(y=0;y<l;y++)
+       	if(y%2!=0)
+        		printf("%c",string1[k][y]);
+       	else
+        	printf("%d",string1[k][y]);
+        	printf("=%d\n",a);
+    	}
+    	return 0;
+}
