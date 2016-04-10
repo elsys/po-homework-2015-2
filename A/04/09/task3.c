@@ -50,7 +50,11 @@ int main() {
     for (int i = 0; i < combos_length; i++) {
         generate_signs(combos[i], length - 2, signs);
         for (int j = 0; j < length; j++) {
-            sprintf(temp, "%c%c", digits[j], signs[j]);
+            if (j != length - 1) {
+                sprintf(temp, "%c%c", digits[j], signs[j]);
+            } else {
+                sprintf(temp, "%c", digits[j]);
+            }
             strcat(combos_list[i], temp);
         }
     }
