@@ -3,11 +3,8 @@
 
 void calculation(int, int, int);
 
-int expected;
-int length;
-int flag = 0;
-char entered_digits[10];
-char result[22];
+int expected , length , ok = 0;
+char entered_digits[10] , result[22];
 
 int main(){
 
@@ -21,7 +18,7 @@ int main(){
 
     calculation(1, entered_digits[0] - '0', 0);
 
-    if (flag == 0){
+    if (ok == 0){
 
         printf("%d\n", -1);
 
@@ -36,7 +33,7 @@ void calculation(int number, int current_sum, int level){
 
     if (number == length){
         if (current_sum == expected){
-            flag = 1;
+            ok = 1;
 
             help = number*2;
 
