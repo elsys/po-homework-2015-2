@@ -52,7 +52,7 @@ int main(){
 		}
 	}
 	for(int i = 1; i <= times; i++){
-		printf("%s=%d\n", sort[i], searched);
+		printf("%s=%d\n", sort[i-1], searched);
 	}
 	if(!times){
 		printf("-1");
