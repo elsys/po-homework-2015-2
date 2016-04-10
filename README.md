@@ -3,6 +3,7 @@
 ## News
 
 1. Срокът на домашно 01 е удължен до този четвъртък ( **2016-03-17 23:59:59** )!
+2. Срокът на домашно 04 е удължен до тази неделя ( **2016-04-10 23:59:59** )!
 
 ## Important
 
@@ -11,7 +12,7 @@ https://docs.google.com/spreadsheets/d/1bj6Y8O1POXFm2LN03ut5ORoGL7C-1lcWnt0Ij9WP
 
 ## Lectures
 
-### Lecture 7 
+### Lecture 7 - Exam Preparation
 https://docs.google.com/presentation/d/1U1J_ItIyob_k8L_KUiAChuaCvIScqRFbd8XgWmb_F8E
 
 ### Lecture 6 - Pointers & Structures
