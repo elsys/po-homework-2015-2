@@ -24,7 +24,7 @@ int main()
     remove_all_chars(str, '-');
     res=checkSum(str);
 
-    printf("%d\n", res);
+    printf("%d", res);
     if(res==1)
     {
         for(i1=0;i1<=3 ;i1++)
@@ -32,7 +32,7 @@ int main()
             house=strstr(str2,s1[i1]);
             if(house!=NULL)
             {
-                printf("%s",s2[i1]);
+                printf("\n%s",s2[i1]);
                 return 0;
             }
         }
