@@ -32,22 +32,22 @@ void the_magic(int input, int length, int required_number) {
 		input /= 10;
 	}
 
+	/*IF ALL ARE +*/
 	for(i = 0; i < length; i++) {
 		temp += numbers[i];
 	}
-
 	if(temp == required_number) {
 		printf("%d", numbers[1]);
 		for(i = 2; i < length; i++) {
 			printf("+%d", numbers[i]);
 		}
-		printf("=%d", required_number);
+		printf("=%d", required_number);	
 	}
 
+	/*IF ALL ARE -*/
 	for(i = 2, temp = numbers[1]; i < length + 1; i++) {
 		temp -= numbers[i];
 	}
-
 	if(temp == required_number) {
 		printf("%d", numbers[1]);
 		for(i = 2; i < length; i++) {
@@ -55,6 +55,10 @@ void the_magic(int input, int length, int required_number) {
 		}
 		printf("=%d", required_number);
 	}
+	else {
+		printf("-1");
+	}
+
 
 
 
