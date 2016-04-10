@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-void the_magic(int, int, int);
+int the_magic(int, int, int);
 
 int main() {
 	int input, temp;
@@ -22,7 +22,7 @@ int main() {
 	return 0;
 }
 
-void the_magic(int input, int length, int required_number) {
+int the_magic(int input, int length, int required_number) {
 
 	int numbers[10];
 	int i, temp = 0;
@@ -42,6 +42,7 @@ void the_magic(int input, int length, int required_number) {
 			printf("+%d", numbers[i]);
 		}
 		printf("=%d", required_number);	
+		return 0;
 	}
 
 	/*IF ALL ARE -*/
@@ -60,6 +61,6 @@ void the_magic(int input, int length, int required_number) {
 	}
 
 
-
+	return 0;
 
 }
