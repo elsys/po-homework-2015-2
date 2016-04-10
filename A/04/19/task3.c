@@ -12,7 +12,7 @@ int main(){
 	scanf("%ld", &answer);
 
 	if(digits(numbers, answer))
-		printf("-1");;
+		printf("-1");
 
 	return 0;
 }
