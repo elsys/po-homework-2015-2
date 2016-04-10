@@ -3,8 +3,6 @@
 #include <string.h>
 #include <time.h>
 
-/* THIS PROGRAM USES RANDOMISING, GIVE IT MORE THAN ONE SECOND FOR RUNTIME */
-
 int main()
 {
     char input[40] = {'\0'};
@@ -23,8 +21,8 @@ int main()
     int successcount = 0;
     int checkcounter = 0;
     int repeatflag = 1;
-    char success[40][40] = {{'\0'}};
-    char failure[40][40] = {{'\0'}};
+    char success[512][40] = {{'\0'}};
+    char failure[512][40] = {{'\0'}};
     int desired_output = 0;
     int op_selector = 0;
     int possibilities = 0;
@@ -99,7 +97,7 @@ int main()
                 counter2++;
             }
             repeatflag = 0;
-            while(checkcounter<40)
+            while(checkcounter<512)
             {
                 if(strcmp(tempequation, success[checkcounter]) == 0)
                 {
@@ -141,12 +139,12 @@ int main()
     counter2 = 0;
     if(successcount==0)
     {
-        printf("-1\n");
+        printf("-1");
         return 1;
     }
-    while(counter < 40)
+    while(counter < 512)
     {
-        while(counter2 < (40 - counter))
+        while(counter2 < (512 - counter))
         {
             if(strcmp(success[counter2], success[counter2+1]) < 0)
             {
@@ -163,7 +161,7 @@ int main()
     while(counter < successcount)
     {
         printf("\n%s", success[counter]);
-        printf("=%d\n", desired_output);
+        printf("=%d", desired_output);
         counter++;
     }
     return 0;
