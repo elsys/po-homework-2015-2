@@ -4,7 +4,7 @@
 #define SORTLEN 22
 #define MAXINPLEN 11
 
-void combination_sort(char, int);
+void combination_sort(char*, int);
 
 int main(){
 	int i = 0;
@@ -56,7 +56,7 @@ int main(){
 	return 0;
 }
 
-void combination_sort(char combinations[512][SORTLEN], int variation_number){
+void combination_sort(char* combinations[512][SORTLEN], int variation_number){
 	char temp[SORTLEN];
 	int i, j;
 	for(i = 0; i < variation_number; i++){
