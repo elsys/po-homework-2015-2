@@ -31,7 +31,6 @@ int main()
 				{
 					i++;
 				}
-				printf("i 		%c\n", ISBN13[i]);
 				if (ISBN13[i+1]=='9' && ISBN13[i+2]=='3' && ISBN13[i+3]=='3' && ISBN13[i+4]=='3' && ISBN13[i+5]=='4' && ISBN13[i+6]=='6')
 				{
 					printf("1\nBluebridge");
