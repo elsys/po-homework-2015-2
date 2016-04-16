@@ -36,7 +36,7 @@ int main()
     }
 
 
-    EAN = ((isbn[0]- '0')  10 + isbn[1] - '0' )  10 + isbn[2] - '0';
+    EAN = ((isbn[0]- '0') * 10 + isbn[1] - '0' ) * 10 + isbn[2] - '0';
 
     for(i = 0;i < length;i++){
 
