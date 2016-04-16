@@ -93,29 +93,29 @@ int main()
 
     lang = i; 
 
-    printf("Door:CLOSED\n");
+    printf("Door: CLOSED\n");
 
     for(i = 0 ; i < lang ; i++)
     {
            switch(output[i])
            {
             case 0:
-                printf("Door:CLOSED\n");
+                printf("Door: CLOSED\n");
                 break;
             case 1:
-                printf("Door:OPENING\n");
+                printf("Door: OPENING\n");
                 break;
             case 2:
-                printf("Door:OPEN\n");
+                printf("Door: OPEN\n");
                 break;
             case 3:
-                printf("Door:CLOSING\n");
+                printf("Door: CLOSING\n");
                 break;
             case 4:
-                printf("Door:STOPPED_WHILE_CLOSING\n");
+                printf("Door: STOPPED_WHILE_CLOSING\n");
                 break;
             case 5:
-                printf("Door:STOPPED_WHILE_OPENING\n");
+                printf("Door: STOPPED_WHILE_OPENING\n");
                 break;
            }
     }
