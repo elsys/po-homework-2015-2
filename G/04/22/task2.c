@@ -36,15 +36,15 @@ int main()
 	l=strlen(door_states);
 	for(i=0; i<l-1; i++)
 	{
-		printf("\nDoor: ");
+		
 		switch(door_states[i])
 		{
-			case 1: printf("CLOSED"); break;
-			case 2: printf("OPEN"); break;
-			case 3: printf("CLOSING"); break;
-			case 4: printf("OPENING"); break;
-			case 5: printf("STOPPED_WHILE_CLOSING"); break;
-			case 6: printf("STOPPED_WHILE_OPENING"); break;
+			case 1: printf("Door: CLOSED\n"); break;
+			case 2: printf("Door: OPEN\n"); break;
+			case 3: printf("Door: CLOSING\n"); break;
+			case 4: printf("Door: OPENING\n"); break;
+			case 5: printf("Door: STOPPED_WHILE_CLOSING\n"); break;
+			case 6: printf("Door: STOPPED_WHILE_OPENING\n"); break;
 		}
 	}
 	return 0;
