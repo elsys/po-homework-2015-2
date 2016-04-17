@@ -36,13 +36,13 @@ int main(){
     counter = 0;
 
     for(;counter < (strlen(routine)-1); counter++){
-        printf("Door: "); switch(routine[counter]){
-                                case 1: printf("CLOSED\n"); break;
-                                case 2: printf("OPENING\n"); break;
-                                case 3: printf("OPEN\n"); break;
-                                case 4: printf("CLOSING\n"); break;
-                                case 5: printf("STOPPED_WHILE_CLOSING\n"); break;
-                                case 6: printf("STOPPED_WHILE_OPENING\n"); break;
+        		switch(routine[counter]){
+                       		case 1: printf("Door: CLOSED\n"); break;
+                              	case 2: printf("Door: OPENING\n"); break;
+                              	case 3: printf("Door: OPEN\n"); break;
+                             	case 4: printf("Door: CLOSING\n"); break;
+                            	case 5: printf("Door: STOPPED_WHILE_CLOSING\n"); break;
+                           	case 6: printf("Door: STOPPED_WHILE_OPENING\n"); break;
 
                             }
     }
