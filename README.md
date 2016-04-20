@@ -14,6 +14,9 @@ https://docs.google.com/spreadsheets/d/1bj6Y8O1POXFm2LN03ut5ORoGL7C-1lcWnt0Ij9WP
 
 ## Lectures
 
+### Lecture 8 - Dynamic Memory
+https://docs.google.com/presentation/d/1r-9OIEe-ILXE491j8nur2U-Hljk831VHZfUiTgUwUz4
+
 ### Lecture 7 - Exam Preparation
 https://docs.google.com/presentation/d/1U1J_ItIyob_k8L_KUiAChuaCvIScqRFbd8XgWmb_F8E
 
