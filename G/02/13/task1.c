@@ -1,123 +1,29 @@
+#include <string.h>
 #include <stdio.h>
 
-
-void minmax(int *arr, int size, int *min, int *max) 
-{
-    
-int i = 0;
-    
-*min = arr[i];
-    
-*max = arr[i];
-    
-for(; i < size; ++i) 
-{
-        
-if(arr[i] < *min) 
-{
-            
-*min = arr[i];
-        
-}
-        
-if(arr[i] > *max) 
-{
-            
-*max = arr[i];
-        
-}
-    
+void minmax(int *arr, int *size,int *counter,int *min,int *max){
+	if(*min>*arr){
+		*min=*arr;
+	}
+	if(*max<*arr){
+		*max=*arr;
+	}
+	if(*counter==*size-1){
+		*min=*min+*max;
+	printf("%d",*min);
+	}
 }
 
-}
-
-int digit(int curr, char n) 
+int main()
 {
-  
-return (curr * 10) + n - '0';  
-
-}
-
-
-int main() 
-{
-    
-int min, max, n, i, nums[500], negs[500];
-    
-char c;
-    
-n = i = 0;
-    
-while((c = getchar()) != '\n') 
-{
-       
-n = digit(n, c);
-    
-}
-    
-for(i = 0; i < n; ++i) 
-{
-       
- nums[i] = 0;
-        
-negs[i] = 0;
-    
-}
-    
-i = 0;
-    
-while((c = getchar()) != EOF) 
-{
-        
-switch(c) 
-{
-            
-case '-': 
-{
-               
- negs[i] = 1;
-                
-break;
-            
-}
-            
-case ' ': 
-{
-                
-i++;
-                
-break;
-            
-}
-            
-default: 
-{
-                
-nums[i] = digit(nums[i], c);              
-                
-break;
-            
-}
-        
-}
-   
-}
-    
-for(i = 0; i < n; ++i) 
-{
-        
-if(negs[i]) 
-{
-           
- nums[i] *= -1;
-        
-}
-    
-}
-    
-minmax(nums, n, &min, &max);
-    
-printf("\n%d\n", min + max);  
-return 0;
-
+	int min,arr[500],max,counter,size;
+	scanf("%d",&size);
+	scanf("%d",&arr[0]);
+	min=arr[0];
+	max=arr[0];
+	for(counter=1;counter<size;counter++){
+		scanf("%d",&arr[counter]);
+		minmax(&arr[counter],&size,&counter,&min,&max);
+	}
+	return 0;
 }
