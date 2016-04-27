@@ -28,7 +28,6 @@ int main()
 
 void solve(int currentIndex, int currentSum, int level)
 {
-    int i;
     if (currentIndex == length)
     {
         if (currentSum == expected)
