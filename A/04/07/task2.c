@@ -37,7 +37,7 @@ int main()
             if(strcmp(command, "button_clicked") == 0)
             {
                 condition = 3;
-                printf("\nSTOPPED_WHILE_OPENING");
+                printf("\nDoor: STOPPED_WHILE_OPENING");
                 if(scanf("%s", command) == EOF)
                     break;
             }
