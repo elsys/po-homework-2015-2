@@ -54,7 +54,7 @@ int main()
 				for(j = 0; array[i].same[j][0] != 0  && strcmp(input, array[i].same[j]) != 0; j++);
 				
 
-				if(strcmp(input, array[i].same[j]) != 0 && j < 3)
+				if(strcmp(input, array[i].same[j]) != 0 )
 					strcpy(array[i].same[j], input);
                
 
