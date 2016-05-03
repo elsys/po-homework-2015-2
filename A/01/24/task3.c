@@ -1,129 +1,169 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#define WORD 200
-#define MAX 3000
+#include <stdlib.h>
 
-struct occurance_t
-{
-	long hash;
-	int count;
-	char same[4][WORD];
-	int len;
+
+#define STRUCT_MAX_LEN 3000
+#define WORD_LEN 200
+
+
+struct occurance_t{
+	int hash;
+	char same[4][WORD_LEN];
 };
 
-long hash(char *word);
-void sort(struct occurance_t *word, int len);
+
+
+int sorting(struct occurance_t* );
+
+int hash(char * );
+
+void printing(struct occurance_t *,int );
+
+
 
 int main()
 {
-	int i = 0, j, result, words_counter = 0;
-	char arr[MAX];
-	struct occurance_t word[MAX];
+	
+	char input[WORD_LEN];
+	struct occurance_t array[STRUCT_MAX_LEN];
+	int i, j,length;
 
-	for(i = 0; i < MAX; i++)
+
+	for(i = 0; i < STRUCT_MAX_LEN; i++)
 	{
-		word[i].hash=0;
-		word[i].count=0;
-		for(j = 0;j < 4;j++)
-		word[i].same[j][0] = '\0';
+		array[i].hash = 0;
+
+		for(j = 0; j < 4; j++)
+			array[i].same[j][0] = 0;
+		
 	}
 
 
-	do
-	{
+	do{
+		i = 0;
 
-		scanf("%s", arr);
-		result = hash(arr);
-	
-		for(j = 0; j < MAX; j++)
-			{
-				if(word[j].hash==result)
-				{	
-					strcpy(word[j].same[word[j].count],arr);
+		scanf(" %s", input);
+		
 
-					word[j].count++;
-					
-					break;
-				}
-
-				else if(word[j].hash == 0)
-				{
-					word[j].hash=result;
-					
-					word[j].count=1;
-					
-					strcpy(word[j].same[0],arr);
-					
-					words_counter++;
-					
-					break;
-				}
-			}
-			
-		if(word[j].count==4)
-			break;
-
-	
-	}while(1>0);
-
-  	sort(word,words_counter - 1); 	
-	
-      
-   	for(i = 0; word[i].hash != '\0'; i++)
-	{
-		if(word[i].count > 1)
+		while(array[i].hash != 0)
 		{
-		printf("%ld  ",word[i].hash);
-		for(j = 0 ; j <4;j++)
-			printf("%s ",word[i].same[j]);
-		printf("\n");
+			if(hash(input) == array[i].hash)
+			{
+
+				for(j = 0; array[i].same[j][0] != 0  && strcmp(input, array[i].same[j]) != 0; j++);
+				
+
+				if(strcmp(input, array[i].same[j]) != 0 )
+					strcpy(array[i].same[j], input);
+               
+
+
+                break;
+			}
+
+			i++;
 		}
-	}
+		
+		if(array[i].hash == 0)
+		{
+			array[i].hash = hash(input);
+
+			strcpy(array[i].same[0], input);
+		}
+
+		if(j == 3)
+            break;
+	
+
+	}while(1);
+
+	
+	length = sorting(array);
+
+
+	printing(array,length);
 	
 
 	return 0;
 }
 
-long hash(char *word)
+int hash(char* input)
 {
-	int i,len;
-	long asc = 42;
-	
-	len = strlen(word) - 1;
-	
-	for(i = 0; i <= len ; i++)
+
+	int length = strlen(input);
+	int hashed_value = 42;
+	int i;
+
+	if(length > 1)
 	{
-		asc +=   word[i] * (i + 1);
+		for(i = 0; i < length; i++)
+		{
+			hashed_value = hashed_value + input[i]*(i+1);
+		}
 	}
 
-	return asc;
+	return hashed_value;
 }
 
-
-void sort(struct occurance_t *word, int len) 
+int sorting(struct occurance_t* array)
 {
-    
-    struct occurance_t swap;
-	int check,i;
+	int i,j,k;
+
+	struct occurance_t temp;
+	
+	int len;
+	
+	for(len = 0; array[len].hash != 0; len++);
+
+	for(i = 0; i < (len-1); i++)
+	{
+		
+		for(j = 0; j < (len-i-1); j++)
+		{
+			
+			if(array[j].hash > array[j+1].hash)
+			{
+				
+				temp.hash = array[j].hash;
 
 
-    do 
-    {
-        check = 1;
-       
-        for (i = 0; i < len; i++) 
-        {
-            if (word[i].hash > word[i + 1].hash) 
-            {
-            	swap = word[i];
+				for(k = 0; array[j].same[k] != 0 && k < 4 ; k++)
+					strcpy(temp.same[k], array[j].same[k]);
+				
+				array[j].hash = array[j+1].hash;
+				
+				for(k = 0; array[j+1].same[k] != 0 && k < 4; k++)
+					strcpy(array[j].same[k], array[j+1].same[k]);
+				
 
-            	word[i] = word[i + 1];
-                
-                word[i + 1] = swap;
-                
-                check = 0;
-            }
-        }
-    }while (!check);
+				array[j+1].hash = temp.hash;
+				for(k = 0; temp.same[k] != 0 && k < 4 ; k++)
+					strcpy(array[j+1].same[k], temp.same[k]);
+			}
+		}
+	}
+	return len;
+}
+
+void printing(struct occurance_t* array, int len)
+{
+	int i,j;
+
+
+
+	for(i = 0; i < len; i++)
+	{
+		if(array[i].same[1][0] != 0)
+		{
+			printf("%d", array[i].hash);
+			
+			for(j = 0; j < 4 ; j++)
+			{
+				if(array[i].same[j][0] != 0)
+					printf(" %s", array[i].same[j]);
+			}
+			printf(" ");
+		}
+	}
 }
