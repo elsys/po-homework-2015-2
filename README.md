@@ -14,6 +14,9 @@ https://docs.google.com/spreadsheets/d/1bj6Y8O1POXFm2LN03ut5ORoGL7C-1lcWnt0Ij9WP
 
 ## Lectures
 
+### Lecture 9 - Dynamic Memory II
+https://docs.google.com/presentation/d/1W2Ev9Ino72fujRBdHPQntxN7V4kZigW8YtTwm6WW42I/edit?usp=sharing
+
 ### Lecture 8 - Dynamic Memory
 https://docs.google.com/presentation/d/1r-9OIEe-ILXE491j8nur2U-Hljk831VHZfUiTgUwUz4
 
