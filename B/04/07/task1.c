@@ -26,7 +26,7 @@ int main(){
     char a[20];
     scanf("%s",a);
     if((a[16]-'0') != CheckISBN(a)) end =5;
-    if(strncmp(a,"978",3) != 0 && strncmp(a,"979",3) != 0) end = 0;
+    if(strncmp(a,"978-",4) != 0 && strncmp(a,"979-",4) != 0) end = 0;
     for(i=0;i<strlen(a);i++) if(a[i] != '-') shit++;
     if(shit != 13) end=0;
     printf("%d",end);
