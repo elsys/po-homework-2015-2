@@ -6,75 +6,103 @@ struct occurance_t
 	long hash;
 	int count;
 	char array[4][200];
-	int n;
 };
 
 long hash(char *word);
+int repeating_words(struct occurance_t *occurance, int pos, char *word);
 
 int main()
 {
 	char word[200];	
 	struct occurance_t occurance[3000];
 	struct occurance_t temp;
-	int n=0,i=0,j=0;
-	int word_found,found,stop=0;
+	int i=0,j=0,stop=0,found,sort;
 	long sum=0;
 	do{
-		do{
-			scanf("%s",word);
-		}while(strlen(word)>200);
-		sum=hash(word);
-		found=0;
-		for(i=0;i<n;i++)
+		scanf("%s",word);
+	}while(strlen(word)>200);
+	sum=hash(word);
+	found=0;
+	for(i=0;i<3000 && stop==0;i++)
+	{
+		for(j=0;j<=i;j++)
 		{
-			if(occurance[i].hash==sum)
+			if(occurance[j].count==0)
+ 			{
+ 				occurance[j].hash=sum;
+				strcpy(occurance[j].array[occurance[j].count],word);
+				occurance[j].count++;
+				if(occurance[j].count==4)
+				{
+					stop=1;
+					break;
+				}
+				found++;
+				break;
+			}
+			if(occurance[j].hash==sum)
 			{
-				occurance[i].count++;
-				found=1;
-				word_found=0;
-				for(j=0;j<occurance[i].n;j++)
+				if(repeating_words(occurance,j,word)==1)
 				{
-					if(occurance[i].array[j]==word)
- 					{
-						word_found=1;
-					}
+					break;
 				}
-				if(word_found==0)
+				strcpy(occurance[j].array[occurance[j].count],word);
+				occurance[j].count++;
+				if(occurance[j].count==4)
 				{
-					strcpy(occurance[i].array[occurance[i].n],word);
-					occurance[i].n++;
-					if(occurance[i].n==4)
-					{
-						stop=1;
-					}
+					stop=1;
+					break;
 				}
+				break;
 			}
 		}
-		if(found==0)
+		if(stop==0)
 		{
-			occurance[n].hash=sum;
-			occurance[n].count=1;
-			strcpy(occurance[n].array[0],word);
-			occurance[n].n=1;
-			n++;
+			scanf("%s",word);
+			sum=hash(word);
 		}
-
-	}while(stop!=1 && n<300);
-	for(i=0;i<n;i++)
-     {
-          if(occurance[i].hash>occurance[i+1].hash)
-          {
-              temp=occurance[i];
-              occurance[i]=occurance[i+1];
-              occurance[i+1]=temp;
-          }
-      }
-	for(i=0;i<n;i++)
+	}
+	while(sort!=1)
 	{
-		printf("\n%ld",occurance[i].hash);
-		for(j=0;j<occurance[i].n;j++)
+		sort=1;
+		for(i=0;i<found-1;i++)
 		{
-			printf("%s",occurance[i].array[j]);
+			if(occurance[i].hash>occurance[i+1].hash)
+			{
+				temp=occurance[i];
+				occurance[i]=occurance[i+1];
+				occurance[i+1]=temp;
+				sort=0;
+			}
+		}
+	}
+	for(i=0;i<found;i++)
+	{
+		if(occurance[i].count>1)
+		{
+			printf("%ld ",occurance[i].hash);
+			for(j=0;occurance[i].array[j][0]!=0 && j<4;j++)
+			{
+				printf(" %s ",occurance[i].array[j]);
+			}
+			printf("\n");
+		}
+	}
+	return 0;
+}
+
+int repeating_words(struct occurance_t *occurance, int pos, char *word)
+{
+	int i=0;
+	for(i=0;i<4;i++)
+	{
+		if(strcmp(word,occurance[pos].array[i])==0)
+		{
+			return 1;
+		}
+		if(occurance[pos].array[i][0]=='\0')
+		{
+			break;
 		}
 	}
 	return 0;
