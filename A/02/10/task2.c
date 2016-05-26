@@ -7,18 +7,16 @@ int main()
 {
 	char haystack[400]={'\0'},needle;
 	char *result;
-	do{
-		scanf("%s",haystack);
-	}while(strlen(haystack)>400);
-	scanf("%s",&needle);
+	fgets(haystack,400,stdin);
+	scanf("%c",&needle);
 	result=find(haystack,needle);
-	if(result==NULL)
+	if(result!=NULL)
 	{
-		printf("\n-1");
+		printf("\n%d",(int)(result-haystack));
 	}
 	else
 	{
-		printf("\n%d",(int)(result-haystack));
+		printf("\n-1");
 	}
 	return 0;
 }
