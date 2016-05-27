@@ -80,10 +80,10 @@ int main()
 	{
 		if(occurance[i].count>1)
 		{
-			printf("%ld ",occurance[i].hash);
+			printf("%ld",occurance[i].hash);
 			for(j=0;occurance[i].array[j][0]!=0 && j<4;j++)
 			{
-				printf(" %s ",occurance[i].array[j]);
+				printf(" %s",occurance[i].array[j]);
 			}
 			printf("\n");
 		}
