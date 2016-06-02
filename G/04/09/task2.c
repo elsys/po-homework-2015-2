@@ -4,7 +4,6 @@
 int main(){
  
 char command[17];
-char status[30];
 int condition = 0;
  
 // 0=closed
@@ -38,7 +37,7 @@ while(scanf("%s", command) != EOF){
         }
     }
  
-    if(!strcmp(command,"cycle_complete")){     
+    if(!strcmp(command,"cycle_complete")){    
         if(condition == 1){
             condition = 5;
         }
