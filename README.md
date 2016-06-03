@@ -2,7 +2,7 @@
 
 ## News
 
-0. [**FAQ Офирмяне втори срок**](https://docs.google.com/document/d/1ETePYqIaqUG5ZunoYQ8laciVo1Ghz3EktExV7SYGGLE/edit?usp=sharing)
+0. [**FAQ Оформяне втори срок**](https://docs.google.com/document/d/1ETePYqIaqUG5ZunoYQ8laciVo1Ghz3EktExV7SYGGLE/edit?usp=sharing)
 0. [**Codito Manifesto**](https://docs.google.com/document/d/1Ub5tekkCVQxmzpmYgjHmaMqOzvXWb5T1P_fzYIMox8M/edit#)
 0. **Следващия вторник, 07 юни 2016, ще има консултации от 12:00 в кабинет 34!!**
 0. Следващия час (**2016-05-17/18**) ще има малко контролно на тема динамична памет!
