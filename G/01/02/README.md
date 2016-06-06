@@ -10,14 +10,14 @@ https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D
 Compiled with warning(s)
 ```
 task1.c: In function 'main':
-task1.c:27:1: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[200]' [-Wformat=]
+task1.c:27:7: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[200]' [-Wformat=]
  scanf("%s",&word);
- ^
+       ^
 
 ```
 ### Testcase 1 passed
 ### Testcase 2 passed
-### Testcase 3 passed
+### Testcase 3 failed
 
 ## Task 2: Occurances [0/7 points]
 https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-2
@@ -47,10 +47,10 @@ task2.c:25:1: error: expected identifier or '(' before '}' token
  }
  ^
 task2.c: In function 'main':
-task2.c:35:18: warning: passing argument 1 of 'scanf' from incompatible pointer type
+task2.c:35:18: warning: passing argument 1 of 'scanf' from incompatible pointer type [-Wincompatible-pointer-types]
      while (scanf(stdin, "%s", word)){
                   ^
-In file included from /usr/include/features.h:374:0,
+In file included from /usr/include/features.h:361:0,
                  from /usr/include/stdio.h:27,
                  from task2.c:2:
 /usr/include/stdio.h:446:12: note: expected 'const char * restrict' but argument is of type 'struct _IO_FILE *'
