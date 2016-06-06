@@ -1,6 +1,6 @@
 # Assignment report
 ```
-Points earned: 22
+Points earned: 26
 Maximum points: 26
 ```
 
@@ -14,9 +14,9 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 
 ### Testcase 1 passed
 
-## Task 3: Za.io [8/12 points]
+## Task 3: Za.io [12/12 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3---zaio
 
 ### Testcase 1 passed
 ### Testcase 2 passed
-### Testcase 3 failed
+### Testcase 3 passed

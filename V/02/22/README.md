@@ -14,9 +14,9 @@ Exit code: 1
 Error
 ```
 task1.c: In function 'main':
-task1.c:10:3: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
+task1.c:10:9: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
    scanf("%d",arr[i]);
-   ^
+         ^
 task1.c: In function 'minmax':
 task1.c:28:3: error: invalid operands to binary * (have 'int' and 'int *')
    *min=arr[i];

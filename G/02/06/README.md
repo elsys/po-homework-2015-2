@@ -18,3 +18,5 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3---zaio
 
 ### Not submitted
+## Unrecognized files
+### taskoc2.c

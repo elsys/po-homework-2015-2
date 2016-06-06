@@ -1,6 +1,6 @@
 # Assignment report
 ```
-Points earned: 21
+Points earned: 13
 Maximum points: 26
 ```
 
@@ -9,10 +9,10 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 
 Compiled with warning(s)
 ```
-task1.c: In function 'minmax':
-task1.c:39:12: warning: 'return' with a value, in function returning void
-     return 0;
-            ^
+task1.c: In function 'main':
+task1.c:23:8: warning: unused variable 'Sum' [-Wunused-variable]
+    int Sum = 0;
+        ^
 
 ```
 ### Testcase 1 passed
@@ -22,10 +22,7 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 
 ### Testcase 1 passed
 
-## Task 3: Za.io [8/12 points]
+## Task 3: Za.io [0/12 points]
 https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3---zaio
 
-### Testcase 1 passed
-### Testcase 2 passed
-### Testcase 3 failed
-Execution took more than 1 seconds
+### Not submitted
