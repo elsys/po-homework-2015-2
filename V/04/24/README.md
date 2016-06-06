@@ -1,6 +1,6 @@
 # Assignment report
 ```
-Points earned: 17
+Points earned: 10
 Maximum points: 17
 ```
 
@@ -16,9 +16,19 @@ https://github.com/elsys/po-homework/tree/master/A/04#%D0%97%D0%B0%D0%B4%D0%B0%D
 
 ### Testcase 1 passed
 
-## Task 3: Digits [7/7 points]
+## Task 3: Digits [0/7 points]
 https://github.com/elsys/po-homework/tree/master/A/04#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-3---digits
 
-### Testcase 1 passed
-### Testcase 2 passed
-### Testcase 3 passed
+Failed compiling
+
+Exit code: 1
+
+Error
+```
+task3.c: In function 'main':
+task3.c:48:13: error: 'elem' undeclared (first use in this function)
+             elem = curr%2;
+             ^
+task3.c:48:13: note: each undeclared identifier is reported only once for each function it appears in
+
+```

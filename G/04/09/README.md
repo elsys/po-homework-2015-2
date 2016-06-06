@@ -14,14 +14,6 @@ https://github.com/elsys/po-homework/tree/master/A/04#%D0%97%D0%B0%D0%B4%D0%B0%D
 ## Task 2: Doors [0/5 points]
 https://github.com/elsys/po-homework/tree/master/A/04#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-2---doors
 
-Compiled with warning(s)
-```
-task2.c: In function 'main':
-task2.c:7:6: warning: unused variable 'status' [-Wunused-variable]
- char status[30];
-      ^
-
-```
 ### Testcase 1 failed
 
 ## Task 3: Digits [5/7 points]
