@@ -5,7 +5,7 @@ void minmax(int *arr, int *size, int *min, int *max);
 int main()
 {
 	int arr[500];
-	int size, num=1, i, min, max;
+	int size, num=1, min, max;
 	scanf("%d", &size);
 	scanf("%d", &arr[0]);
 	min = arr[0];

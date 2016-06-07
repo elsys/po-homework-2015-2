@@ -15,13 +15,13 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 Compiled with warning(s)
 ```
 task2.c: In function 'main':
-task2.c:16:10: warning: assignment makes integer from pointer without a cast
+task2.c:16:10: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
    helper = find(&array[index], symbol);
           ^
 task2.c: In function 'find':
-task2.c:32:25: warning: return makes pointer from integer without a cast
+task2.c:32:32: warning: return makes pointer from integer without a cast [-Wint-conversion]
   if(*haystack == needle)return 1;
-                         ^
+                                ^
 
 ```
 ### Testcase 1 passed

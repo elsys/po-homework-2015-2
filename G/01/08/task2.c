@@ -36,7 +36,7 @@ occurance var;
 var.reps=0;
 var.hash=0;
 int i=0,l=0,helper2=0;
-long helper=0
+long helper=0;
 for(i=0;i<counter;i++){
 l=i;
 helper=array[i];
@@ -54,7 +54,10 @@ for(l=0;l<counter;l++){
 
 }
 printf("%d\n",var.reps);
-printf("%d",var.hash);
+
+printf("%ld",var.hash);
+
+return 0;
 }
 
 long hashing(char arr[]){

@@ -29,9 +29,9 @@ task2.c:17:45: warning: comparison between pointer and integer
          if (find(&haystack[counter],needle) == 1){
                                              ^
 task2.c: In function 'find':
-task2.c:35:20: warning: return makes pointer from integer without a cast
+task2.c:35:27: warning: return makes pointer from integer without a cast [-Wint-conversion]
    if (helper == 1) return 1;
-                    ^
+                           ^
 
 ```
 ### Testcase 1 passed

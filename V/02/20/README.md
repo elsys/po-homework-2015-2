@@ -15,9 +15,9 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 Compiled with warning(s)
 ```
 task2.c: In function 'main':
-task2.c:19:9: warning: format '%ld' expects argument of type 'long int', but argument 2 has type 'int' [-Wformat=]
+task2.c:19:16: warning: format '%ld' expects argument of type 'long int', but argument 2 has type 'int' [-Wformat=]
          printf("%ld\n", res - line);
-         ^
+                ^
 
 ```
 ### Testcase 1 passed

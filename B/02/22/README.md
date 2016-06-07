@@ -15,9 +15,9 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 Compiled with warning(s)
 ```
 task2.c: In function 'main':
-task2.c:13:2: warning: format '%ld' expects argument of type 'long int', but argument 2 has type 'int' [-Wformat=]
+task2.c:13:9: warning: format '%ld' expects argument of type 'long int', but argument 2 has type 'int' [-Wformat=]
   printf("%ld" , find(text, symvol) - text );
-  ^
+         ^
 
 ```
 ### Testcase 1 failed
@@ -28,9 +28,9 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 Compiled with warning(s)
 ```
 task3.c: In function 'main':
-task3.c:12:2: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
+task3.c:12:19: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
   for(i = 0; scanf("%d", arr[i]) != EOF; i++){}
-  ^
+                   ^
 task3.c:9:5: warning: unused variable 'size' [-Wunused-variable]
  int size;
      ^

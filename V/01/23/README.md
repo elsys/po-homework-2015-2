@@ -10,9 +10,9 @@ https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D
 Compiled with warning(s)
 ```
 task1.c: In function 'main':
-task1.c:10:5: warning: format '%ld' expects argument of type 'long int', but argument 2 has type 'int' [-Wformat=]
+task1.c:10:12: warning: format '%ld' expects argument of type 'long int', but argument 2 has type 'int' [-Wformat=]
      printf("%ld", hash_n);
-     ^
+            ^
 
 ```
 ### Testcase 1 passed

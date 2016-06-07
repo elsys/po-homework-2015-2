@@ -10,7 +10,7 @@ https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D
 Compiled with warning(s)
 ```
 task1.c: In function 'main':
-task1.c:44:7: warning: passing argument 1 of 'hash' from incompatible pointer type
+task1.c:44:7: warning: passing argument 1 of 'hash' from incompatible pointer type [-Wincompatible-pointer-types]
   hash(&word);
        ^
 task1.c:5:6: note: expected 'char *' but argument is of type 'char (*)[200]'
@@ -20,7 +20,7 @@ task1.c:5:6: note: expected 'char *' but argument is of type 'char (*)[200]'
 ```
 ### Testcase 1 passed
 ### Testcase 2 passed
-### Testcase 3 passed
+### Testcase 3 failed
 
 ## Task 2: Occurances [0/7 points]
 https://github.com/elsys/po-homework/tree/master/B/01#%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-2

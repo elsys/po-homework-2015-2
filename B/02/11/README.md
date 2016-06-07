@@ -10,7 +10,7 @@ https://github.com/elsys/po-homework/tree/master/A/02#%D0%97%D0%B0%D0%B4%D0%B0%D
 Compiled with warning(s)
 ```
 task1.c: In function 'main':
-task1.c:26:9: warning: passing argument 1 of 'minmax' from incompatible pointer type
+task1.c:26:9: warning: passing argument 1 of 'minmax' from incompatible pointer type [-Wincompatible-pointer-types]
   minmax(&arr, size, &min, &max);
          ^
 task1.c:3:6: note: expected 'int *' but argument is of type 'int (*)[500]'
