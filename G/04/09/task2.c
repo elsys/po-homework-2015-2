@@ -5,10 +5,11 @@ int main(){
  
 char command[17];
 int condition = 0;
+int is_valid = 1;
  
 // 0=closed
 // 1=opening
-// 2=stoped_while_opening
+// 2=st oped_while_opening
 // 3=closing
 // 4=stoped_while_closing
 // 5=opened
@@ -35,45 +36,57 @@ while(scanf("%s", command) != EOF){
         else if(condition == 5){
             condition = 3;
         }
+        is_valid = 1;
     }
- 
-    if(!strcmp(command,"cycle_complete")){    
+    else if(!strcmp(command,"cycle_complete")){    
         if(condition == 1){
             condition = 5;
+            is_valid = 1;
         }
         else if(condition == 3){
             condition = 0;
+            is_valid = 1;
+        }
+        else
+        {
+            is_valid = 0;
         }
     }
- 
- 
-    if(condition == 0){
-        printf("Door: CLOSED\n");
-    }
-   
-   
-    if(condition == 1){
-        printf("Door: OPENING\n");
+    else
+    {
+        is_valid = 0;
     }
  
-   
-    if(condition == 2){
-        printf("Door: STOPED_WHILE_OPENING\n");
-    }
- 
-   
-    if(condition == 3){
-        printf("Door: CLOSING\n");
-    }
- 
-   
-    if(condition == 4){
-        printf("Door: STOPED_WHILE_CLOSING\n");
-    }
- 
-   
-    if(condition == 5){
-        printf("Door: OPEN\n");
+     if(is_valid)
+     {
+        if(condition == 0){
+            printf("Door: CLOSED\n");
+        }
+       
+       
+        if(condition == 1){
+            printf("Door: OPENING\n");
+        }
+     
+       
+        if(condition == 2){
+            printf("Door: STOPED_WHILE_OPENING\n");
+        }
+     
+       
+        if(condition == 3){
+            printf("Door: CLOSING\n");
+        }
+     
+       
+        if(condition == 4){
+            printf("Door: STOPED_WHILE_CLOSING\n");
+        }
+     
+       
+        if(condition == 5){
+            printf("Door: OPEN\n");
+        }
     }
 }
  
