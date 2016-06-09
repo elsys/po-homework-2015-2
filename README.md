@@ -2,6 +2,7 @@
 
 ## News
 
+0. **Следващата седмица, всички ученици трябва да се явят.** Тези които са доволни от **Tryout 1** трябва да минат през нас, да бъдат отбелязани. Останалите ще бъдат изпитани на подобни задачи.
 0. [**FAQ Оформяне втори срок**](https://docs.google.com/document/d/1ETePYqIaqUG5ZunoYQ8laciVo1Ghz3EktExV7SYGGLE/edit?usp=sharing)
 0. [**Codito Manifesto**](https://docs.google.com/document/d/1Ub5tekkCVQxmzpmYgjHmaMqOzvXWb5T1P_fzYIMox8M/edit#)
 0. **Следващия вторник, 07 юни 2016, ще има консултации от 12:00 в кабинет 31!!**
